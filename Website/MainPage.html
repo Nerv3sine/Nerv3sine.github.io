@@ -10,20 +10,44 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
     <!---->
 
+    <!--Page javascript inclusion-->
+    <script src="MainPage.js" defer></script>
+
     <title>Main Page</title>
 </head>
+
 <body>
     <ion-app>
         <ion-header>
             <ion-toolbar>
-                <ion-title class="ion-text-center">Main Menu</ion-title>
+                <ion-title class="ion-text-center"><h1>Hot Access</h1></ion-title>
             </ion-toolbar>
         </ion-header>
+
         <ion-content>
             <ion-grid>
                 <ion-row class="ion-text-center">
                     <ion-col>
-                        <ion-button color="danger">To first page</ion-button>
+                        
+                        <ion-card class="ion-no-margin ion-margin-start" onclick="navigate(0)" color="danger">
+                            <ion-img src="http://www.sfu.ca/content/sfu/bog/jcr:content/main_content/image.img.640.medium.jpg/1618347378648.jpg"></ion-img>
+                            <ion-card-title class="ion-padding" >
+                                School Shortcuts
+                            </ion-card-title>
+                        </ion-card>
+
+                    </ion-col>
+
+                    <ion-col>
+                        
+                        <ion-card class="ion-no-margin ion-margin-start" color="primary">
+                            <ion-img src="https://res.cloudinary.com/marcelcruz/image/upload/v1608733517/Dev%20Resources/thumbnail-v2_nerwh5.png"></ion-img>
+                            <ion-card-title class="ion-padding">
+                                Development Resources
+                            </ion-card-title>
+                            
+                        </ion-card>
+
                     </ion-col>
                 </ion-row>
                 <ion-row class="ion-text-center">
