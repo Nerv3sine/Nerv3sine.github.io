@@ -12,5 +12,8 @@ const navigate = (page) => {
         case 3:
             window.open('https://crowdmark.com/');
             break;
+        case 4:
+            window.open('https://www.slader.com/textbook/9780321982384-linear-algebra-and-its-applications-5th-edition/');
+            break;
     }
 }
