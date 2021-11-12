@@ -7,5 +7,8 @@ const navigate = (page) => {
         case 0:
             window.location.href = 'SchoolLinks.html';
             break;
+        case 1:
+            window.location.href = 'WIP.html';
+            break;
     }
 }
