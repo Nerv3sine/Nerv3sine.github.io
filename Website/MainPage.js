@@ -1,4 +1,3 @@
-
 const navSFUCo_op = () => {
     window.location.href = 'https://myexperience.sfu.ca/myAccount/dashboard.htm';
 }

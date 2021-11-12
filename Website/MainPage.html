@@ -12,29 +12,6 @@
 
     <!--Page javascript inclusion-->
     <script src="MainPage.js" defer></script>
-    <script>
-        var bannerIndex = 0;
-        showSlide(bannerIndex);
-        
-        const changeSlide = (n) => {
-            showSlide(bannerIndex += n);
-        }
-        
-        const showSlide = (n) => {
-            var i;
-            var x = document.getElementsByClassName("banner-slides");
-            if(n > x.length){
-                bannerIndex = 0;
-            }
-            if(n < 0){
-                bannerIndex = x.length;
-            }
-            for(i = 0; i < x.length; i++){
-                x[i].style.display = "none";
-            }
-            x[bannerIndex].style.display = "block";
-        }
-        </script>
 
     <style>
         .top-banner{
@@ -90,6 +67,30 @@
 </head>
 
 <body>
+    <script>
+        var bannerIndex = 0;
+        showSlide(bannerIndex);
+        
+        const changeSlide = (n) => {
+            showSlide(bannerIndex += n);
+        }
+        
+        const showSlide = (n) => {
+            var i;
+            var x = document.getElementsByClassName("banner-slides");
+            if(n > x.length){
+                bannerIndex = 0;
+            }
+            if(n < 0){
+                bannerIndex = x.length;
+            }
+            for(i = 0; i < x.length; i++){
+                x[i].style.display = "none";
+            }
+            x[bannerIndex].style.display = "block";
+        }
+        </script>
+
     <ion-app>
         <div class="top-banner">
             <img class="banner-slides" src="https://i.imgur.com/ZtdhrUA.jpg" style="width:100%">
