@@ -13,16 +13,72 @@
     <!--Page javascript inclusion-->
     <script src="MainPage.js" defer></script>
 
+    <style>
+        .top-banner{
+            position:relative;
+            margin-top: 0em;
+        }
+
+        .bannerBtn{
+            border:none;
+            display:inline-block;
+            outline:0;
+            padding:8px 16px;
+            vertical-align:middle;
+            overflow:hidden;
+            text-decoration:none;
+            color:inherit;
+            background-color:inherit;
+            text-align:center;
+            cursor:pointer;
+            white-space:nowrap;
+        }
+
+        .bannerBtn{
+            -webkit-touch-callout:none;
+            -webkit-user-select:none;
+            -khtml-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+        }
+
+        .bannerBtn{
+            width:100%;
+            text-align:left;
+            padding:8px 16px;
+        }
+
+        .top-banner .bannerBtn{
+            position:absolute;
+            top:32%;
+        }
+
+        .leftDisplay{
+            left:0;
+        }
+
+        .rightDisplay{
+            right:0;
+        }
+    </style>
+
     <title>Main Page</title>
 </head>
 
 <body>
     <ion-app>
-        <ion-header>
+        <div class="top-banner">
+            <img class="banner-slides" src="https://steamuserimages-a.akamaihd.net/ugc/940586530515504757/CDDE77CB810474E1C07B945E40AE4713141AFD76/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" style="width:100%">
+            <img class="banner-slides" src="https://d3b4yo2b5lbfy.cloudfront.net/wp-content/uploads/wallpapers/af6953a10506-1920x1080.jpg" style="width:100%">
+            <button class="bannerBtn leftDisplay" onclick="changeSlide(1)">&#10094;</button>
+            <button class="bannerBtn rightDisplay" onclick="changeSlide(-1)">&#10095;</button>
+        </div>
+        <!-- <ion-header>
             <ion-toolbar>
                 <ion-title class="ion-text-center"><h1>Quick Access</h1></ion-title>
             </ion-toolbar>
-        </ion-header>
+        </ion-header> -->
 
         <ion-content>
             <ion-grid>
