@@ -13,84 +13,10 @@
     <!--Page javascript inclusion-->
     <script src="MainPage.js" defer></script>
 
-    <style>
-        .top-banner{
-            position:relative;
-            margin-top: 0em;
-        }
-
-        .bannerBtn{
-            border:none;
-            display:inline-block;
-            outline:0;
-            padding:8px 16px;
-            vertical-align:middle;
-            overflow:hidden;
-            text-decoration:none;
-            color:inherit;
-            background-color:inherit;
-            text-align:center;
-            cursor:pointer;
-            white-space:nowrap;
-        }
-
-        .bannerBtn{
-            -webkit-touch-callout:none;
-            -webkit-user-select:none;
-            -khtml-user-select:none;
-            -moz-user-select:none;
-            -ms-user-select:none;
-            user-select:none;
-        }
-
-        .bannerBtn{
-            width:100%;
-            text-align:left;
-            padding:8px 16px;
-        }
-
-        .top-banner .bannerBtn{
-            position:absolute;
-            top:32%;
-        }
-
-        .leftDisplay{
-            left:0;
-        }
-
-        .rightDisplay{
-            right:0;
-        }
-    </style>
-
     <title>Main Page</title>
 </head>
 
 <body>
-    <script>
-        var bannerIndex = 0;
-        showSlide(bannerIndex);
-        
-        const changeSlide = (n) => {
-            showSlide(bannerIndex += n);
-        }
-        
-        const showSlide = (n) => {
-            var i;
-            var x = document.getElementsByClassName("banner-slides");
-            if(n > x.length){
-                bannerIndex = 0;
-            }
-            if(n < 0){
-                bannerIndex = x.length;
-            }
-            for(i = 0; i < x.length; i++){
-                x[i].style.display = "none";
-            }
-            x[bannerIndex].style.display = "block";
-        }
-        </script>
-
     <ion-app>
         <div class="top-banner">
             <img class="banner-slides" src="https://i.imgur.com/ZtdhrUA.jpg" style="width:100%">
