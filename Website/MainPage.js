@@ -1,11 +1,11 @@
 var bannerIndex = 0;
 showSlide(bannerIndex);
 
-function changeSlide(n){
+const changeSlide = (n) => {
     showSlide(bannerIndex += n);
 }
 
-function showSlide(n){
+const showSlide = (n) => {
     var i;
     var x = document.getElementsByClassName("banner-slides");
     if(n > x.length){
