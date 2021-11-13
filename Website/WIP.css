@@ -1,6 +1,7 @@
 .top-banner{
-    height:25%;
-
+    height:25vh;
+    margin:0;
+    padding:0;
 }
 
 .img-content{
