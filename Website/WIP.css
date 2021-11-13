@@ -1,7 +1,10 @@
 .top-banner{
-    height:25vh;
+    height:75vh;
     margin:0;
     padding:0;
+    border: 0;
+    align-content: center;
+    background-color: black;
 }
 
 .img-content{
