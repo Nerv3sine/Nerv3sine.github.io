@@ -1,4 +1,9 @@
 let bannerPageIndex = 1;
+let bannerChangeDelay = 5000;
+
+let bannerTimerID = setInterval(() => {
+    changePage(1);
+}, bannerChangeDelay);
 
 let bannerContent = [
     "https://i.pinimg.com/originals/8a/90/98/8a909882b3c6a2fcba6e1d4a42dabd42.jpg",
@@ -18,5 +23,9 @@ const changePage = (n) => {
     if(bannerPageIndex < 1){
         bannerPageIndex = bannerContent.length;
     }
+    clearInterval(bannerTimerID);
+    bannerTimerID = setInterval(() => {
+        changePage(1);
+    }, bannerChangeDelay);
     bannerUpdate();
 }
