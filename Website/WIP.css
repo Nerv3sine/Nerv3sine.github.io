@@ -4,13 +4,23 @@
 }
 
 .top-banner{
-    height:75vh;
+    height: 60vh;
     width: 100%;
     display: flex;
     justify-content: center;
     background-color: black;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-overlay{
+    height:inherit;
+    width:inherit;
+    overflow:hidden;
+    position: absolute;
 }
 
 .img-content{
     height:inherit;
+    position: absolute;
 }
