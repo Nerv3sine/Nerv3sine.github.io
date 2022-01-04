@@ -12,14 +12,19 @@ const main = async (filePath) => {
     fileData = await request(filePath);
 
     let allInfo = new Set();
+    let siteNames = new Array();
+    for(let name of fileData.names){
+        siteNames.push(name);
+    }
+    console.log(siteNames);
     for(let info of fileData.sites){
         allInfo.add(info);
     }
 
-    generateContent(allInfo);
+    generateContent(allInfo, siteNames);
 }
 
-const generateContent = (info) => {
+const generateContent = (info, siteNames) => {
     let siteAccessContainer = document.getElementById("sitesContainer");
 
     if(info.size < 1){
@@ -27,13 +32,15 @@ const generateContent = (info) => {
     }
 
     //simple x in y loops don't work for sets
+    count = 0;
     for(let site of info){
         //card content
         const itemPic = document.createElement("ion-img");
         itemPic.setAttribute('src', imageLink);
         const itemLabel = document.createElement("ion-card-title");
         itemLabel.setAttribute('class', 'ion-padding');
-        itemLabel.innerHTML = site;
+        itemLabel.innerHTML = siteNames[count];
+        count++;
 
         //card
         const itemCard = document.createElement("ion-card");
