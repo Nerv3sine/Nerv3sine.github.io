@@ -2,6 +2,8 @@ import json
 
 filePath = "RecipeDatabase.json"
 
+maintenance = False
+
 with open(filePath) as file:
     data = json.load(file)
 
@@ -11,14 +13,21 @@ for recipe in data.get("Cookbook"):
     information.update({"ID": i})
     i = i + 1
 
+if(maintenance):
+    #maintenance mode
+    output = json.dumps(data)
 
-output = json.dumps(data)
+    outputFile = open(filePath, "w")
+    outputFile.write(output)
+    outputFile.close()
 
-outputFile = open(filePath, "w")
-outputFile.write(output)
-outputFile.close()
-
-print("\n\nFinished!")
+    print("\n\nFinished!")
+else:
+    #debug mode
+    x = 0
+    while(x > -1):
+        print(data.get("Cookbook")[x].get("Recipe").get("Name"))
+        x = int(input("input value: "))
 
 # i = 0
 # for recipe in data.get("Cookbook"):
