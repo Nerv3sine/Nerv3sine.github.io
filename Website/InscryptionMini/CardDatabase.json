@@ -1,19 +1,30 @@
 {
     "Cards" : [
         {
-            "Name": "Bear"
+            "Name": "Bear",
+            "HP": 4,
+            "ATK": 4
+            
         },
         {
-            "Name": "Bee"
+            "Name": "Bee",
+            "HP": 1,
+            "ATK": 1
         },
         {
-            "Name": "Deer"
+            "Name": "Deer",
+            "HP": 7,
+            "ATK": 0
         },
         {
-            "Name": "Boulder"
+            "Name": "Boulder",
+            "HP": 7,
+            "ATK": 0
         },
         {
-            "Name": "Ferret"
+            "Name": "Ferret",
+            "HP": 2,
+            "ATK": 1
         }
     ]
 }
