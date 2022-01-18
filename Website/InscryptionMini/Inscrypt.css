@@ -4,6 +4,7 @@
 }
 
 body{
+    padding: 0;
     background-image: url("https://external-preview.redd.it/K7sturkBKFQXsWubMPSd9MaQW1oFLzDJ5fFFbQ0LyHc.png?auto=webp&s=510e234c04269fc1a4e20f5c9dcf7f7c1904bd40");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -12,10 +13,34 @@ body{
     width: 100%;
 }
 
+.mainSection{
+    width: 100%;
+    height: 100%;
+    align-content: center;
+}
+
 .slot{
     border-color: white;
     border-style: dashed;
-    width: 7%;
-    height: 20%;
-    position: absolute;
+    width: 16vh;
+    height: 100%;
+    border-radius: 10px;
+    border-width: 2px;
+    margin-left: 3px;
+}
+
+.row{
+    width: fit-content;
+    height: 25vh;
+    display: flex;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.hand{
+    margin-top: 6vh;
+}
+
+.reveal.row{
+    height: 12vh;
 }
