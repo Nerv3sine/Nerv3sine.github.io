@@ -10,5 +10,8 @@ const navigate = (page) => {
         case 1:
             window.location.href = 'WIP.html';
             break;
+        case 2:
+            window.location.href = 'InscryptionMini/InscryptionMini.html';
+            break;
     }
 }

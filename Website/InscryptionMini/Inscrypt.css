@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("https://external-preview.redd.it/K7sturkBKFQXsWubMPSd9MaQW1oFLzDJ5fFFbQ0LyHc.png?auto=webp&s=510e234c04269fc1a4e20f5c9dcf7f7c1904bd40");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    height: 100vh;
+    width: 100%;
+}
+
+.slot{
+    border-color: white;
+    border-style: dashed;
+    width: 7%;
+    height: 20%;
+    position: absolute;
+}
