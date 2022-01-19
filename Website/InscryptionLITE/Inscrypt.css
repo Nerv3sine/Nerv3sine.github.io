@@ -42,6 +42,7 @@ body{
     border-radius: 10px;
     border-width: 2px;
     margin-left: 3px;
+    position: relative;
 }
 
 .row{
@@ -75,5 +76,29 @@ body{
 .cardLabel{
     color: white;
     text-align: center;
+    margin-top: 10%;
+}
 
+.HP{
+    position: absolute;
+    bottom: 10%;
+    right: 20%;
+    color: white;
+    padding: 2%;
+    padding-left: 6%;
+    padding-right: 6%;
+    background-color: green;
+    border-radius: 25%;
+}
+
+.ATK{
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    color: white;
+    padding: 2%;
+    padding-left: 6%;
+    padding-right: 6%;
+    background-color: red;
+    border-radius: 25%;
 }
