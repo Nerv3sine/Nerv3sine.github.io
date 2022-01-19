@@ -1,4 +1,4 @@
-const fileSrc = "https://nerv3sine.github.io/Website/InscryptionMini/CardDatabase.json"
+const fileSrc = "https://nerv3sine.github.io/Website/InscryptionLITE/CardDatabase.json"
 //imports methods from another js file
 
 let handComponents = [];
