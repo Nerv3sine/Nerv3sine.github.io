@@ -13,8 +13,8 @@
         },
         {
             "Name": "Deer",
-            "HP": 7,
-            "ATK": 0
+            "HP": 2,
+            "ATK": 2
         },
         {
             "Name": "Boulder",
