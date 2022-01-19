@@ -1,17 +1,11 @@
 const fileSrc = "https://nerv3sine.github.io/Website/InscryptionLITE/CardDatabase.json"
 //imports methods from another js file
 
-let handComponents = [];
-let playerComponents = [];
-let opponentComponents = [];
-let revealComponents = [];
+let playableComponents = [new Array(), new Array(5), new Array(5), new Array(5)];
 
 let cardSelection = [-1, -1];
 
-let currentHand = []
-let playerCards = new Array(5)
-let opponentCards = new Array(5)
-let revealCards = new Array(5)
+let playingField = [new Array(), new Array(5), new Array(5), new Array(5)]
 
 //0: hand
 //1: player
@@ -19,7 +13,11 @@ let revealCards = new Array(5)
 //3: reveal
 
 
-//json loading
+/**
+ * loads in the json file of the designated location
+ * @param {String} filePath 
+ * @returns 
+ */
 const request = async(filePath) => {
     const response = await fetch(filePath);
     const data = await response.json();
@@ -28,7 +26,7 @@ const request = async(filePath) => {
 
 const cardLoad = async (filePath) => {
     data = await request(filePath);
-    currentHand = data.Cards
+    playingField[0] = data.Cards
 }
 
 
@@ -38,35 +36,46 @@ window.onload=function(){
     setup()
 }
 
+/**
+ * assigns all variables keeping track of the different fields in the play field
+ */
 const setup = async () => {
     await cardLoad(fileSrc)
     let x = document.getElementById("reveal");
-    revealComponents = x.children
+    playableComponents[3] = x.children
     x = document.getElementById("opponent")
-    opponentComponents = x.children
+    playableComponents[2] = x.children
     x = document.getElementById("player")
-    playerComponents = x.children
-    currentHand && handSetup();
+    playableComponents[1] = x.children
+    playingField[0] && handSetup();
 }
 
+/**
+ * generates all the cards within the player's hand
+ */
 const handSetup = () => {
     let x = document.getElementById("hand");
 
     let i = 0;
-    for(let item of currentHand){
+    for(let item of playingField[0]){
 
         let card = generateCard(item, [0, i]);
 
         x.appendChild(card);
-        handComponents.push(card);
+        playableComponents[0].push(card);
         i++;
     }
 }
 
-const generateCard = (information, cardPosition) => {
+/**
+ * generates an HTMLElement card component that's ready for displaying
+ * @param {Object} information 
+ * @returns an HTMLElement component
+ */
+const generateCard = (information) => {
     const card = document.createElement("div");
     card.classList.add("slot");
-    let tempFunc = "slotInteract(" + cardPosition[0] + ", " + cardPosition[1] + ")";
+    let tempFunc = "handInteract(" + information.Name + ")";
     card.setAttribute("onclick", tempFunc);
     card.classList.add("card");
 
@@ -88,58 +97,46 @@ const generateCard = (information, cardPosition) => {
     return card;
 }
 
+/**
+ * selects a specific slot that's of the "group" group and "slot" element 
+ * @param {*} group 
+ * @param {*} index 
+ * @returns 
+ */
 const slotInteract = (group, index) => {
     if(cardSelection[0] == group && cardSelection[1] == index){
         return;
     }
     if(cardSelection[0] != -1 && cardSelection[1] != -1){
-        slotStateChange(false, getComponent(cardSelection[0], cardSelection[1]))
+        slotStateChange(false, playableComponents[cardSelection[0]][cardSelection[1]])
     }
 
     if(cardSelection[0] == 0){
-        getComponent(cardSelection[0], cardSelection[1]).remove();
-        let card = currentHand[cardSelection[1]]
-        currentHand = popElement(currentHand, cardSelection[1])
-        getSlotGroup(group)[index] = card;
-        getComponent(group, index).appendChild(generateCard(card, [group, index]));
+        playableComponents[cardSelection[0]][cardSelection[1]].remove();
+        let card = playingField[0][cardSelection[1]]
+        playingField[group][index] = card;
+        playableComponents[group][index].appendChild(generateCard(card, [group, index]));
     }
 
     cardSelection = [group, index];
-    slotStateChange(true, getComponent(cardSelection[0], cardSelection[1]))
+    slotStateChange(true, playableComponents[cardSelection[0]][cardSelection[1]])
+}
+
+const handInteract = (cardName) => {
+
 }
 
 // const moveCard = (originalPosition, newPosition) => {
     
 // }
 
-const getComponent = (group, index) => {
-    switch(group){
-        case 0:
-            return handComponents[index]
-        case 1:
-            return playerComponents[index]
-        case 2:
-            return opponentComponents[index]
-        case 3:
-            return revealComponents[index]
-        default:
-            p("error in getComponent function")
-    }
-}
-
-const getSlotGroup = (group) => {
-    switch(group){
-        case 0:
-            return currentHand;
-        case 1:
-            return playerCards;
-        case 2:
-            return opponentCards;
-        case 3:
-            return revealCards;
-    }
-}
-
+/**
+ * activates/deactivates a slot HTMLElement component based on the mode provided
+ * 
+ * @param {*} mode 
+ * @param {*} component 
+ * 
+ */
 const slotStateChange = (mode, component) => {
     if(mode){
         component.classList.add("selected")
@@ -148,18 +145,18 @@ const slotStateChange = (mode, component) => {
     }
 }
 
+/**
+ * cancels the current selected slot
+ */
 const cancel = () => {
     if(cardSelection[0] != -1 && cardSelection[1] != -1){
-        slotStateChange(false, getComponent(cardSelection[0], cardSelection[1]))
+        slotStateChange(false, playableComponents[cardSelection[0]][cardSelection[1]])
     }
     cardSelection = [-1, -1]
 }
 
 
-const test = () => {
-    let test = document.getElementById("test")
-
-}
+//custom methods
 
 const popElement = (input, index) => {
     let out = input.slice(0, index);
@@ -169,9 +166,24 @@ const popElement = (input, index) => {
     return out
 }
 
+const customFind = (input, cardName) => {
+    i = 0;
+    for(let card of input){
+        if(card.Name == cardName){
+            return i;
+        }
+        i++;
+    }
+    console.log("find method error")
+} 
+
 const p = (msg) => {
     console.log(msg)
 }
 
-test()
+const test = () => {
+    let test = document.getElementById("test")
+    p("testing method run; success!")
+}
 
+test()
