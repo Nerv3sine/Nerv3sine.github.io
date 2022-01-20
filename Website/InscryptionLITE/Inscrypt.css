@@ -22,8 +22,10 @@ body{
 
 .side{
     position: absolute;
-    width: 23%;
+    width: 24%;
     height: 90%;
+    display: flex;
+    justify-content: center;
 }
 
 .left{
@@ -85,8 +87,8 @@ body{
     right: 20%;
     color: white;
     padding: 2%;
-    padding-left: 6%;
-    padding-right: 6%;
+    padding-left: 7px;
+    padding-right: 7px;
     background-color: green;
     border-radius: 25%;
 }
@@ -97,8 +99,41 @@ body{
     left: 20%;
     color: white;
     padding: 2%;
-    padding-left: 6%;
-    padding-right: 6%;
+    padding-left: 7px;
+    padding-right: 7px;
     background-color: red;
     border-radius: 25%;
+}
+
+.cardInfo{
+    position: sticky;
+    height: 60%;
+    width: 70%;
+    border-color: cyan;
+    border-radius: 2.5%;
+    margin: auto;
+    margin-bottom: 2px;
+    display: none;
+}
+
+.cancelBtn{
+    position: sticky;
+    height: fit-content;
+    width: 65%;
+    color: white;
+    background-color: red;
+    border-radius: 4px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: auto;
+    margin-top: 2px;
+    text-align: center;
+    display: none;
+}
+
+.right.side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
