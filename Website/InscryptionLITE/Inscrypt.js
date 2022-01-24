@@ -121,19 +121,22 @@ const slotInteract = (group, index) => {
         return;
     }
 
-    
+    /*deactivate the previous card that was selected (if any)*/
     if(cardSelection[0] != -1 && cardSelection[1] != -1){
         slotStateChange(false, playableComponents[cardSelection[0]][cardSelection[1]])
     }
+
+    /*checks whether to move the card from the user's hand */
     if(cardSelection[0] == 0 && group != 0 && playingField[group][index] == null){
         moveCard(cardSelection, [group, index])
         playingField[0] = popElement(playingField[0], cardSelection[1])
         playableComponents[cardSelection[0]][cardSelection[1]].remove();
         playableComponents[cardSelection[0]] = popElement(playableComponents[cardSelection[0]], cardSelection[1])
     }
-
     if(playingField[group][index] != null){
         showCardInfo(playingField[group][index])
+    }else{
+        return;
     }
 
     toggleCancelBtn(true)
@@ -146,6 +149,7 @@ const handInteract = (cardName) => {
     let card = playingField[0][customFind(playingField[0], cardName)];
     showCardInfo(card)
 
+    /*deactivate the previous card that was selected (if any)*/
     if(cardSelection[0] != -1 && cardSelection[1] != -1){
         slotStateChange(false, playableComponents[cardSelection[0]][cardSelection[1]])
     }
