@@ -53,9 +53,10 @@ const setup = async () => {
     for(let group of playableComponents){
         if(i > 0){
             for(let comp of group){
-                comp.appendChild(document.createElement("div"));
-                comp.appendChild(document.createElement("div"));
-                comp.appendChild(document.createElement("div"));
+                comp.appendChild(document.createElement("p"));
+                comp.appendChild(document.createElement("img"));
+                comp.appendChild(document.createElement("p"));
+                comp.appendChild(document.createElement("p"));
             }
         }
         i++;
@@ -95,6 +96,11 @@ const generateCard = (information) => {
     label.innerHTML = information.Name;
     label.classList.add("cardLabel");
     card.appendChild(label);
+
+    const visual = document.createElement("img");
+    visual.src = information.Visual;
+    visual.classList.add("cardVisual");
+    card.appendChild(visual);
 
     const healthLabel = document.createElement("p");
     healthLabel.innerHTML = information.HP;
@@ -178,27 +184,31 @@ const moveCard = (original, newPos) => {
     prevSpot.classList.remove("card")
     prevSpot.children[0].classList.remove("cardLabel");
     prevSpot.children[0].innerHTML = ""
-    prevSpot.children[1].classList.remove("HP");
-    prevSpot.children[1].innerHTML = ""
-    prevSpot.children[2].classList.remove("ATK");
+    prevSpot.children[1].src = "./assets/empty.png"
+    prevSpot.children[2].classList.remove("HP");
     prevSpot.children[2].innerHTML = ""
+    prevSpot.children[3].classList.remove("ATK");
+    prevSpot.children[3].innerHTML = ""
 
     slotStateChange(true, newSpot)
     newSpot.classList.add("card")
     newSpot.children[0].classList.add("cardLabel");
     newSpot.children[0].innerHTML = targetSlot.Name;
-    newSpot.children[1].classList.add("HP");
-    newSpot.children[1].innerHTML = targetSlot.HP;
-    newSpot.children[2].classList.add("ATK");
-    newSpot.children[2].innerHTML = targetSlot.ATK;
+    newSpot.children[1].src = targetSlot.Visual;
+    newSpot.children[1].classList.add("cardVisual");
+    newSpot.children[2].classList.add("HP");
+    newSpot.children[2].innerHTML = targetSlot.HP;
+    newSpot.children[3].classList.add("ATK");
+    newSpot.children[3].innerHTML = targetSlot.ATK;
 }
 
 const showCardInfo = (card) => {
     let display = document.getElementById("cardDisplay");
     display.style.display = "block"
     display.children[0].innerHTML = card.Name;
-    display.children[1].innerHTML = card.HP;
-    display.children[2].innerHTML = card.ATK;
+    display.children[1].src = card.Visual;
+    display.children[2].innerHTML = card.HP;
+    display.children[3].innerHTML = card.ATK;
 }
 
 /**
