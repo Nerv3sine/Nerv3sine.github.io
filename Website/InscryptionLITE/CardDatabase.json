@@ -1,30 +1,35 @@
 {
     "Cards" : [
         {
-            "Name": "Bear",
-            "HP": 4,
-            "ATK": 4
+            "Name": "5 Pin",
+            "Visual": "https://cdn-icons-png.flaticon.com/512/889/889446.png",
+            "HP": 5,
+            "ATK": 3
             
         },
         {
-            "Name": "Bee",
+            "Name": "10 Pin",
+            "Visual": "https://cdn-icons-png.flaticon.com/512/2438/2438312.png",
+            "HP": 7,
+            "ATK": 4
+        },
+        {
+            "Name": "Paperclip",
+            "Visual": "https://cdn-icons.flaticon.com/png/512/3756/premium/3756653.png?token=exp=1643076971~hmac=e7fc76b97e968d018528826388d39705",
             "HP": 1,
             "ATK": 1
         },
         {
-            "Name": "Deer",
+            "Name": "Wrench",
+            "Visual": "https://cdn-icons-png.flaticon.com/512/969/969788.png",
             "HP": 2,
             "ATK": 2
         },
         {
-            "Name": "Boulder",
-            "HP": 7,
-            "ATK": 0
-        },
-        {
-            "Name": "Ferret",
-            "HP": 2,
-            "ATK": 1
+            "Name": "Scissors",
+            "Visual": "https://cdn-icons-png.flaticon.com/512/760/760992.png",
+            "HP": 1,
+            "ATK": 4
         }
     ]
 }
