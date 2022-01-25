@@ -154,3 +154,18 @@ body{
     flex-direction: column;
     justify-content: center;
 }
+
+.ringerButton{
+    position: sticky;
+    margin-top: 80vh;
+    height: fit-content;
+    width: fit-content;
+    padding: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    background-color: rgb(0, 177, 177);
+    border-color: white;
+    border-radius: 6px;
+    font-weight: 600;
+}
