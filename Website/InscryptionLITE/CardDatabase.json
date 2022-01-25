@@ -3,33 +3,51 @@
         {
             "Name": "5 Pin",
             "Visual": "https://cdn-icons-png.flaticon.com/512/889/889446.png",
-            "HP": 5,
-            "ATK": 3
-            
+            "HP": 4,
+            "ATK": 2,
+            "Powers": []
         },
         {
             "Name": "10 Pin",
             "Visual": "https://cdn-icons-png.flaticon.com/512/2438/2438312.png",
-            "HP": 7,
-            "ATK": 4
+            "HP": 5,
+            "ATK": 3,
+            "Powers": []
         },
         {
             "Name": "Paperclip",
             "Visual": "https://cdn-icons-png.flaticon.com/512/646/646189.png",
             "HP": 1,
-            "ATK": 1
+            "ATK": 1,
+            "Powers": ["Cling"]
         },
         {
             "Name": "Wrench",
             "Visual": "https://cdn-icons-png.flaticon.com/512/969/969788.png",
             "HP": 2,
-            "ATK": 2
+            "ATK": 2,
+            "Powers": []
         },
         {
             "Name": "Scissors",
             "Visual": "https://cdn-icons-png.flaticon.com/512/760/760992.png",
             "HP": 1,
-            "ATK": 4
+            "ATK": 4,
+            "Powers": ["Deadly"]
+        },
+        {
+            "Name": "Spade",
+            "Visual": "https://cdn-icons-png.flaticon.com/512/609/609834.png",
+            "HP": 3,
+            "ATK": 2,
+            "Powers": []
+        },
+        {
+            "Name": "Tank",
+            "Visual": "https://cdn-icons-png.flaticon.com/512/1693/1693450.png",
+            "HP": 7,
+            "ATK": 7,
+            "Powers": []
         }
     ]
 }
