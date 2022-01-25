@@ -31,9 +31,23 @@
         {
             "Name": "Scissors",
             "Visual": "https://cdn-icons-png.flaticon.com/512/760/760992.png",
-            "HP": 1,
+            "HP": 4,
             "ATK": 4,
-            "Powers": ["Deadly"]
+            "Powers": ["R.P.S."]
+        },
+        {
+            "Name": "Paper",
+            "Visual": "https://cdn-icons-png.flaticon.com/512/4334/4334396.png",
+            "HP": 4,
+            "ATK": 4,
+            "Powers": ["R.P.S."]
+        },
+        {
+            "Name": "Rock",
+            "Visual": "https://cdn-icons-png.flaticon.com/512/4405/4405457.png",
+            "HP": 4,
+            "ATK": 4,
+            "Powers": ["R.P.S."]
         },
         {
             "Name": "Spade",
