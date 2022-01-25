@@ -173,16 +173,13 @@ const handInteract = (cardName) => {
  */
 const moveCard = (original, newPos) => {
     playingField[newPos[0]][newPos[1]] = playingField[original[0]][original[1]];
-    playingField[original[0]][original[1]] = null;
 
     let targetSlot = playingField[newPos[0]][newPos[1]]
 
-    prevSpot = playableComponents[original[0]][original[1]];
-    newSpot = playableComponents[newPos[0]][newPos[1]];
+    let newSpot = playableComponents[newPos[0]][newPos[1]];
 
-    clearSlot(prevSpot);
+    clearSlot(original);
 
-    slotStateChange(true, newSpot)
     newSpot.classList.add("card")
     newSpot.children[0].classList.add("cardLabel");
     newSpot.children[0].innerHTML = targetSlot.Name;
@@ -194,7 +191,12 @@ const moveCard = (original, newPos) => {
     newSpot.children[3].innerHTML = targetSlot.ATK;
 }
 
-const clearSlot = (slot) => {
+const clearSlot = (prevInfo) => {
+
+    playingField[prevInfo[0]][prevInfo[1]] = null;
+
+    let slot = playableComponents[prevInfo[0]][prevInfo[1]];
+
     slotStateChange(false, slot);
     slot.classList.remove("card");
     slot.children[0].classList.remove("cardLabel");
@@ -253,6 +255,22 @@ const toggleCancelBtn = (state) => {
         cancelBtn.style.display = "none";
     }
 }
+
+const endTurn = () => {
+    cancel()
+    moveOpponentCards()
+}
+
+const moveOpponentCards = () => {
+    let pos = 0;
+    for(let card of playingField[3]){
+        if(card != null && playingField[2][pos] == null){
+            moveCard([3, pos], [2, pos]);
+        }
+        pos++;
+    }
+}
+
 
 //custom methods
 
