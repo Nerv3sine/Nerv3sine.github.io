@@ -62,6 +62,13 @@
             "HP": 7,
             "ATK": 7,
             "Powers": []
+        },
+        {
+            "Name": "Buffer",
+            "Visual": "https://cdn-icons-png.flaticon.com/512/248/248958.png",
+            "HP": 2,
+            "ATK": 0,
+            "Powers": []
         }
     ]
 }
