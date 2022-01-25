@@ -180,15 +180,7 @@ const moveCard = (original, newPos) => {
     prevSpot = playableComponents[original[0]][original[1]];
     newSpot = playableComponents[newPos[0]][newPos[1]];
 
-    slotStateChange(false, prevSpot)
-    prevSpot.classList.remove("card")
-    prevSpot.children[0].classList.remove("cardLabel");
-    prevSpot.children[0].innerHTML = ""
-    prevSpot.children[1].src = "./assets/empty.png"
-    prevSpot.children[2].classList.remove("HP");
-    prevSpot.children[2].innerHTML = ""
-    prevSpot.children[3].classList.remove("ATK");
-    prevSpot.children[3].innerHTML = ""
+    clearSlot(prevSpot);
 
     slotStateChange(true, newSpot)
     newSpot.classList.add("card")
@@ -200,6 +192,18 @@ const moveCard = (original, newPos) => {
     newSpot.children[2].innerHTML = targetSlot.HP;
     newSpot.children[3].classList.add("ATK");
     newSpot.children[3].innerHTML = targetSlot.ATK;
+}
+
+const clearSlot = (slot) => {
+    slotStateChange(false, slot);
+    slot.classList.remove("card");
+    slot.children[0].classList.remove("cardLabel");
+    slot.children[0].innerHTML = "";
+    slot.children[1].src = "./assets/empty.png";
+    slot.children[2].classList.remove("HP");
+    slot.children[2].innerHTML = "";
+    slot.children[3].classList.remove("ATK");
+    slot.children[3].innerHTML = "";
 }
 
 const showCardInfo = (card) => {
