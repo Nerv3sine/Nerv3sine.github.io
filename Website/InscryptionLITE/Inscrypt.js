@@ -131,9 +131,9 @@ const generateCard = (information) => {
 
 /**
  * selects a specific slot that's of the "group" group and "slot" element 
- * @param {integer} group 
- * @param {integer} index 
- * @returns 
+ * @param {Integer} group 
+ * @param {Integer} index 
+ * @returns null
  */
 const slotInteract = (group, index) => {
     /*prevents any changes from happening if the same slot was selected*/
@@ -165,6 +165,10 @@ const slotInteract = (group, index) => {
     slotStateChange(true, playableComponents[cardSelection[0]][cardSelection[1]])
 }
 
+/**
+ * triggers when a card within the hand is selected
+ * @param {String} cardName 
+ */
 const handInteract = (cardName) => {
     let card = playingField[0][customFind(playingField[0], cardName)];
     showCardInfo(card)
@@ -181,7 +185,7 @@ const handInteract = (cardName) => {
 }
 
 /**
- * 
+ * moves card from the *original* position to the new position
  * @param {Array} original 
  * @param {Array} newPos 
  */
@@ -208,11 +212,15 @@ const moveCard = (original, newPos) => {
     newSpot.children[4].children[0].src = getCostVisual(targetSlot.Cost)
 }
 
-const clearSlot = (prevInfo) => {
+/**
+ * clears any visible information within the given slot, resets the slot
+ * @param {Object} info 
+ */
+const clearSlot = (info) => {
 
-    playingField[prevInfo[0]][prevInfo[1]] = null;
+    playingField[info[0]][info[1]] = null;
 
-    let slot = playableComponents[prevInfo[0]][prevInfo[1]];
+    let slot = playableComponents[info[0]][info[1]];
 
     slotStateChange(false, slot);
     slot.classList.remove("card");
@@ -225,6 +233,10 @@ const clearSlot = (prevInfo) => {
     slot.children[4].children[0].src = getCostVisual(0)
 }
 
+/**
+ * turns on the card visual that displays information about the provided card
+ * @param {Object} card 
+ */
 const showCardInfo = (card) => {
     let display = document.getElementById("cardDisplay");
     display.style.display = "block"
@@ -251,7 +263,7 @@ const slotStateChange = (mode, component) => {
 }
 
 /**
- * cancels the current selected slot
+ * cancels the current selected slot, resets the current card visual as well
  */
 const cancel = () => {
     if(cardSelection[0] != -1 && cardSelection[1] != -1){
@@ -264,7 +276,10 @@ const cancel = () => {
     display.style.display = "none"
 }
 
-
+/**
+ * toggles the cancel button to the desired state provided
+ * @param {Boolean} state 
+ */
 const toggleCancelBtn = (state) => {
     let cancelBtn = document.getElementById("cancelBtn");
     if(state){
@@ -274,11 +289,17 @@ const toggleCancelBtn = (state) => {
     }
 }
 
+/**
+ * method called when player ends turn
+ */
 const endTurn = () => {
     cancel()
     moveOpponentCards()
 }
 
+/**
+ * moves all of the opponent's card from the reveal row to the opponent row
+ */
 const moveOpponentCards = () => {
     let pos = 0;
     for(let card of playingField[3]){
@@ -289,6 +310,11 @@ const moveOpponentCards = () => {
     }
 }
 
+/**
+ * Returns the appropriate visual link according to the value received
+ * @param {Integer} value 
+ * @returns image link in the form of a String
+ */
 const getCostVisual = (value) => {
     switch(value){
         case 1:
@@ -309,6 +335,13 @@ const getCostVisual = (value) => {
             return "./assets/empty.png";
     }
 }
+
+
+
+
+
+
+
 
 
 //custom methods
