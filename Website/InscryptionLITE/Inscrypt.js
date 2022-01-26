@@ -7,6 +7,8 @@ let cardSelection = [-1, -1];
 
 let playingField = [new Array(), new Array(5), new Array(5), new Array(5)]
 
+let cardDatabase = new Array();
+
 //0: hand
 //1: player
 //2: opponent
@@ -26,7 +28,7 @@ const request = async(filePath) => {
 
 const cardLoad = async (filePath) => {
     data = await request(filePath);
-    playingField[0] = data.Cards
+    cardDatabase = data.Cards;
 }
 
 
@@ -40,14 +42,15 @@ window.onload=function(){
  * assigns all variables keeping track of the different fields in the play field
  */
 const setup = async () => {
-    await cardLoad(fileSrc)
+    await cardLoad(fileSrc);
     let x = document.getElementById("reveal");
-    playableComponents[3] = [...x.children]
-    x = document.getElementById("opponent")
-    playableComponents[2] = [...x.children]
-    x = document.getElementById("player")
-    playableComponents[1] = [...x.children]
-    playingField[0] && handSetup();
+    playableComponents[3] = [...x.children];
+    x = document.getElementById("opponent");
+    playableComponents[2] = [...x.children];
+    x = document.getElementById("player");
+    playableComponents[1] = [...x.children];
+
+    cardDatabase && pickUpCards(6);
 
     i = 0;
     for(let group of playableComponents){
@@ -67,23 +70,6 @@ const setup = async () => {
         }
         i++;
     }
-}
-
-/**
- * generates all the cards within the player's hand
- */
-const handSetup = () => {
-    let x = document.getElementById("hand");
-
-    let i = 0;
-    for(let item of playingField[0]){
-
-        let card = generateCard(item, [0, i]);
-
-        x.appendChild(card);
-        i++;
-    }
-    playableComponents[0] = [...x.children]
 }
 
 /**
@@ -295,6 +281,7 @@ const toggleCancelBtn = (state) => {
 const endTurn = () => {
     cancel()
     moveOpponentCards()
+    pickUpCards(2);
 }
 
 /**
@@ -308,6 +295,28 @@ const moveOpponentCards = () => {
         }
         pos++;
     }
+}
+
+/**
+ * adds a desired amount of cards to the player's hand
+ * @param {Integer} amt 
+ */
+const pickUpCards = (amt) => {
+    let x = 0;
+
+    let physicalHand = document.getElementById("hand");
+
+    //TODO: FIX PROBLEM OF DUPLICATE CARDS ADD AN ID TO IDENTIFY THE DIFFERENCE BETWEEN CARDS
+    while(x < amt){
+        let id = Math.floor(Math.random() * cardDatabase.length);
+        playingField[0].push(cardDatabase[id]);
+
+        physicalHand.appendChild(generateCard(playingField[0][playingField[0].length - 1]));
+
+        x++;
+    }
+
+    playableComponents[0] = [...physicalHand.children];
 }
 
 /**
