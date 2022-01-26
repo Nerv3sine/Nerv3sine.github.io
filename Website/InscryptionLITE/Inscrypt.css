@@ -100,8 +100,8 @@ body{
 
 .HP{
     position: absolute;
-    bottom: 10%;
-    right: 20%;
+    bottom: 5%;
+    right: 10%;
     color: white;
     padding: 2%;
     padding-left: 7px;
@@ -112,14 +112,31 @@ body{
 
 .ATK{
     position: absolute;
-    bottom: 10%;
-    left: 20%;
+    bottom: 5%;
+    left: 10%;
     color: white;
     padding: 2%;
     padding-left: 7px;
     padding-right: 7px;
     background-color: red;
     border-radius: 25%;
+}
+
+.Cost{
+    position: absolute;
+    bottom: 5%;
+    height: fit-content;
+    width: 100%;
+}
+
+.costVisual{
+    height: 20px;
+    margin: auto;
+    display: block;
+}
+
+.preview.costVisual{
+    height: 40px;
 }
 
 .cardInfo{

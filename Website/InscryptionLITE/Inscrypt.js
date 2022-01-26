@@ -57,6 +57,12 @@ const setup = async () => {
                 comp.appendChild(document.createElement("img"));
                 comp.appendChild(document.createElement("p"));
                 comp.appendChild(document.createElement("p"));
+                
+                const cost = document.createElement("div");
+                let costImg = document.createElement("img");
+                costImg.src = "./assets/empty.png";
+                cost.appendChild(costImg);
+                comp.appendChild(cost);
             }
         }
         i++;
@@ -111,6 +117,14 @@ const generateCard = (information) => {
     powerLabel.innerHTML = information.ATK;
     powerLabel.classList.add("ATK");
     card.appendChild(powerLabel);
+
+    const cost = document.createElement("div");
+    cost.classList.add("Cost");
+    const costImg = document.createElement("img");
+    costImg.classList.add("costVisual");
+    costImg.src = getCostVisual(information.Cost);
+    cost.appendChild(costImg);
+    card.appendChild(cost);
 
     return card;
 }
@@ -189,6 +203,9 @@ const moveCard = (original, newPos) => {
     newSpot.children[2].innerHTML = targetSlot.HP;
     newSpot.children[3].classList.add("ATK");
     newSpot.children[3].innerHTML = targetSlot.ATK;
+    newSpot.children[4].classList.add("Cost");
+    newSpot.children[4].children[0].classList.add("costVisual");
+    newSpot.children[4].children[0].src = getCostVisual(targetSlot.Cost)
 }
 
 const clearSlot = (prevInfo) => {
@@ -199,13 +216,13 @@ const clearSlot = (prevInfo) => {
 
     slotStateChange(false, slot);
     slot.classList.remove("card");
-    slot.children[0].classList.remove("cardLabel");
     slot.children[0].innerHTML = "";
     slot.children[1].src = "./assets/empty.png";
-    slot.children[2].classList.remove("HP");
     slot.children[2].innerHTML = "";
-    slot.children[3].classList.remove("ATK");
+    slot.children[2].classList.remove("HP");
     slot.children[3].innerHTML = "";
+    slot.children[3].classList.remove("ATK");
+    slot.children[4].children[0].src = getCostVisual(0)
 }
 
 const showCardInfo = (card) => {
@@ -215,6 +232,7 @@ const showCardInfo = (card) => {
     display.children[1].src = card.Visual;
     display.children[2].innerHTML = card.HP;
     display.children[3].innerHTML = card.ATK;
+    display.children[4].children[0].src = getCostVisual(card.Cost);
 }
 
 /**
@@ -268,6 +286,27 @@ const moveOpponentCards = () => {
             moveCard([3, pos], [2, pos]);
         }
         pos++;
+    }
+}
+
+const getCostVisual = (value) => {
+    switch(value){
+        case 1:
+            return "./assets/die 1.png";
+        case 2:
+            return "./assets/die 2.png";
+        case 3:
+            return "./assets/die 3.png";
+        case 4:
+            return "./assets/die 4.png";
+        case 5:
+            return "./assets/die 5.png";
+        case 6:
+            return "./assets/die 6.png";
+        case 7:
+            return "./assets/die 7.png";
+        default:
+            return "./assets/empty.png";
     }
 }
 
