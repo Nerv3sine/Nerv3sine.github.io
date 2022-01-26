@@ -1,12 +1,16 @@
+/**src link for the card database*/
 const fileSrc = "https://nerv3sine.github.io/Website/InscryptionLITE/CardDatabase.json"
-//imports methods from another js file
 
+/**the "physical" playing field to keep track of the visual html components for easy access */
 let playableComponents = [new Array(), new Array(5), new Array(5), new Array(5)];
 
+/**keeps track of the last card that was selected, will return -1, -1 if last card is NULL*/
 let cardSelection = [-1, -1];
 
+/**artificial playing field created to keep track of the cards information */
 let playingField = [new Array(), new Array(5), new Array(5), new Array(5)]
 
+/**database of all the possible cards created for the game */
 let cardDatabase = new Array();
 
 //0: hand
@@ -26,6 +30,7 @@ const request = async(filePath) => {
     return data;
 }
 
+/**saves the fetched information into the local database */
 const cardLoad = async (filePath) => {
     data = await request(filePath);
     cardDatabase = data.Cards;
