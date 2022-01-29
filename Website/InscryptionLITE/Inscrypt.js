@@ -284,8 +284,9 @@ const toggleCancelBtn = (state) => {
  * method called when player ends turn
  */
 const endTurn = () => {
-    cancel()
-    moveOpponentCards()
+    cancel();
+    animateTest();
+    moveOpponentCards();
     pickUpCards(2);
 }
 
@@ -348,6 +349,24 @@ const getCostVisual = (value) => {
         default:
             return "./assets/empty.png";
     }
+}
+
+const animateTest = () => {
+    let duration = 0;
+    for(let x = 0; x < playableComponents[1].length; x++){
+        if(playingField[1][x] != null || playingField[2][x] != null){
+            setTimeout(() => {
+                playableComponents[1][x].classList.add("action");
+                playableComponents[2][x].classList.add("action");
+                setTimeout(() => {
+                    playableComponents[1][x].classList.remove("action");
+                    playableComponents[2][x].classList.remove("action");
+                }, 450);
+            }, 900 * duration);
+            duration++;
+        }
+    }
+
 }
 
 

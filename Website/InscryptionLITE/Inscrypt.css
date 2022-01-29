@@ -73,6 +73,7 @@ body{
     border-style: solid;
     border-width: 2px;
     background-color: #0000005d;
+    transition: transform 0.5s;
 }
 
 .cardLabel{
@@ -87,6 +88,10 @@ body{
     margin: auto;
     margin-top: 20%;
     display: block;
+}
+
+.card.action{
+    transform: rotate(180deg);
 }
 
 .preview.cardVisual{
