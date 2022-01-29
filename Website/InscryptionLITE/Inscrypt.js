@@ -189,18 +189,14 @@ const moveCard = (original, newPos) => {
 
     clearSlot(original);
 
+    updateCardInfoContents(newSpot, targetSlot);
     newSpot.classList.add("card")
     newSpot.children[0].classList.add("cardLabel");
-    newSpot.children[0].innerHTML = targetSlot.Name;
-    newSpot.children[1].src = targetSlot.Visual;
     newSpot.children[1].classList.add("cardVisual");
     newSpot.children[2].classList.add("HP");
-    newSpot.children[2].innerHTML = targetSlot.HP;
     newSpot.children[3].classList.add("ATK");
-    newSpot.children[3].innerHTML = targetSlot.ATK;
     newSpot.children[4].classList.add("Cost");
     newSpot.children[4].children[0].classList.add("costVisual");
-    newSpot.children[4].children[0].src = getCostVisual(targetSlot.Cost)
 }
 
 /**
@@ -231,11 +227,7 @@ const clearSlot = (info) => {
 const showCardInfo = (card) => {
     let display = document.getElementById("cardDisplay");
     display.style.display = "block"
-    display.children[0].innerHTML = card.Name;
-    display.children[1].src = card.Visual;
-    display.children[2].innerHTML = card.HP;
-    display.children[3].innerHTML = card.ATK;
-    display.children[4].children[0].src = getCostVisual(card.Cost);
+    updateCardInfoContents(display, card);
 }
 
 /**
@@ -332,16 +324,27 @@ const pickUpCards = (amt) => {
  * @param {Function} followUp
  */
 const attackCycle = async (id) => {
-    let duration = 0;
+    let opp = 2;
     let animation = "action";
     if(id == 2){
         animation = "reaction";
+        opp = 1;
     }
     for(let x = 0; x < playableComponents[id].length; x++){
+        
         entity = playingField[id][x];
+        oppEntity = playingField[opp][x];
+        
         if(entity != null && entity.ATK > 0){
             playableComponents[id][x].classList.add(animation);
             await wait(100);
+            if(oppEntity != null){
+                oppEntity.HP -= playingField[id][x].ATK;
+                if(oppEntity.HP < 0){
+                    oppEntity.HP = 0;
+                }
+                updateCardInfoContents(playableComponents[opp][x], oppEntity);
+            }
             playableComponents[id][x].classList.remove(animation);
             await wait(150);
         }
@@ -372,6 +375,14 @@ const getCostVisual = (value) => {
         default:
             return "./assets/empty.png";
     }
+}
+
+const updateCardInfoContents = (component, info) => {
+    component.children[0].innerHTML = info.Name;
+    component.children[1].src = info.Visual;
+    component.children[2].innerHTML = info.HP;
+    component.children[3].innerHTML = info.ATK;
+    component.children[4].children[0].src = getCostVisual(info.Cost);
 }
 
 
