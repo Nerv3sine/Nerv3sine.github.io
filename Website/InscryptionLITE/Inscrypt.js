@@ -283,10 +283,11 @@ const toggleCancelBtn = (state) => {
 /**
  * method called when player ends turn
  */
-const endTurn = () => {
+const endTurn = async () => {
     cancel();
+    const t = await attackCycle(1);
     moveOpponentCards();
-    animateTest();
+    const t2 = await attackCycle(2);
     pickUpCards(2);
 }
 
@@ -312,7 +313,7 @@ const pickUpCards = (amt) => {
 
     let physicalHand = document.getElementById("hand");
 
-    //TODO: FIX PROBLEM OF DUPLICATE CARDS ADD AN ID TO IDENTIFY THE DIFFERENCE BETWEEN CARDS
+    //TODO: FIX PROBLEM OF DUPLICATE CARDS ADD AN ID TO IDENTIFY THE DIFFERENCE BETWEEN NEAR IDENTICAL CARDS
     while(x < amt){
         let id = Math.floor(Math.random() * cardDatabase.length);
         playingField[0].push(cardDatabase[id]);
@@ -323,6 +324,28 @@ const pickUpCards = (amt) => {
     }
 
     playableComponents[0] = [...physicalHand.children];
+}
+
+/**
+ * will activate the attack cycle for a group/player (1 for user, 2 for opponent/AI)
+ * @param {Integer} id 
+ * @param {Function} followUp
+ */
+const attackCycle = async (id) => {
+    let duration = 0;
+    let animation = "action";
+    if(id == 2){
+        animation = "reaction";
+    }
+    for(let x = 0; x < playableComponents[id].length; x++){
+        entity = playingField[id][x];
+        if(entity != null && entity.ATK > 0){
+            playableComponents[id][x].classList.add(animation);
+            await wait(100);
+            playableComponents[id][x].classList.remove(animation);
+            await wait(150);
+        }
+    }
 }
 
 /**
@@ -351,25 +374,7 @@ const getCostVisual = (value) => {
     }
 }
 
-const animateTest = () => {
-    let duration = 0;
-    for(let x = 0; x < playableComponents[1].length; x++){
-        let player = playingField[1][x];
-        let opp = playingField[2][x];
-        if(player != null || opp != null){
-            setTimeout(() => {
-                (player && player.ATK > 0) && playableComponents[1][x].classList.add("action");
-                (opp && opp.ATK > 0) && playableComponents[2][x].classList.add("reaction");
-                setTimeout(() => {
-                    playableComponents[1][x].classList.remove("action");
-                    playableComponents[2][x].classList.remove("reaction");
-                }, 100);
-            }, 900 * duration);
-            duration++;
-        }
-    }
 
-}
 
 
 
@@ -380,6 +385,12 @@ const animateTest = () => {
 
 
 //custom methods
+
+async function wait(ms){
+    return new Promise(resolve => {
+        setTimeout(resolve, ms);
+    });
+}
 
 /**
  * removes the provided element at the index of the provided array from the array
