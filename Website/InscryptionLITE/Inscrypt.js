@@ -285,8 +285,8 @@ const toggleCancelBtn = (state) => {
  */
 const endTurn = () => {
     cancel();
-    animateTest();
     moveOpponentCards();
+    animateTest();
     pickUpCards(2);
 }
 
@@ -354,14 +354,16 @@ const getCostVisual = (value) => {
 const animateTest = () => {
     let duration = 0;
     for(let x = 0; x < playableComponents[1].length; x++){
-        if(playingField[1][x] != null || playingField[2][x] != null){
+        let player = playingField[1][x];
+        let opp = playingField[2][x];
+        if(player != null || opp != null){
             setTimeout(() => {
-                playableComponents[1][x].classList.add("action");
-                playableComponents[2][x].classList.add("action");
+                (player && player.ATK > 0) && playableComponents[1][x].classList.add("action");
+                (opp && opp.ATK > 0) && playableComponents[2][x].classList.add("reaction");
                 setTimeout(() => {
                     playableComponents[1][x].classList.remove("action");
-                    playableComponents[2][x].classList.remove("action");
-                }, 450);
+                    playableComponents[2][x].classList.remove("reaction");
+                }, 100);
             }, 900 * duration);
             duration++;
         }
