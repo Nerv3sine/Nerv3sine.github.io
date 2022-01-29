@@ -201,7 +201,7 @@ const moveCard = (original, newPos) => {
 
 /**
  * clears any visible information within the given slot, resets the slot
- * @param {Object} info 
+ * @param {Array} info 
  */
 const clearSlot = (info) => {
 
@@ -340,10 +340,13 @@ const attackCycle = async (id) => {
             await wait(100);
             if(oppEntity != null){
                 oppEntity.HP -= playingField[id][x].ATK;
-                if(oppEntity.HP < 0){
+                if(oppEntity.HP <= 0){
+                    //BUG: THIS UPDATES GLOBBALLY FOR ALL INSTANCES AND FUTURE CARDS, FIX BY CREATING SEPERATE NEW INSTANCES
                     oppEntity.HP = 0;
+                    clearSlot([opp, x]);
+                }else{
+                    updateCardInfoContents(playableComponents[opp][x], oppEntity);
                 }
-                updateCardInfoContents(playableComponents[opp][x], oppEntity);
             }
             playableComponents[id][x].classList.remove(animation);
             await wait(150);
