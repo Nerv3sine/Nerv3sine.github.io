@@ -13,6 +13,7 @@ let playingField = [new Array(), new Array(5), new Array(5), new Array(5)]
 /**database of all the possible cards created for the game */
 let cardDatabase = new Array();
 
+let instanceCounter = 0;
 //0: hand
 //1: player
 //2: opponent
@@ -85,7 +86,7 @@ const setup = async () => {
 const generateCard = (information) => {
     const card = document.createElement("div");
     card.classList.add("slot");
-    let tempFunc = "handInteract('" + information.Name + "')";
+    let tempFunc = "handInteract('" + information.InstanceID + "')";
     card.setAttribute("onclick", tempFunc);
     card.classList.add("card");
 
@@ -158,10 +159,10 @@ const slotInteract = (group, index) => {
 
 /**
  * triggers when a card within the hand is selected
- * @param {String} cardName 
+ * @param {String} cardInstanceID 
  */
-const handInteract = (cardName) => {
-    let card = playingField[0][customFind(playingField[0], cardName)];
+const handInteract = (cardInstanceID) => {
+    let card = playingField[0][customFind(playingField[0], cardInstanceID)];
     showCardInfo(card)
 
     /*deactivate the previous card that was selected (if any)*/
@@ -171,7 +172,7 @@ const handInteract = (cardName) => {
 
     toggleCancelBtn(true)
 
-    cardSelection = [0, customFind(playingField[0], cardName)];
+    cardSelection = [0, customFind(playingField[0], cardInstanceID)];
     slotStateChange(true, playableComponents[cardSelection[0]][cardSelection[1]])
 }
 
@@ -306,15 +307,18 @@ const pickUpCards = (amt) => {
 
     let physicalHand = document.getElementById("hand");
 
-    //TODO: FIX PROBLEM OF DUPLICATE CARDS ADD AN ID TO IDENTIFY THE DIFFERENCE BETWEEN NEAR IDENTICAL CARDS
     while(x < amt){
         let id = Math.floor(Math.random() * cardDatabase.length);
 
         let test = Object.create(cardDatabase[id]);
 
+        Object.defineProperty(test, "InstanceID", {value:instanceCounter});
+
+        instanceCounter++;
+
         playingField[0].push(test);
 
-        physicalHand.appendChild(generateCard(playingField[0][playingField[0].length - 1]));
+        physicalHand.appendChild(generateCard(test));
 
         x++;
     }
@@ -345,7 +349,6 @@ const attackCycle = async (id) => {
             if(oppEntity != null){
                 oppEntity.HP -= playingField[id][x].ATK;
                 if(oppEntity.HP <= 0){
-                    //BUG: THIS UPDATES GLOBBALLY FOR ALL INSTANCES AND FUTURE CARDS, FIX BY CREATING SEPERATE NEW INSTANCES
                     oppEntity.HP = 0;
                     clearSlot([opp, x]);
                 }else{
@@ -428,13 +431,13 @@ const popElement = (input, index) => {
 /**
  * finds the card of the specified name and returns it's location index
  * @param {Array} input 
- * @param {String} cardName 
+ * @param {Integer} instanceID 
  * @returns 
  */
-const customFind = (input, cardName) => {
+const customFind = (input, instanceID) => {
     i = 0;
     for(let card of input){
-        if(card.Name == cardName){
+        if(card.InstanceID == instanceID){
             return i;
         }
         i++;
