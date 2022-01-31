@@ -279,6 +279,7 @@ const endTurn = async () => {
     cancel();
     const t = await attackCycle(1);
     moveOpponentCards();
+    let temp = await wait(200);
     const t2 = await attackCycle(2);
     pickUpCards(2);
 }
@@ -308,7 +309,10 @@ const pickUpCards = (amt) => {
     //TODO: FIX PROBLEM OF DUPLICATE CARDS ADD AN ID TO IDENTIFY THE DIFFERENCE BETWEEN NEAR IDENTICAL CARDS
     while(x < amt){
         let id = Math.floor(Math.random() * cardDatabase.length);
-        playingField[0].push(cardDatabase[id]);
+
+        let test = Object.create(cardDatabase[id]);
+
+        playingField[0].push(test);
 
         physicalHand.appendChild(generateCard(playingField[0][playingField[0].length - 1]));
 
