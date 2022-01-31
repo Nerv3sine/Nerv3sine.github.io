@@ -1,5 +1,5 @@
 /**src link for the card database*/
-const fileSrc = "https://nerv3sine.github.io/Website/InscryptionLITE/CardDatabase.json"
+const fileSrc = "https://nerv3sine.github.io/Website/Enscrypted/CardDatabase.json"
 
 /**the "physical" playing field to keep track of the visual html components for easy access */
 let playableComponents = [new Array(), new Array(5), new Array(5), new Array(5)];
