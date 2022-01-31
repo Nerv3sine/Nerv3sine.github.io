@@ -11,7 +11,7 @@ const navigate = (page) => {
             window.location.href = 'WIP.html';
             break;
         case 2:
-            window.location.href = 'InscryptionLITE/InscryptionLITE.html';
+            window.location.href = 'Enscrypted/Enscrypted.html';
             break;
     }
 }
