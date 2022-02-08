@@ -1,6 +1,14 @@
 {
     "Cards" : [
         {
+            "Name": "Buffer",
+            "Visual": "https://cdn-icons-png.flaticon.com/512/248/248958.png",
+            "HP": 2,
+            "ATK": 0,
+            "Cost": 0,
+            "Powers": []
+        },
+        {
             "Name": "5 Pin",
             "Visual": "https://cdn-icons-png.flaticon.com/512/889/889446.png",
             "HP": 4,
@@ -70,14 +78,6 @@
             "HP": 7,
             "ATK": 7,
             "Cost": 6,
-            "Powers": []
-        },
-        {
-            "Name": "Buffer",
-            "Visual": "https://cdn-icons-png.flaticon.com/512/248/248958.png",
-            "HP": 2,
-            "ATK": 0,
-            "Cost": 0,
             "Powers": []
         }
     ]
