@@ -43,6 +43,14 @@ body{
     margin-top: 0;
 }
 
+.Button:hover{
+    background-color: darkblue;
+}
+
+.Button:active{
+    color: grey;
+}
+
 .Start{
     margin-bottom: 10px;
 }
