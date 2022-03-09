@@ -86,8 +86,7 @@ const setup = async () => {
 const generateCard = (information) => {
     const card = document.createElement("div");
     card.classList.add("slot");
-    let tempFunc = "handInteract('" + information.InstanceID + "')";
-    card.setAttribute("onclick", tempFunc);
+    card.addEventListener("click", function(){handInteract(information.InstanceID)});
     card.classList.add("card");
 
     const label = document.createElement("p");
@@ -367,23 +366,10 @@ const attackCycle = async (id) => {
  * @returns image link in the form of a String
  */
 const getCostVisual = (value) => {
-    switch(value){
-        case 1:
-            return "./assets/die 1.png";
-        case 2:
-            return "./assets/die 2.png";
-        case 3:
-            return "./assets/die 3.png";
-        case 4:
-            return "./assets/die 4.png";
-        case 5:
-            return "./assets/die 5.png";
-        case 6:
-            return "./assets/die 6.png";
-        case 7:
-            return "./assets/die 7.png";
-        default:
-            return "./assets/empty.png";
+    if(value > 0 && value < 8){
+        return ("./assets/die " + value + ".png");
+    }else{
+        return "./assets/empty.png";
     }
 }
 
