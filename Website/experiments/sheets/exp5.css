@@ -1,0 +1,11 @@
+#canvas {
+    height: 75vh;
+    width: 75vw;
+}
+
+.circle {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+}

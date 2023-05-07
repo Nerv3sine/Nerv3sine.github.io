@@ -1,7 +1,7 @@
 from os import listdir
 from os.path import isfile, join
 import json
-mypath = "Website/experiments"
+mypath = "."
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath,f))]
 
 outputList = []
