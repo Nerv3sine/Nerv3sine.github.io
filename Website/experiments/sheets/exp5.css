@@ -1,6 +1,14 @@
+body{
+    height: 100%;
+    width: 100%;
+    overflow: clip;
+}
+
 #canvas {
-    height: 75vh;
-    width: 75vw;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: clip;
 }
 
 .circle {
