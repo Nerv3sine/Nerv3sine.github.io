@@ -27,7 +27,7 @@ const Params = {
     },
 
     "sinePattern": {
-        "resetOffset": 4,
+        "resetOffset": -4,
 
         "xOffsetRange": 30,
 
@@ -39,14 +39,17 @@ const Params = {
     },
 
     "circularPattern":{
-        "baseRadius": 1,
-        "radiusRange": 20,
-        "radiusRangeNormalization": 0.001
+        "originXOffset": 100,
+        "originYOffset": 50,
+
+        "baseRadius": 40,
+        "radiusRange": 200,
+        "radiusRangeNormalization": 0.1
     }
 }
 
 let circles = [];
-let currentShape = ShapeTypes.SINE;
+let currentShape = ShapeTypes.CIRCULAR;
 
 function getRandInt(max) {
     return Math.floor(Math.random() * max);
@@ -64,18 +67,28 @@ window.onload=function(){
 }
 
 const updateParticle = (particle) => {
-    
+    let reset = false;
     particle["progress"] += particle["speed"];
+    if(particle["progress"] > Params["particleProperties"]["progressLimit"]){
+        particle["progress"] -= Params["particleProperties"]["progressLimit"];
+        reset = true;
+    }
     switch(currentShape){
         case ShapeTypes.SINE:
-            if(particle["progress"] > Params["particleProperties"]["progressLimit"]){
-                particle["progress"] -= Params["particleProperties"]["progressLimit"] + Params["sinePattern"]["resetOffset"];
+            if(reset){
+                particle["progress"] += Params["sinePattern"]["resetOffset"];
             }
             particle.style.left = particle["progress"] + "%";
-            particle.style.top = sineAnimCalc(particle["progress"], particle["offset"], particle["stretch"], particle["yRestrict"]) + "%";
+            particle.style.top = sineAnimCalc(particle["progress"], particle["sineOffset"], particle["sineStretch"], particle["sineYRestrict"]) + "%";
             break;
         case ShapeTypes.CIRCULAR:
-            
+            let circProgress = 2 * Math.PI * (particle["progress"] / Params["particleProperties"]["progressLimit"]);
+            //added here to experiment with other types of shapes
+            let circR = particle["circRadius"];
+            //give this a try: circR = Math.cos(circProgress) * Math.cos(circProgress) * circR;
+            let circX = Math.cos(circProgress) * circR;
+            particle.style.left = Params["circularPattern"]["originXOffset"] + circX + "vh";
+            particle.style.top = Params["circularPattern"]["originYOffset"] + Math.tan(circProgress) * circX + "vh";
             break;
         default:
             console.log("currentShape has been set to an unknown value!");
@@ -100,10 +113,15 @@ const spawnParticles = () => {
         //setting parameters
         circle["progress"] = getRandInt(Params["particleProperties"]["progressLimit"]);
         //circle["x"] = circle["progress"];
-        circle["offset"] = getRandInt(Params["sinePattern"]["xOffsetRange"]);
-        circle["stretch"] = Params["sinePattern"]["xBaseStretch"] + getRandInt(Params["sinePattern"]["xStretchRange"]);
-        circle["yRestrict"] = Params["sinePattern"]["yBaseRestriction"] + getRandInt(Params["sinePattern"]["yRestrictionRange"]);
+
+        //sine pattern param determination
+        circle["sineOffset"] = getRandInt(Params["sinePattern"]["xOffsetRange"]);
+        circle["sineStretch"] = Params["sinePattern"]["xBaseStretch"] + getRandInt(Params["sinePattern"]["xStretchRange"]);
+        circle["sineYRestrict"] = Params["sinePattern"]["yBaseRestriction"] + getRandInt(Params["sinePattern"]["yRestrictionRange"]);
         
+        //circular pattern param determination
+        circle["circRadius"] = Params["circularPattern"]["baseRadius"] + getRandInt(Params["circularPattern"]["radiusRange"]) * Params["circularPattern"]["radiusRangeNormalization"];
+
         circle["speed"] = getRandInt(Params["particleProperties"]["speedRange"]) 
         * Params["particleProperties"]["speedRangeNormalization"] 
         + Params["particleProperties"]["baseSpeed"];
@@ -111,6 +129,7 @@ const spawnParticles = () => {
         animateParticles(circle);
         circles.push(circle);
         canvas.appendChild(circle);
+        // console.log(circle.style.top);
     }
 }
 
@@ -119,5 +138,6 @@ const animateParticles = () => {
     circles.forEach(particle => {
         updateParticle(particle);
     });
+    
     setTimeout(animateParticles, Params["refreshDelay"]);
 }
