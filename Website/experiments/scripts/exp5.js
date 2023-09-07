@@ -13,7 +13,7 @@ const colors = [
 
 const Params = {
     "windowWidth": 100,
-    "refreshDelay": 20,
+    "refreshDelay": 10,
     
     "particleProperties": {
         "progressLimit": 100,
@@ -21,9 +21,9 @@ const Params = {
         "baseSize": 10,
         "sizeRange": 10,
 
-        "baseSpeed": 0.0002,
-        "speedRange": 500,
-        "speedRangeNormalization": .000001,
+        "baseSpeed": 0.0015,
+        "speedRange": 200,
+        "speedRangeNormalization": .00001,
     },
 
     "sinePattern": {
@@ -49,7 +49,8 @@ const Params = {
 }
 
 let circles = [];
-let currentShape = ShapeTypes.CIRCULAR;
+let lastTime = Date.now();
+let currentShape = ShapeTypes.SINE;
 
 function getRandInt(max) {
     return Math.floor(Math.random() * max);
@@ -68,7 +69,7 @@ window.onload=function(){
 
 const updateParticle = (particle) => {
     let reset = false;
-    particle["progress"] += particle["speed"];
+    particle["progress"] += particle["speed"] * (Date.now() - lastTime);
     if(particle["progress"] > Params["particleProperties"]["progressLimit"]){
         particle["progress"] -= Params["particleProperties"]["progressLimit"];
         reset = true;
@@ -134,10 +135,10 @@ const spawnParticles = () => {
 }
 
 const animateParticles = () => {
-    
     circles.forEach(particle => {
         updateParticle(particle);
     });
+    lastTime = Date.now();
     
     setTimeout(animateParticles, Params["refreshDelay"]);
 }
