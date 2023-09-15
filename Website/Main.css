@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 99vh;
+    width: 100%;
+    overflow: clip;
+}
+
+.bg-img{
+    width: 100%;
+}
+
+.test{
+    width: 20vw;
+    /* transform: rotate(45deg); */
+    transform: rotateZ(45deg);
+}
