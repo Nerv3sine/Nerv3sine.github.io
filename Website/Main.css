@@ -7,6 +7,15 @@ body{
     height: 99vh;
     width: 100%;
     overflow: clip;
+    align-content: center;
+}
+
+.content{
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .bg-img{
