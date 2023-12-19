@@ -89,6 +89,34 @@ li{
     margin-bottom: 20px;
 }
 
+.flexContainer a:first-child{
+    margin-right: 20px;
+}
+
+.flexContainer a:last-child{
+    margin-left: 20px;
+}
+
+.centering{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+#title{
+    font-size: 10vw;
+    font-weight: 600;
+}
+
+#btn:visited{
+    background-color: #69dab4;
+}
+
+#btn{
+    margin-bottom: 10px;
+}
+
 @media only screen and (min-width:720px){
     #vid1Routes{
         display: flex;
@@ -97,12 +125,8 @@ li{
     .col{
         width: 50%;
     }
-}
 
-.flexContainer a:first-child{
-    margin-right: 20px;
-}
-
-.flexContainer a:last-child{
-    margin-left: 20px;
+    #title{
+        font-size: 3em
+    }
 }
