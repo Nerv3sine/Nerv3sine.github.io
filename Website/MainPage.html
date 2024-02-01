@@ -4,78 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--Ionic setup-->
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
-    <!---->
-
-    <!--Page javascript inclusion-->
-    <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/velocity/1.1.0/velocity.min.js"></script> -->
-    <script src="MainPage.js" defer></script>
-
+    <link rel="stylesheet" href="Main.css">
     <link rel="stylesheet" href="mainPageStyle.css">
 
-    <title>Main Page</title>
+    <title>Landing</title>
 </head>
-
 <body>
-    <ion-app>
-        <ion-header>
-            <ion-toolbar>
-                <ion-title class="ion-text-center"><h1>Quick Access</h1></ion-title>
-            </ion-toolbar>
-        </ion-header>
-
-        <ion-content>
-            <ion-grid>
-                <ion-row class="ion-text-center">
-                    <ion-col>
-                        <ion-card class="ion-no-margin ion-margin-start" onclick="navigate(0)" color="danger">
-                            <ion-img src="http://www.sfu.ca/content/sfu/bog/jcr:content/main_content/image.img.640.medium.jpg/1618347378648.jpg"></ion-img>
-                            <ion-card-title class="ion-padding" >
-                                School Shortcuts
-                            </ion-card-title>
-                        </ion-card>
-
-                    </ion-col>
-
-                    <ion-col>
-                        
-                        <ion-card class="ion-no-margin ion-margin-start" color="primary">
-                            <ion-img src="https://res.cloudinary.com/marcelcruz/image/upload/v1608733517/Dev%20Resources/thumbnail-v2_nerwh5.png"></ion-img>
-                            <ion-card-title class="ion-padding">
-                                Development Resources
-                            </ion-card-title>
-                            
-                        </ion-card>
-
-                    </ion-col>
-                </ion-row>
-                <ion-row class="ion-text-center">
-                    <ion-col>
-                        <ion-card class="ion-no-margin ion-margin-start" onclick="navigate(1)" color="warning">
-                            <ion-img src="https://www.digitalsilk.com/wp-content/uploads/2022/09/website-development-process-1.jpg"></ion-img>
-                            <ion-card-title class="ion-padding" >
-                                Development Sandbox
-                            </ion-card-title>
-                        </ion-card>
-
-                    </ion-col>
-
-                    <ion-col>
-                        <ion-card class="ion-no-margin ion-margin-start" onclick="navigate(2)" color="success">
-                            <ion-img src="https://t3.ftcdn.net/jpg/02/81/38/84/360_F_281388405_buIRXnnd0nOlNYbLe4MrAKmNNLydzgsQ.jpg"></ion-img>
-                            <ion-card-title class="ion-padding" >
-                                Enscrypted Game
-                            </ion-card-title>
-                        </ion-card>
-
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-        </ion-content>
-    </ion-app>
+    <img id="content" src="img_files/bg contents.png"/>
+    <img class="bg-img" src="img_files/pure bg.png"/>
+    <top class="top">
+        <div class="home_sec">
+            <h2 class="top_text" id="name">Jason Cai</h2>
+        </div>
+        <div class="top_sec">
+            <h3 class="top_text" onclick="window.location.href='https://www.linkedin.com/in/jasoncai7/'">Linkedin</h3>
+        </div>
+        <div class="top_sec">
+            <h3 class="top_text" onclick="window.location.href='https://github.com/nerv3sine'">Github</h3>
+        </div>
+        <div class="top_sec">
+            <h3 class="top_text" onclick="window.location.href='./experiments/expMain.html'">Experimental Work</h3>
+        </div>
+    </top>
+    <h2 class="sectionTitle">Dev Work</h3>
+    <div id="gallery">
+        <div class="item">
+            <img src="https://upload.wikimedia.org/wikipedia/en/4/48/Inscryption_Cover_Art.jpg">
+            <p>I create an Inscryption like game on HTML!</p>
+            <button onclick="window.location.href='./Enscrypted/Enscrypted.html'" class="btn">
+                Inscryption Parody
+            </button>
+        </div>
+        <div class="item">
+            <img src="./img_files/snapshot_render.jpg">
+            <p>My little web development playground, I fabricate all my website ideas here. </p>
+            <p class="msg">I love Front-end Dev and the all the cool website designs out there, this is my own little playground for materializing all the design ambitions in my head!</p>
+            <button onclick="window.location.href='./experiments/expMain.html'" class="btn">
+                Dev Playground
+            </button>
+        </div>
+    </div>
+    <div id="construction">
+        <h3>
+            I'm still working to make this page look cool right now, feel free to visit some of my works listed above :)
+        </h3>
+    </div>
 </body>
 </html>

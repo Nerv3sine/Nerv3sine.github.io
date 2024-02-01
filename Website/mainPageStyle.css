@@ -1,0 +1,47 @@
+#gallery{
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+}
+
+.sectionTitle{
+    color: white;
+    margin: 10px 20px;
+}
+
+.item{
+    margin: 5px;
+    background-color: silver;
+    padding: 10px;
+    border-radius: 5px;
+    width: 400px;
+}
+
+.btn{
+    background-color: #3880ff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+
+    color: white;
+    font-weight: 600;
+}
+
+.item p{
+    margin: 10px 0;
+}
+
+.item img{
+    width: 400px;
+}
+
+.msg{
+    font-size: small;
+}
+
+#construction{
+    width: 100%;
+    text-align: center;
+    margin: 30px 0 80px 0;
+    color: white;
+}
