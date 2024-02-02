@@ -14,7 +14,7 @@ var intention = LEFT;
 var parts = [];
 
 var food = new v2(0, 0);
-var cheats = true;
+var cheats = false;
 
 var score = 0;
 
