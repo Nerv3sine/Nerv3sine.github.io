@@ -15,3 +15,7 @@ const navigate = (page) => {
             break;
     }
 }
+
+const wOpen = (page) => {
+    window.open(page);
+}
