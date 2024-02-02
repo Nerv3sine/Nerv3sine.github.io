@@ -14,7 +14,9 @@ var intention = LEFT;
 var parts = [];
 
 var food = new v2(0, 0);
-var cheats = false;
+var cheats = true;
+
+var score = 0;
 
 function setup() {
   createCanvas(windowWidth - 4, windowHeight - 4);
@@ -26,6 +28,13 @@ function setup() {
 function draw() {
   background(0, 100, 0);
   
+  fill(255);
+  stroke(255);
+  strokeWeight(1);
+  textSize(50);
+  text(score, width - 25 - 25 * ((score == 0) ? 1 : int(log(score)/log(10)) + 1), 50);
+  console.log()
+
   fill(200, 100, 100);
   noStroke();
   ellipse(food.x, food.y, size/2, size/2);
@@ -90,6 +99,7 @@ function draw() {
 
 function eat(){
   consumption += weight;
+  score++;
 }
 
 function genV2(){
