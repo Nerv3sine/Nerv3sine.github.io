@@ -27,8 +27,19 @@
     font-weight: 600;
 }
 
+.btn:hover{
+    background-color: #72a6ff;
+    color: white;
+}
+
+.btn:active{
+    background-color: #b1ceff;
+    color: black;
+}
+
 .item p{
     margin: 10px 0;
+    font-weight: 600;
 }
 
 .item img{
@@ -37,6 +48,7 @@
 
 .msg{
     font-size: small;
+    font-weight: 100;
 }
 
 #construction{
