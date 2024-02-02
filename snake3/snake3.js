@@ -14,6 +14,7 @@ var intention = LEFT;
 var parts = [];
 
 var food = new v2(0, 0);
+var cheats = false;
 
 function setup() {
   createCanvas(windowWidth - 4, windowHeight - 4);
@@ -129,9 +130,11 @@ function keyPressed(){
       intention = DOWN;
     }
   }
-  if(keyCode == 32)
-  {
-    eat();
+  if(cheats){
+    if(keyCode == 32)
+    {
+      eat();
+    }
   }
   //console.log(intention);
 }
