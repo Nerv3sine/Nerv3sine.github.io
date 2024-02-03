@@ -81,25 +81,30 @@ class snek{
     return Nx == this.x && Ny == this.y;
   }
   
+  kCode(val){
+    return (val).charCodeAt(0);
+  }
+  
   keyCodeTrigger(keyVal, cheats){
+    console.log(keyVal);
     if(this.direction % 2 == 0)
     {
-      if(keyVal == LEFT_ARROW)
+      if(keyVal == LEFT_ARROW || keyVal == this.kCode('a') || keyVal == this.kCode('A'))
       {
         this.intention = LEFT;
       }
-      else if(keyVal == RIGHT_ARROW)
+      else if(keyVal == RIGHT_ARROW || keyVal == this.kCode('d') || keyVal == this.kCode('D'))
       {
         this.intention = RIGHT;
       }
     }
     else
     {
-      if(keyVal == UP_ARROW)
+      if(keyVal == UP_ARROW || keyVal == this.kCode('w') || keyVal == this.kCode('W'))
       {
         this.intention = UP;
       }
-      else if(keyVal == DOWN_ARROW)
+      else if(keyVal == DOWN_ARROW || keyVal == this.kCode('s') || keyVal == this.kCode('S'))
       {
         this.intention = DOWN;
       }

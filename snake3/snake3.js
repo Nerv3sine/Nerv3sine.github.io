@@ -45,8 +45,11 @@ function paused(){
   textSize(100);
   text("Snake!", width/2, height/2 - 250);
   strokeWeight(2);
-  textSize(75);
-  text("click the screen to start", width/2, height/2);
+  textSize(50);
+  text("click the anywhere to start", width/2, height/2);
+  strokeWeight(0.5);
+  textSize(25);
+  text("use WASD or Arrow Keys to play", width/2, height/2 + 150);
 }
 
 function game(){
