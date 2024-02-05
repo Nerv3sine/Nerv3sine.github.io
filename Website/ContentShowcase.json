@@ -1,0 +1,101 @@
+{
+    "content":
+    [
+        {
+            "image":"https://upload.wikimedia.org/wikipedia/en/4/48/Inscryption_Cover_Art.jpg",
+            "caption":"I create an Inscryption like game on HTML!",
+            "subCaption":"",
+            "buttons":
+            [
+                {
+                    "label":"Inscryption Parody",
+                    "link":"./Enscrypted/Enscrypted.html"
+                },
+                {
+                    "label":"Inspiration",
+                    "link":"https://store.steampowered.com/app/1092790/Inscryption/"
+                }
+            ]
+        },
+        {
+            "image":"https://img.itch.zone/aW1nLzEyNzU2NDUwLnBuZw==/315x250%23c/9D8uoq.png",
+            "caption":"Our Reverse Roguelike Platformer Game Jam submission!",
+            "subCaption":"",
+            "buttons":
+            [
+                {
+                    "label":"Past Your Peak",
+                    "link":"https://bryd.itch.io/past-your-peak"
+                },
+                {
+                    "label":"Github Repo",
+                    "link":"https://github.com/lucastmah/Mute_Jammers"
+                }
+            ]
+        },
+        {
+            "image":"../snake3/snake thumbnail.png",
+            "caption":"Recreated the snake game using Processing, integrated into html using p5.js",
+            "subCaption":"",
+            "buttons":
+            [
+                {
+                    "label":"Snake!",
+                    "link":"../snake3/snake.html"
+                },
+                {
+                    "label":"What's Processing?",
+                    "link":"https://processing.org/"
+                }
+            ]
+        },
+        {
+            "image":"https://user-images.githubusercontent.com/44034888/162912418-bb695aa5-6841-4882-890f-93abb30d3ad5.png",
+            "caption":"My first Unity game built in grade 10, a multiplayer FPS game",
+            "subCaption":"...coming soon to itch.io!",
+            "buttons":
+            [
+                {
+                    "label":"Github Repo",
+                    "link":"https://github.com/Nerv3sine/project-7381"
+                }
+            ]
+        },
+        {
+            "image":"./img_files/project 7381 thumbnail.png",
+            "caption":"My own 3D escape room built in Unity",
+            "subCaption":"...coming soon to itch.io!",
+            "buttons":
+            [
+                {
+                    "label":"Github Repo",
+                    "link":"https://github.com/Nerv3sine/LAN-MULTI-FPS-Game"
+                }
+            ]
+        },
+        {
+            "image":"./img_files/snapshot_render.jpg",
+            "caption":"My little web development playground, I fabricate all my website ideas here.",
+            "subCaption":"",
+            "buttons":
+            [
+                {
+                    "label":"Dev Playground",
+                    "link":"./experiments/expMain.html"
+                }
+            ]
+        },
+        {
+            "image":"https://www.doctorcare.ca/wp-content/uploads/2023/05/DoctorCare-ICBC-2023-scaled.jpg",
+            "caption":"Some Class 5 driving exam notes and routes I compiled for a friend inside an html file",
+            "subCaption":"",
+            "buttons":
+            [
+                {
+                    "label":"Lougheed Class 5 Routes",
+                    "link":"./Kev/kev.html"
+                }
+            ]
+        }
+    ]
+}
