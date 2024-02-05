@@ -10,7 +10,6 @@ const request = async (filePath) =>
 
 const loadGallery = async () => 
 {
-    console.log("test");
     data = await request(siteListFilePath);
 
     let display = document.getElementById('gallery');
@@ -45,7 +44,9 @@ const addToGallery = (data, display) =>
 
     for(let b of data.buttons){
         let btn = document.createElement("button");
-        btn.addEventListener("click", wOpen(b.link));
+        btn.addEventListener("click", () => {
+            wOpen(b.link);
+        });
         btn.className = "btn";
         btn.innerHTML = b.label;
         work.appendChild(btn);

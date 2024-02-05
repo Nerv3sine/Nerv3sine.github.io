@@ -1,7 +1,10 @@
 #gallery{
-    padding: 10px 20px;
-    width: 100%;
+    padding: 10px 9vw;
     display: flex;
+    flex-wrap: wrap;
+    flex-basis: content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sectionTitle{
@@ -10,11 +13,11 @@
 }
 
 .item{
-    margin: 5px;
+    margin: 20px 5px;
     background-color: silver;
     padding: 10px;
     border-radius: 5px;
-    width: 400px;
+    width: 25vw;
 }
 
 .btn{
@@ -22,6 +25,7 @@
     padding: 10px;
     border: none;
     border-radius: 5px;
+    margin-right: 2px;
 
     color: white;
     font-weight: 600;
@@ -43,7 +47,7 @@
 }
 
 .item img{
-    width: 400px;
+    width: 25vw;
 }
 
 .msg{
