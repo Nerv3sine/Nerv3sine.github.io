@@ -64,9 +64,13 @@
         {
             "image":"./img_files/project 7381 thumbnail.png",
             "caption":"My own 3D escape room built in Unity",
-            "subCaption":"...coming soon to itch.io!",
+            "subCaption":"Now available on itch.io!",
             "buttons":
             [
+                {
+                    "label":"Project 7381",
+                    "link":"https://nerv3sine.itch.io/project-7381"
+                },
                 {
                     "label":"Github Repo",
                     "link":"https://github.com/Nerv3sine/LAN-MULTI-FPS-Game"
