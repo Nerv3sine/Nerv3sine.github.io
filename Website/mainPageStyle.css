@@ -62,9 +62,9 @@
     color: white;
 }
 
-@media only screen and (min-width: 1575px){
+@media only screen and (min-width: 1500px){
     #gallery{
-        padding: 10px 9vw;
+        padding: 10px 7vw;
     }
 }
 
