@@ -53,7 +53,19 @@ const addToGallery = (data, display) =>
     }
 
     display.appendChild(work);
+
+    let tags = document.createElement("div");
+    tags.className = "tagList";
+    for(let t of data.tags){
+        let tag = document.createElement("tag");
+        tag.className = "tag";
+        tag.innerHTML = t;
+        tags.appendChild(tag);
+    }
+    work.appendChild(tags);
 }
+
+//when tags are implemented, make customized tags with logos for easier identification?
 
 const wOpen = (page) => 
 {

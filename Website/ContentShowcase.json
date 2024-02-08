@@ -2,23 +2,6 @@
     "content":
     [
         {
-            "image":"https://upload.wikimedia.org/wikipedia/en/4/48/Inscryption_Cover_Art.jpg",
-            "caption":"I create an Inscryption like game on HTML!",
-            "subCaption":"",
-            "buttons":
-            [
-                {
-                    "label":"Inscryption Parody",
-                    "link":"./Enscrypted/Enscrypted.html"
-                },
-                {
-                    "label":"Inspiration",
-                    "link":"https://store.steampowered.com/app/1092790/Inscryption/"
-                }
-            ],
-            "tags": ["HTML", "JavaScript", "CSS", "Python", "JSON"]
-        },
-        {
             "image":"https://img.itch.zone/aW1nLzEyNzU2NDUwLnBuZw==/315x250%23c/9D8uoq.png",
             "caption":"Our Reverse Roguelike Platformer Game Jam submission!",
             "subCaption":"",
@@ -34,23 +17,6 @@
                 }
             ],
             "tags": ["Unity2D", "C#"]
-        },
-        {
-            "image":"../snake3/snake thumbnail.png",
-            "caption":"Recreated the snake game using Processing, integrated into html using p5.js",
-            "subCaption":"",
-            "buttons":
-            [
-                {
-                    "label":"Snake!",
-                    "link":"../snake3/snake.html"
-                },
-                {
-                    "label":"What's Processing?",
-                    "link":"https://processing.org/"
-                }
-            ],
-            "tags": ["P5.js", "HTML", "Processing"]
         },
         {
             "image":"https://user-images.githubusercontent.com/44034888/162912418-bb695aa5-6841-4882-890f-93abb30d3ad5.png",
@@ -81,6 +47,40 @@
                 }
             ],
             "tags": ["Unity3D", "C#"]
+        },
+        {
+            "image":"../snake3/snake thumbnail.png",
+            "caption":"Recreated the snake game using Processing, integrated into html using p5.js",
+            "subCaption":"",
+            "buttons":
+            [
+                {
+                    "label":"Snake!",
+                    "link":"../snake3/snake.html"
+                },
+                {
+                    "label":"What's Processing?",
+                    "link":"https://processing.org/"
+                }
+            ],
+            "tags": ["P5.js", "HTML", "Processing"]
+        },
+        {
+            "image":"https://upload.wikimedia.org/wikipedia/en/4/48/Inscryption_Cover_Art.jpg",
+            "caption":"I create an Inscryption like game on HTML!",
+            "subCaption":"",
+            "buttons":
+            [
+                {
+                    "label":"Inscryption Parody",
+                    "link":"./Enscrypted/Enscrypted.html"
+                },
+                {
+                    "label":"Inspiration",
+                    "link":"https://store.steampowered.com/app/1092790/Inscryption/"
+                }
+            ],
+            "tags": ["HTML", "JavaScript", "CSS", "Python", "JSON"]
         },
         {
             "image":"https://user-images.githubusercontent.com/44034888/162928524-1f994cd6-16ad-4e75-a4a8-3d332524c0c0.png",

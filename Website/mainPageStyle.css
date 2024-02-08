@@ -41,6 +41,19 @@
     color: black;
 }
 
+.tagList{
+    display: flex;
+    margin: 4px 0;
+}
+
+.tag{
+    background-color: #666666;
+    color: white;
+    padding: 3px;
+    border-radius: 2px;
+    margin: 1px 2px;
+}
+
 .item p{
     margin: 10px 0;
     font-weight: 600;
