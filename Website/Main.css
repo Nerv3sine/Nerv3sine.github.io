@@ -19,22 +19,18 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-42.5%, -50%);
     
 }
 
 .bg-img{
     margin-top: 60px;
-    height: 85vh;
+    
     width: 100vw;
+    height: 85vh;
+    overflow: hidden;
     margin-bottom: 10vh;
 }
-
-/* .test{
-    width: 20vw;
-    transform: rotate(45deg);
-    transform: rotateZ(45deg);
-} */
 
 .top{
     display: block;
@@ -75,7 +71,6 @@ body{
     font-size: 4vh;
     width: 100%;
     color: white;
-    /* text-align: center; */
 }
 
 #proj_showcase{
@@ -94,7 +89,6 @@ body{
 }
 
 .project{
-    /* height: 70vh; */
     width: 60vw;
     border-radius: 10px;
 }

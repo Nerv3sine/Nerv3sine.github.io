@@ -1,5 +1,5 @@
 #gallery{
-    padding: 10px 9vw;
+    padding: 10px 15vw;
     display: flex;
     flex-wrap: wrap;
     flex-basis: content;
@@ -17,7 +17,7 @@
     background-color: silver;
     padding: 10px;
     border-radius: 5px;
-    width: 25vw;
+    width: 400px;
 }
 
 .btn{
@@ -47,7 +47,7 @@
 }
 
 .item img{
-    width: 25vw;
+    width: 400px;
 }
 
 .msg{
@@ -60,4 +60,24 @@
     text-align: center;
     margin: 30px 0 80px 0;
     color: white;
+}
+
+@media only screen and (min-width: 1575px){
+    #gallery{
+        padding: 10px 9vw;
+    }
+}
+
+@media only screen and (min-width: 1880px){
+    #gallery{
+        padding: 10px 4.25vw;
+    }
+    
+    .item{
+        width: 400px;
+    }
+
+    .item img{
+        width: 400px;
+    }
 }
