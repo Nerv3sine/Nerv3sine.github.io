@@ -15,7 +15,8 @@
                     "label":"Inspiration",
                     "link":"https://store.steampowered.com/app/1092790/Inscryption/"
                 }
-            ]
+            ],
+            "tags": ["HTML", "JavaScript", "CSS", "Python", "JSON"]
         },
         {
             "image":"https://img.itch.zone/aW1nLzEyNzU2NDUwLnBuZw==/315x250%23c/9D8uoq.png",
@@ -31,7 +32,8 @@
                     "label":"Github Repo",
                     "link":"https://github.com/lucastmah/Mute_Jammers"
                 }
-            ]
+            ],
+            "tags": ["Unity2D", "C#"]
         },
         {
             "image":"../snake3/snake thumbnail.png",
@@ -47,7 +49,8 @@
                     "label":"What's Processing?",
                     "link":"https://processing.org/"
                 }
-            ]
+            ],
+            "tags": ["P5.js", "HTML", "Processing"]
         },
         {
             "image":"https://user-images.githubusercontent.com/44034888/162912418-bb695aa5-6841-4882-890f-93abb30d3ad5.png",
@@ -57,9 +60,10 @@
             [
                 {
                     "label":"Github Repo",
-                    "link":"https://github.com/Nerv3sine/project-7381"
+                    "link":"https://github.com/Nerv3sine/LAN-MULTI-FPS-Game"
                 }
-            ]
+            ],
+            "tags": ["Unity3D", "C#"]
         },
         {
             "image":"./img_files/project 7381 thumbnail.png",
@@ -73,9 +77,10 @@
                 },
                 {
                     "label":"Github Repo",
-                    "link":"https://github.com/Nerv3sine/LAN-MULTI-FPS-Game"
+                    "link":"https://github.com/Nerv3sine/project-7381"
                 }
-            ]
+            ],
+            "tags": ["Unity3D", "C#"]
         },
         {
             "image":"https://user-images.githubusercontent.com/44034888/162928524-1f994cd6-16ad-4e75-a4a8-3d332524c0c0.png",
@@ -91,7 +96,8 @@
                     "label":"Inspiration",
                     "link":"https://www.arknights.global/"
                 }
-            ]
+            ],
+            "tags": ["C++"]
         },
         {
             "image":"./img_files/snapshot_render.jpg",
@@ -103,7 +109,8 @@
                     "label":"Dev Playground",
                     "link":"./experiments/expMain.html"
                 }
-            ]
+            ],
+            "tags": ["HTML", "JavaScript", "CSS", "Python", "JSON"]
         },
         {
             "image":"https://www.doctorcare.ca/wp-content/uploads/2023/05/DoctorCare-ICBC-2023-scaled.jpg",
@@ -115,7 +122,8 @@
                     "label":"Lougheed Class 5 Routes",
                     "link":"./Kev/kev.html"
                 }
-            ]
+            ],
+            "tags": ["HTML", "CSS"]
         }
     ]
 }
