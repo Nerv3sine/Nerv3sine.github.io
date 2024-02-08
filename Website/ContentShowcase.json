@@ -78,6 +78,22 @@
             ]
         },
         {
+            "image":"https://user-images.githubusercontent.com/44034888/162928524-1f994cd6-16ad-4e75-a4a8-3d332524c0c0.png",
+            "caption":"A very basic \"Arknights operator\" database system developed in C++",
+            "subCaption":"comes with it's own Arknights operator generation program!",
+            "buttons":
+            [
+                {
+                    "label":"Github Repo",
+                    "link":"https://github.com/Nerv3sine/AKCharacterDatabaseSim"
+                },
+                {
+                    "label":"Inspiration",
+                    "link":"https://www.arknights.global/"
+                }
+            ]
+        },
+        {
             "image":"./img_files/snapshot_render.jpg",
             "caption":"My little web development playground, I fabricate all my website ideas here.",
             "subCaption":"",
