@@ -1,5 +1,4 @@
 const siteListFilePath = "https://nerv3sine.github.io/Website/ContentShowcase.json";
-// const siteListFilePath = "./ContentShowcase.json"
 
 const request = async (filePath) => 
 {
