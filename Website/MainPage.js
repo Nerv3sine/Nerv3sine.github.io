@@ -1,5 +1,9 @@
 const siteListFilePath = "https://nerv3sine.github.io/Website/ContentShowcase.json";
 
+const githubFollowingLink = "https://api.github.com/users/Nerv3sine/following";
+
+var githubFollowings = {}
+
 const request = async (filePath) => 
 {
     const response = await fetch(filePath);
@@ -7,7 +11,7 @@ const request = async (filePath) =>
     return data;
 }
 
-const loadGallery = async () => 
+const loadPage = async () => 
 {
     data = await request(siteListFilePath);
 
@@ -18,6 +22,15 @@ const loadGallery = async () =>
         addToGallery(content, display);
     }
    
+    friends = await request(githubFollowingLink);
+
+    userProcessing(friends);
+
+    let friendsList = document.getElementById('friends');
+
+    for(let person of Object.entries(githubFollowings)){
+        addPerson(person[1], friendsList);
+    }
 }
 
 const addToGallery = (data, display) => 
@@ -64,6 +77,40 @@ const addToGallery = (data, display) =>
     work.appendChild(tags);
 }
 
+const userProcessing = (data) => {
+    
+    for(let person of data){
+        githubFollowings[person.id] = {
+            username: person.login,
+            pfp: person.avatar_url,
+            link: person.html_url
+        }
+    }
+}
+
+const addPerson = (data, display) => {
+
+    console.log(data)
+    person = document.createElement('div');
+    person.addEventListener("click", () => {
+        wOpen(data.link);
+    });
+    person.className = "friend";
+
+    pfp = document.createElement('img');
+    pfp.src = data.pfp;
+    pfp.className = "pfp";
+    person.appendChild(pfp);
+
+    // add a tooltip instead for displaying usernames
+    // username = document.createElement('p');
+    // username.innerHTML = data.username;
+    // username.className = "username";
+    // person.appendChild(username);
+
+    display.appendChild(person);
+}
+
 //when tags are implemented, make customized tags with logos for easier identification?
 //add other collaborators as icons for different group projects?
 
@@ -73,5 +120,5 @@ const wOpen = (page) =>
 }
 
 window.addEventListener("load", () => {
-    loadGallery();
+    loadPage();
 })

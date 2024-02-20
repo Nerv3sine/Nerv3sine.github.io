@@ -76,6 +76,30 @@
     color: white;
 }
 
+#friends{
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.friend{
+    width: 80px;
+    height: 70px;
+    padding: auto;
+    margin-left: 10px;
+}
+
+.friend .pfp{
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+}
+
+.friend .username{
+    color: white;
+    font-weight: 600;
+}
+
 @media only screen and (min-width: 1500px){
     #gallery{
         padding: 10px 7vw;
