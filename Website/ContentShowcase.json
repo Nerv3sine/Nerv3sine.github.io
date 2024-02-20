@@ -2,6 +2,19 @@
     "content":
     [
         {
+            "image":"./img_files/PC Parts DB Snapshot.png",
+            "caption":"A PC parts database website developed using the LAMP app technology stack",
+            "subCaption":"comes with with a PC Parts generator for DB content",
+            "buttons":
+            [
+                {
+                    "label":"Github Repo",
+                    "link":"https://github.com/lynn9101/PC_Parts_Database_Generator"
+                }
+            ],
+            "tags": ["PHP", "JavaScript", "MySQL", "CSS"]
+        },
+        {
             "image":"https://img.itch.zone/aW1nLzEyNzU2NDUwLnBuZw==/315x250%23c/9D8uoq.png",
             "caption":"Our Reverse Roguelike Platformer Game Jam submission!",
             "subCaption":"",

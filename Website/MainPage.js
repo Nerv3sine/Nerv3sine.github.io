@@ -65,6 +65,7 @@ const addToGallery = (data, display) =>
 }
 
 //when tags are implemented, make customized tags with logos for easier identification?
+//add other collaborators as icons for different group projects?
 
 const wOpen = (page) => 
 {
