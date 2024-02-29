@@ -3,8 +3,8 @@
     [
         {
             "image":"./img_files/PC Parts DB Snapshot.png",
-            "caption":"A PC parts database website developed using the LAMP app technology stack",
-            "subCaption":"comes with with a PC Parts generator for DB content",
+            "caption":"A PC parts database website",
+            "subCaption":"developed using the LAMP app technology stack, comes with with a PC Parts generator for DB content",
             "buttons":
             [
                 {
@@ -35,7 +35,7 @@
         },
         {
             "image":"https://user-images.githubusercontent.com/44034888/162912418-bb695aa5-6841-4882-890f-93abb30d3ad5.png",
-            "caption":"My first Unity game built in grade 10, a multiplayer FPS game",
+            "caption":"My first Unity game, a multiplayer FPS game",
             "subCaption":"...coming soon to itch.io!",
             "buttons":
             [
@@ -67,8 +67,8 @@
         },
         {
             "image":"../snake3/snake thumbnail.png",
-            "caption":"Recreated the snake game using Processing, integrated into html using p5.js",
-            "subCaption":"",
+            "caption":"Snake game made in Processing",
+            "subCaption":"Integrated into html using p5.js!",
             "buttons":
             [
                 {
@@ -103,7 +103,7 @@
         },
         {
             "image":"https://user-images.githubusercontent.com/44034888/162928524-1f994cd6-16ad-4e75-a4a8-3d332524c0c0.png",
-            "caption":"A very basic \"Arknights operator\" database system developed in C++",
+            "caption":"A basic \"Arknights operator\" C++ database system",
             "subCaption":"comes with it's own Arknights operator generation program!",
             "buttons":
             [
@@ -121,7 +121,7 @@
         },
         {
             "image":"./img_files/mars_explorer.png",
-            "caption":"A 3D Crafting Sandbox Game Prototype developed in Unity",
+            "caption":"A Unity 3D Crafting Sandbox Game Prototype",
             "subCaption":"Inspired by Minecraft, Subnautica and Fortnite",
             "buttons":
             [
@@ -135,8 +135,8 @@
         },
         {
             "image":"./img_files/snapshot_render.jpg",
-            "caption":"My little web development playground, I fabricate all my website ideas here.",
-            "subCaption":"",
+            "caption":"My little web development playground",
+            "subCaption":"I fabricate all my website ideas here.",
             "buttons":
             [
                 {
@@ -149,8 +149,8 @@
         },
         {
             "image":"https://www.doctorcare.ca/wp-content/uploads/2023/05/DoctorCare-ICBC-2023-scaled.jpg",
-            "caption":"Some Class 5 driving exam notes and routes I compiled for a friend inside an html file",
-            "subCaption":"",
+            "caption":"Lougheed Class 5 driving routes website",
+            "subCaption":"Some Class 5 driving exam notes and routes I compiled for a friend",
             "buttons":
             [
                 {

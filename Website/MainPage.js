@@ -210,4 +210,7 @@ function gAsync(url, callback){
     xmlHttp.open("POST", url, true);
     xmlHttp.send(null);
 }
+
+useful postman links [duolingo]: 
+https://www.duolingo.com/2017-08-30/users/452658628?fields
 */
