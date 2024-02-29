@@ -13,11 +13,22 @@
 }
 
 .item{
+    /* position: static; */
     margin: 20px 5px;
     background-color: silver;
     padding: 10px;
     border-radius: 5px;
+    width: 450px;
+}
+
+.item p{
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.item .snapshot{
     width: 400px;
+    object-fit: cover;
 }
 
 .btn{
@@ -54,19 +65,26 @@
     margin: 1px 2px;
 }
 
-.item p{
-    margin: 10px 0;
-    font-weight: 600;
+.members{
+    /* display: flex; */
+    display: block;
 }
 
-.item img{
-    width: 400px;
-    object-fit: cover;
+.mPfp{
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    margin-left: 10px;
 }
 
 .msg{
     font-size: small;
     font-weight: 100;
+}
+
+.moreDetails{
+    display: flex;
+    bottom: 5px;
 }
 
 #construction{
@@ -113,10 +131,10 @@
     }
     
     .item{
-        width: 400px;
+        width: 450px;
     }
 
-    .item img{
+    .item .snapshot{
         width: 400px;
     }
 }
