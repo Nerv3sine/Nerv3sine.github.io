@@ -12,7 +12,8 @@
                     "link":"https://github.com/lynn9101/PC_Parts_Database_Generator"
                 }
             ],
-            "tags": ["PHP", "JavaScript", "MySQL", "CSS"]
+            "tags": ["PHP", "JavaScript", "MySQL", "CSS"],
+            "teammates": [81499105]
         },
         {
             "image":"https://img.itch.zone/aW1nLzEyNzU2NDUwLnBuZw==/315x250%23c/9D8uoq.png",
@@ -29,7 +30,8 @@
                     "link":"https://github.com/lucastmah/Mute_Jammers"
                 }
             ],
-            "tags": ["Unity2D", "C#"]
+            "tags": ["Unity2D", "C#"],
+            "teammates": [14838700, 57679353, 90071802, 77144254, 29824410]
         },
         {
             "image":"https://user-images.githubusercontent.com/44034888/162912418-bb695aa5-6841-4882-890f-93abb30d3ad5.png",
@@ -42,7 +44,8 @@
                     "link":"https://github.com/Nerv3sine/LAN-MULTI-FPS-Game"
                 }
             ],
-            "tags": ["Unity3D", "C#"]
+            "tags": ["Unity3D", "C#"],
+            "teammates": [35856905]
         },
         {
             "image":"./img_files/project 7381 thumbnail.png",
@@ -59,7 +62,8 @@
                     "link":"https://github.com/Nerv3sine/project-7381"
                 }
             ],
-            "tags": ["Unity3D", "C#", "Blender3D"]
+            "tags": ["Unity3D", "C#", "Blender3D"],
+            "teammates": []
         },
         {
             "image":"../snake3/snake thumbnail.png",
@@ -76,7 +80,8 @@
                     "link":"https://processing.org/"
                 }
             ],
-            "tags": ["P5.js", "HTML", "Processing"]
+            "tags": ["P5.js", "HTML", "Processing"],
+            "teammates": []
         },
         {
             "image":"https://upload.wikimedia.org/wikipedia/en/4/48/Inscryption_Cover_Art.jpg",
@@ -93,7 +98,8 @@
                     "link":"https://store.steampowered.com/app/1092790/Inscryption/"
                 }
             ],
-            "tags": ["HTML", "JavaScript", "CSS", "Python", "JSON"]
+            "tags": ["HTML", "JavaScript", "CSS", "Python", "JSON"],
+            "teammates": []
         },
         {
             "image":"https://user-images.githubusercontent.com/44034888/162928524-1f994cd6-16ad-4e75-a4a8-3d332524c0c0.png",
@@ -110,7 +116,8 @@
                     "link":"https://www.arknights.global/"
                 }
             ],
-            "tags": ["C++"]
+            "tags": ["C++"],
+            "teammates": []
         },
         {
             "image":"./img_files/mars_explorer.png",
@@ -123,7 +130,8 @@
                     "link":"https://github.com/Nerv3sine/Mars_Explorer"
                 }
             ],
-            "tags": ["Unity3D", "C#", "Blender3D"]
+            "tags": ["Unity3D", "C#", "Blender3D"],
+            "teammates": []
         },
         {
             "image":"./img_files/snapshot_render.jpg",
@@ -136,7 +144,8 @@
                     "link":"./experiments/expMain.html"
                 }
             ],
-            "tags": ["HTML", "JavaScript", "CSS", "Python", "JSON"]
+            "tags": ["HTML", "JavaScript", "CSS", "Python", "JSON"],
+            "teammates": []
         },
         {
             "image":"https://www.doctorcare.ca/wp-content/uploads/2023/05/DoctorCare-ICBC-2023-scaled.jpg",
@@ -149,7 +158,8 @@
                     "link":"./Kev/kev.html"
                 }
             ],
-            "tags": ["HTML", "CSS"]
+            "tags": ["HTML", "CSS"],
+            "teammates": []
         }
     ]
 }
