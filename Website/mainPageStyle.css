@@ -1,3 +1,10 @@
+/* section label styling */
+.sectionTitle{
+    color: white;
+    margin: 10px 20px;
+}
+
+/* project showcase */
 #gallery{
     padding: 10px 15vw;
     display: flex;
@@ -7,13 +14,9 @@
     margin-right: auto;
 }
 
-.sectionTitle{
-    color: white;
-    margin: 10px 20px;
-}
 
+/* individual project styling */
 .item{
-    /* position: static; */
     margin: 20px 5px;
     background-color: silver;
     padding: 10px;
@@ -21,14 +24,19 @@
     width: 450px;
 }
 
+.item .snapshot{
+    width: 400px;
+    object-fit: cover;
+}
+
 .item p{
     margin: 10px 0;
     font-weight: 600;
 }
 
-.item .snapshot{
-    width: 400px;
-    object-fit: cover;
+.msg{
+    font-size: small;
+    font-weight: 100;
 }
 
 .btn{
@@ -65,28 +73,8 @@
     margin: 1px 2px;
 }
 
-.members{
-    /* display: flex; */
-    display: block;
-}
 
-.mPfp{
-    width: 40px;
-    height: 40px;
-    border-radius: 40px;
-    margin-left: 10px;
-}
-
-.msg{
-    font-size: small;
-    font-weight: 100;
-}
-
-.moreDetails{
-    display: flex;
-    bottom: 5px;
-}
-
+/* WIP styles */
 #construction{
     width: 100%;
     text-align: center;
@@ -94,6 +82,8 @@
     color: white;
 }
 
+
+/* friends list styles */
 #friends{
     display: flex;
     padding-top: 20px;
@@ -114,11 +104,9 @@
     border-radius: 40px;
 }
 
-.friend .username{
-    color: white;
-    font-weight: 600;
-}
 
+
+/* adaptive formatting for different screen sizes */
 @media only screen and (min-width: 1500px){
     #gallery{
         padding: 10px 7vw;
@@ -131,7 +119,7 @@
     }
     
     .item{
-        width: 450px;
+        width: 400px;
     }
 
     .item .snapshot{
