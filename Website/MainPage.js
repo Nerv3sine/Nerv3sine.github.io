@@ -5,7 +5,16 @@ const siteListFilePath = "https://nerv3sine.github.io/Website/ContentShowcase.js
 const githubFollowingLink = "https://api.github.com/users/Nerv3sine/following";
 
 //object meant to store "users followed" information for future use
-var githubFollowings = {}
+var githubFollowings = {};
+
+//pfps
+var profiles = {
+    "Linkedin":{
+        logo: "",
+        pfp:"",
+        link: ""
+    }
+}
 
 /**
  * designated function for fetching data
@@ -25,11 +34,13 @@ const request = async (filePath) =>
 const loadPage = async () => 
 {
     //loads in the JSON file of all the project information that's to be presented
-    data = await request(siteListFilePath);
+    let data = await request(siteListFilePath);
 
     //loads in all the users that I follow on Github
-    friends = await request(githubFollowingLink);
+    let friends = await request(githubFollowingLink);
     // console.log(friends)
+
+    profileLoading();
 
     userProcessing(friends);
     // console.log(data)
@@ -157,6 +168,10 @@ const addPerson = (data, display) =>
     // TODO: make a custom tooltip instead for displaying usernames
 
     display.appendChild(person);
+}
+
+const profileLoading = () => {
+    
 }
 
 //IDEA: when tags are implemented, make customized tags with logos for easier identification?
