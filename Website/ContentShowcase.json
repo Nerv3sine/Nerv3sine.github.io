@@ -18,7 +18,7 @@
         {
             "image":"./img_files/PC Parts DB Snapshot.png",
             "caption":"A PC parts database website",
-            "subCaption":"developed using the LAMP app technology stack, comes with with a PC Parts generator for DB content",
+            "subCaption":"developed using the LAMP app technology stack, comes with a PC Parts generator for DB content",
             "buttons":
             [
                 {
