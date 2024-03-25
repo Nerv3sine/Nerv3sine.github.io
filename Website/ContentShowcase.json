@@ -2,6 +2,20 @@
     "content":
     [
         {
+            "image":"https://raw.githubusercontent.com/gasparf/mountain24/gaspar/src/Assets/placeholder.jpg",
+            "caption":"The Perspective Journal",
+            "subCaption":"A React Native Database Website that stores and stitches together different perspectives!",
+            "buttons":
+            [
+                {
+                    "label":"Github Repo",
+                    "link":"https://github.com/gasparf/mountain24/tree/gaspar"
+                }
+            ],
+            "tags": ["React", "TypeScript", "FireBase", "Python"],
+            "teammates": [63479092, 61367162]
+        },
+        {
             "image":"./img_files/PC Parts DB Snapshot.png",
             "caption":"A PC parts database website",
             "subCaption":"developed using the LAMP app technology stack, comes with with a PC Parts generator for DB content",
