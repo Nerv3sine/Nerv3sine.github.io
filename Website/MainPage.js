@@ -138,7 +138,7 @@ const userProcessing = (data) =>
             link: person.html_url
         }
     }
-    console.log(githubFollowings)
+    // console.log(githubFollowings)
 }
 
 /**
