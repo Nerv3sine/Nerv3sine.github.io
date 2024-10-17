@@ -2,6 +2,20 @@
     "content":
     [
         {
+            "image":"https://private-user-images.githubusercontent.com/44034888/377628235-bcdd7415-b197-4958-a92d-009acb561170.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkyMDA0MzAsIm5iZiI6MTcyOTIwMDEzMCwicGF0aCI6Ii80NDAzNDg4OC8zNzc2MjgyMzUtYmNkZDc0MTUtYjE5Ny00OTU4LWE5MmQtMDA5YWNiNTYxMTcwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMTclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDE3VDIxMjIxMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTc3ZDY2MDYyYjQ3MGU5Yjc0Mjk0NTlkYmEzNDQxMGM4ZDRhMmEyN2RmYTg3Njc2NDk1MTg0YzZiMGI4YTdjMTEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.oRUwLG2zAXaC0HTM0ALScMjhd55x0fgxPlDUUSjujOI",
+            "caption":"FitSpace",
+            "subCaption":"Your virtual closet from the future. Helping you plan and preview your outfits with ease!",
+            "buttons":
+            [
+                {
+                    "label":"Github Repo",
+                    "link":"https://github.com/jerrydngzh/stormhacks_2024"
+                }
+            ],
+            "tags": ["React", "TypeScript", "Firebase", "CSS"],
+            "teammates": []
+        },
+        {
             "image":"https://raw.githubusercontent.com/gasparf/mountain24/gaspar/src/Assets/placeholder.jpg",
             "caption":"The Perspective Journal",
             "subCaption":"A React Native Database Website that stores and stitches together different perspectives!",
@@ -9,7 +23,7 @@
             [
                 {
                     "label":"Github Repo",
-                    "link":"https://github.com/gasparf/mountain24/tree/master"
+                    "link":"https://github.com/gasparf/mountain24"
                 }
             ],
             "tags": ["React", "TypeScript", "Firebase", "Python", "CSS"],
@@ -28,6 +42,20 @@
             ],
             "tags": ["PHP", "JavaScript", "MySQL", "CSS"],
             "teammates": [81499105]
+        },
+        {
+            "image":"https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/066/615/datas/gallery.jpg",
+            "caption":"BarrowTech",
+            "subCaption":"The technology of now, helping you discover the perfect balance.",
+            "buttons":
+            [
+                {
+                    "label":"Github Repo",
+                    "link":"https://github.com/romansinkus/barrowTech"
+                }
+            ],
+            "tags": ["React", "TypeScript", "Firebase", "CSS", "Python", "Matlab", "Flask"],
+            "teammates": []
         },
         {
             "image":"https://img.itch.zone/aW1nLzEyNzU2NDUwLnBuZw==/315x250%23c/9D8uoq.png",
