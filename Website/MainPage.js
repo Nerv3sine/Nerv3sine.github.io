@@ -10,9 +10,29 @@ var githubFollowings = {};
 //pfps
 var profiles = {
     "Linkedin":{
-        logo: "",
+        logo: "./img_files/logo-linkedin.svg",
+        pfp:"https://media.licdn.com/dms/image/v2/D5635AQHA9A74i6xErA/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1675666297930?e=1730062800&v=beta&t=yUjbFKbt8x9BifkZdYf75f4Kggk8ACSB22z_7Xta_Jo",
+        link: "https://www.linkedin.com/in/jasoncai7/"
+    },
+    "Github":{
+        logo: "./img_files/logo-github.svg",
+        pfp:"https://avatars.githubusercontent.com/u/44034888?v=4",
+        link: "https://www.github.com/nerv3sine"
+    },
+    "Instagram1":{
+        logo: "./img_files/logo-instagram.svg",
         pfp:"",
-        link: ""
+        link: "https://www.instagram.com/project_cjs/"
+    },
+    "Instagram2":{
+        logo: "./img_files/logo-instagram.svg",
+        pfp:"",
+        link: "https://www.instagram.com/jc_visionairy/"
+    },
+    "Resume":{
+        logo: "./img_files/document-text-outline.svg",
+        pfp:"",
+        link: "../files/General Resume.pdf"
     }
 }
 
@@ -65,6 +85,38 @@ const loadPage = async () =>
     {
         addPerson(person[1], friendsList);
     }
+}
+
+const loadFooter = () => {
+    let footer = document.getElementById("idFooter");
+
+    Object.keys(profiles).forEach(key => {
+        let comp = document.createElement("div");
+
+        if(profiles[key].logo == "")
+        {
+            let label = document.createElement("p");
+            label.innerHTML = key;
+            label.style.padding = "5px"
+            comp.appendChild(label);
+        }
+        else
+        {
+            let logo = document.createElement("img");
+            logo.src = profiles[key].logo;
+            logo.width = 75;
+            logo.height = 75;
+            logo.className = "darkmode";
+            logo.style.paddingLeft = "30px";
+            logo.style.paddingRight = "30px";
+            comp.appendChild(logo);
+        }
+        comp.addEventListener("click", () => {
+            wOpen(profiles[key].link)
+        });
+
+        footer.appendChild(comp);
+    });
 }
 
 /**
@@ -194,6 +246,7 @@ const wOpen = (page) =>
 window.addEventListener("load", () => 
 {
     loadPage();
+    // loadFooter();
     
     /*app dev testing
     t = (content) => {

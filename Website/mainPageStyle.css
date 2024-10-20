@@ -104,7 +104,14 @@
     border-radius: 40px;
 }
 
+#idFooter{
+    display: flex;
+    justify-content: center;
+}
 
+.darkmode{
+    filter: invert(90%) sepia(100%) hue-rotate(20deg);
+}
 
 /* adaptive formatting for different screen sizes */
 @media only screen and (min-width: 1500px){
