@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import snapshotBG from '../../Website/img_files/pure bg.png'
+import snapshot from '../../Website/img_files/bg contents.png'
 import './App.css'
 
 function App() {
@@ -8,6 +10,8 @@ function App() {
 
   return (
     <>
+      <img src={snapshotBG} alt="siteBG" className="page1"/>
+      <img src={snapshot} alt="siteFG" className="content"/>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
