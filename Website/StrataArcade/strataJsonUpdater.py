@@ -21,6 +21,9 @@ def convert(combo):
         out += translate(c) + " "
     return out
 
+def printDB(data):
+    for i in data:
+        print(i)
 
 
 def format(name, combo, icon):
@@ -107,7 +110,7 @@ def addStratagem(data):
             "combo": combo,
             "icon": icon
         })
-        print(data)
+        printDB(data)
 
     return (data, choice == 2)
 
@@ -141,7 +144,6 @@ f = open("strata.json", "r")
 
 db = json.loads(f.read())
 f.close()
-for i in db:
-    print(i)
+printDB(db)
 
 mainMenu(db)

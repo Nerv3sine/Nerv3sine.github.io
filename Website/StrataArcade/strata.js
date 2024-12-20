@@ -9,7 +9,8 @@ const arrowIcon = (idx) => {
     return "https://static.wikia.nocookie.net/helldivers_gamepedia/images/" + arrow[idx]
 }
 
-const db = [
+//presetData
+var db = [
     {
         "name": "MG-43 Machine Gun",
         "combo": "DLDUR",
@@ -24,93 +25,10 @@ const db = [
         "name": "M-105 Stalwart",
         "combo": "DLDUUL",
         "icon": "Patriotic%20Administration%20Center/Stalwart.svg"
-    },
-    {
-        "name": "EAT-17 Expendable Anti-tank",
-        "combo": "DDLUR",
-        "icon": "Patriotic%20Administration%20Center/Expendable%20Anti-Tank.svg"
-    },
-    {
-        "name": "MLS-4X Commando",
-        "combo": "DLUDR",
-        "icon": "Patriotic%20Administration%20Center/Commando.svg"
-    },
-    {
-        "name": "GR-8 Recoilless Rifle",
-        "combo": "DLRRL",
-        "icon": "Patriotic%20Administration%20Center/Recoilless%20Rifle.svg"
-    },
-    {
-        "name": "FLAM-40 Flamethrower",
-        "combo": "DLUDU",
-        "icon": "Patriotic%20Administration%20Center/Flamethrower.svg"
-    },
-    {
-        "name": "AC-8 Autocannon",
-        "combo": "DLDUUR",
-        "icon": "Patriotic%20Administration%20Center/Autocannon.svg"
-    },
-    {
-        "name": "MG-206 Heavy Machine Gun",
-        "combo": "DLUDD",
-        "icon": "Patriotic%20Administration%20Center/Heavy%20Machine%20Gun.svg"
-    },
-    {
-        "name": "RS-422 Railgun",
-        "combo": "DRDULR",
-        "icon": "Patriotic%20Administration%20Center/Railgun.svg"
-    },
-    {
-        "name": "FAF-14 Spear Launcher",
-        "combo": "DDUDD",
-        "icon": "Patriotic%20Administration%20Center/Spear.svg"
-    },
-    {
-        "name": "GL-21 Grenade Launcher",
-        "combo": "DLULD",
-        "icon": "Engineering%20Bay/Grenade%20Launcher.svg"
-    },
-    {
-        "name": "LAS-98 Laser Cannon",
-        "combo": "DLDUL",
-        "icon": "Engineering%20Bay/Laser%20Cannon.svg"
-    },
-    {
-        "name": "ARC-3 Arc Thrower",
-        "combo": "DRDULL",
-        "icon": "Engineering%20Bay/Arc%20Thrower.svg"
-    },
-    {
-        "name": "LAS-99 Quasar Cannon",
-        "combo": "DDULR",
-        "icon": "Engineering%20Bay/Quasar%20Cannon.svg"
-    },
-    {
-        "name": "RL-77 Airburst Rocket Launcher",
-        "combo": "DUULR",
-        "icon": "Patriotic%20Administration%20Center/Airburst%20Rocket%20Launcher.svg"
-    },
-    {
-        "name": "Orbital Gatling Barrage",
-        "combo": "RDLUU",
-        "icon": "Orbital%20Cannons/Orbital%20Gatling%20Barrage.svg"
-    },
-    {
-        "name": "Orbital Airburst Strike",
-        "combo": "RRR",
-        "icon": "Orbital%20Cannons/Orbital%20Airburst%20Strike.svg"
     }
 ]
 
-/*
-    ,
-    {
-        "name": "RS-422 Railgun",
-        "combo": "DRDULR",
-        "icon": ""
-    }
-*/
-
+var readyState = false;
 const qSize = 6;
 const getIcon = (idx) => {
     return "https://raw.githubusercontent.com/nvigneux/Helldivers-2-Stratagems-icons-svg/b7ad1b3baab4bda356940a183025334e895b2121/" + db[idx].icon
@@ -125,23 +43,25 @@ const randInt = (max) => {
 }
 
 const loadStratagems = async() => {
-    const response = await fetch(stratagemDBPath)
+    await fetch("https://nerv3sine.github.io/Website/StrataArcade/strata.json")
         .then(response => response.json())
-        .then(data => console.log(data));
+        .then(data => {
+            db = data
+        });
 }
 
 $(document).ready(() => {
-    // loadStratagems();
-    for(let i = 0; i < qSize; i++){
-        setStrata(i, randInt(db.length));
-    }
-
-    // $(this).on("keydown", (e) => {
-    //     console.log(e.originalEvent.code)
-    // })
+    loadStratagems()
+        .then(() => {
+            for(let i = 0; i < qSize; i++){
+                setStrata(i, randInt(db.length));
+            }
+            readyState = true;
+        });
 })
 
 const arcadeKeyPress = (key) => {
+    if(!readyState) return;
     let keyPressed = null;
     switch(key){
         case "W":
@@ -184,11 +104,12 @@ const compareInput = (input) => {
     }else{
         progress = 0;
         arrows.removeClass("pressed");
-        arrowGlow("error");
+        animateGlow($("#combo").children(), "error");
     }
 }
 
 const processQ = () => {
+    animateGlow($("#currentStratagem"), "successBg");
     for(let i = 0; i < qSize; i++){
         var idx = i + 1 == qSize ? randInt(db.length) : $("#slot" + (i + 1)).attr("value");
         setStrata(i, idx);
@@ -228,10 +149,9 @@ const addPoints = (pts) => {
     scoreElement.html(score + pts);
 }
 
-const arrowGlow = (colorClass) => {
-    let arrows = $("#combo").children();
-    arrows.addClass(colorClass);
+const animateGlow = (targetElement, glowClass) => {
+    targetElement.addClass(glowClass);
     setTimeout(() => {
-        arrows.removeClass(colorClass);
-    }, 100);
+        targetElement.removeClass(glowClass);
+    }, 100)
 }

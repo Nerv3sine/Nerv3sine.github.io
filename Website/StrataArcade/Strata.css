@@ -126,3 +126,7 @@ body{
 .error{
     filter: var(--redFilter);
 }
+
+.successBg{
+    background-color: var(--green) !important;
+}
