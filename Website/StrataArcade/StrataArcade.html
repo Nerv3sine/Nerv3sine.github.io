@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StrataArcade</title>
+    
+    <link rel="stylesheet" href="Strata.css">
+    <link rel="stylesheet" href="colors.css">
+    <link rel="stylesheet" href="fonts.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="general.js"></script>
+    <script src="strata.js"></script>
+</head>
+<body>
+    <img id="bgLogo" src="https://preview.redd.it/super-earth-helldivers-svg-logo-v0-0cvbn5nesrvc1.png?width=1024&format=png&auto=webp&s=e3fa0b71beb271bf9164688c4bb23703f7eca352" />
+    
+    <div id="startWindow" class="bannerSpacing" hidden>
+        <p class="centre-text banner-font pad-bottom-100">STRATAGEM ARCADE</p>
+        <p class="centre-text L-font font-yellow">Enter any Stratagem Input to Start!</p>
+        <p class="centre-text">(arrow keys and WASD controls both work)</p>
+    </div>
+
+    <div id="readyWarnWindow" class="bannerSpacing" hidden>
+        <p class="centre-text banner-font pad-bottom-40">GET READY</h1>
+        <p class="centre-text M-font" style="margin: 0;">Round</p>
+        <p id="roundNumber" class="centre-text L-font font-yellow">1</p>
+    </div>
+
+    <div id="gamePlay" class="flex">
+        <div id="gameLeft" class="sideDisp">
+            <p class="M-font margin-0">Round</p>
+            <p id="gameRoundNumber" class="L-font font-yellow margin-0">1</p>
+        </div>
+
+        <div id="gameMain">
+            <div id="stratagems" class="flex">
+                <img id="slot0" class="stratagemIcon" src="https://static.wikia.nocookie.net/helldivers_gamepedia/images/7/7b/Resupply_Icon.png/revision/latest/scale-to-width-down/40?cb=20240501172045"/>
+                <img id="slot1" class="stratagemIcon" src="https://static.wikia.nocookie.net/helldivers_gamepedia/images/7/7b/Resupply_Icon.png/revision/latest/scale-to-width-down/40?cb=20240501172045"/>
+                <img id="slot2" class="stratagemIcon" src="https://static.wikia.nocookie.net/helldivers_gamepedia/images/7/7b/Resupply_Icon.png/revision/latest/scale-to-width-down/40?cb=20240501172045"/>
+                <img id="slot3" class="stratagemIcon" src="https://static.wikia.nocookie.net/helldivers_gamepedia/images/7/7b/Resupply_Icon.png/revision/latest/scale-to-width-down/40?cb=20240501172045"/>
+                <img id="slot4" class="stratagemIcon" src="https://static.wikia.nocookie.net/helldivers_gamepedia/images/7/7b/Resupply_Icon.png/revision/latest/scale-to-width-down/40?cb=20240501172045"/>
+                <img id="slot5" class="stratagemIcon" src="https://static.wikia.nocookie.net/helldivers_gamepedia/images/7/7b/Resupply_Icon.png/revision/latest/scale-to-width-down/40?cb=20240501172045"/>
+            </div>
+            <div id="currentStratagem" class="L-font bg-yellow">RESUPPLY</div>
+            <div id="combo" class="flex">
+                <img class="arrow" src="https://static.wikia.nocookie.net/helldivers_gamepedia/images/1/13/Down_Arrow.png/revision/latest/scale-to-width-down/36?cb=20240502185849"/>
+                <img class="arrow" src="https://static.wikia.nocookie.net/helldivers_gamepedia/images/1/13/Down_Arrow.png/revision/latest/scale-to-width-down/36?cb=20240502185849"/>
+                <img class="arrow" src="https://static.wikia.nocookie.net/helldivers_gamepedia/images/5/51/Up_Arrow.png/revision/latest/scale-to-width-down/36?cb=20240502185833"/>
+                <img class="arrow" src="https://static.wikia.nocookie.net/helldivers_gamepedia/images/3/3c/Right_Arrow.png/revision/latest/scale-to-width-down/36?cb=20240502185827"/>
+            </div>
+        </div>
+
+        <div id="gameRight" class="sideDisp">
+            <p id="gameScoreNumber" class="L-font font-yellow margin-0">0</p>
+            <p class="M-font margin-0">SCORE</p>
+        </div>
+    </div>
+</body>
+</html>

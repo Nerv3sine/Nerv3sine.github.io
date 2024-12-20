@@ -1,0 +1,128 @@
+*{
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: #242424;
+    overflow-x: hidden;
+}
+
+#bgLogo{
+    width: 30vh;
+    height: 30vh;
+    position: absolute;
+    top: 30vh;
+    left: calc(50vw - 15vh);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.bannerSpacing{
+    height: 100%;
+    width: 100%;
+    padding-top: 30vh;
+}
+
+#roundNumber{
+    margin: 0;
+}
+
+.centre-text{
+    width: 100%;
+    text-align: center;
+}
+
+.pad-bottom-100{
+    padding-bottom: 100px;
+}
+
+.pad-bottom-60{
+    padding-bottom: 60px;
+}
+
+.pad-bottom-40{
+    padding-bottom: 40px;
+}
+
+.pad-bottom-20{
+    padding-bottom: 20px;
+}
+
+.margin-0{
+    margin: 0;
+}
+
+.flex{
+    display: flex;
+}
+
+.sideDisp{
+    width: 5vw;
+}
+
+.sideDisp p{
+    font-weight: bolder;
+}
+
+#gameRight p{
+    width: 100%;
+    text-align: right;
+}
+
+#gameMain{
+    width: 40vw;
+    padding-left: auto;
+    padding-top: 10vh;
+    align-content: center;
+}
+
+#gamePlay{
+    width: 100%;
+    padding: 25vh 25vw;
+}
+
+#stratagems{
+    flex-direction: row;
+    justify-content: center;
+    gap: 0px 10px;
+}
+
+.stratagemIcon{
+    width: 3vw;
+    height: 3vw;
+    align-self: center;
+}
+
+#slot0{
+    width: 6vw;
+    height: 6vw;
+    border: var(--yellow) 4px solid;
+    border-radius: 4px;
+}
+
+#currentStratagem{
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+}
+
+#combo{
+    justify-content: center;
+    gap: 0px 5px;
+    padding-top: 20px;
+}
+
+.arrow{
+    height: 2.5vw;
+    width: 2.5vw;
+}
+
+.pressed{
+    filter: var(--yellowFilter);
+}
+
+.error{
+    filter: var(--redFilter);
+}

@@ -1,0 +1,14 @@
+:root{
+    --yellow: rgb(255, 255, 117);
+    --redFilter: invert(28%) sepia(7%) saturate(6607%) hue-rotate(316deg) brightness(127%) contrast(93%);
+    --yellowFilter: invert(73%) sepia(71%) saturate(534%) hue-rotate(9deg) brightness(89%) contrast(93%);
+    --greenFilter: invert(68%) sepia(85%) saturate(3079%) hue-rotate(68deg) brightness(113%) contrast(122%);
+}
+
+.font-yellow{
+    color: var(--yellow);
+}
+
+.bg-yellow{
+    background-color: var(--yellow);
+}
