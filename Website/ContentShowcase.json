@@ -108,6 +108,24 @@
             "teammates": []
         },
         {
+            "image":"./StrataArcade/StrataArcade.png",
+            "caption":"HTML Recreation of the Helldivers Arcade game; Stratagem Hero",
+            "subCaption":"Made with only HTML/CSS/JS",
+            "buttons":
+            [
+                {
+                    "label":"Let's Play!",
+                    "link":"./StrataArcade/StrataArcade.html"
+                },
+                {
+                    "label":"Github Repo",
+                    "link":"https://processing.org/"
+                }
+            ],
+            "tags": ["HTML", "JS", "CSS", "Python"],
+            "teammates": []
+        },
+        {
             "image":"../snake3/snake thumbnail.png",
             "caption":"Snake game made in Processing",
             "subCaption":"Integrated into html using p5.js!",
