@@ -9,3 +9,7 @@
 .M-font{
     font-size: 2vh;
 }
+
+.B-font{
+    font-weight: bolder;
+}

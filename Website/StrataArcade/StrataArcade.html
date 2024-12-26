@@ -16,22 +16,39 @@
 <body>
     <img id="bgLogo" src="https://preview.redd.it/super-earth-helldivers-svg-logo-v0-0cvbn5nesrvc1.png?width=1024&format=png&auto=webp&s=e3fa0b71beb271bf9164688c4bb23703f7eca352" />
     
-    <div id="startWindow" class="bannerSpacing" hidden>
+    <div id="audioManager"></div>
+
+    <div id="startWindow" class="bannerSpacing gameState">
         <p class="centre-text banner-font pad-bottom-100">STRATAGEM ARCADE</p>
         <p class="centre-text L-font font-yellow">Enter any Stratagem Input to Start!</p>
         <p class="centre-text">(arrow keys and WASD controls both work)</p>
     </div>
 
-    <div id="readyWarnWindow" class="bannerSpacing" hidden>
+    <div id="readyWarnWindow" class="bannerSpacing gameState">
         <p class="centre-text banner-font pad-bottom-40">GET READY</h1>
         <p class="centre-text M-font" style="margin: 0;">Round</p>
         <p id="roundNumber" class="centre-text L-font font-yellow">1</p>
     </div>
 
-    <div id="gamePlay" class="flex">
+    <div id="roundClearWindow" class="bannerSpacing gameState">
+        <div class="flex">
+            <p class="centre-text M-font" style="margin: 0;">Round Bonus</p>
+            <p id="roundBonus" class="centre-text B-font L-font font-yellow" style="margin: 0;">0</p>
+        </div>
+        <div class="flex">
+            <p class="centre-text M-font" style="margin: 0;">Perfect Bonus</p>
+            <p id="perfectBonus" class="centre-text B-font L-font font-yellow" style="margin: 0;">0</p>
+        </div>
+        <div class="flex">
+            <p class="centre-text M-font" style="margin: 0;">Total Score</p>
+            <p id="scoreSummary" class="centre-text B-font L-font font-yellow" style="margin: 0;">0</p>
+        </div>
+    </div>
+
+    <div id="gamePlay" class="flex gameState">
         <div id="gameLeft" class="sideDisp">
             <p class="M-font margin-0">Round</p>
-            <p id="gameRoundNumber" class="L-font font-yellow margin-0">1</p>
+            <p id="gameRoundNumber" class="L-font B-font font-yellow margin-0">1</p>
         </div>
 
         <div id="gameMain">
@@ -43,7 +60,7 @@
                 <img id="slot4" class="stratagemIcon" src="https://static.wikia.nocookie.net/helldivers_gamepedia/images/7/7b/Resupply_Icon.png/revision/latest/scale-to-width-down/40?cb=20240501172045"/>
                 <img id="slot5" class="stratagemIcon" src="https://static.wikia.nocookie.net/helldivers_gamepedia/images/7/7b/Resupply_Icon.png/revision/latest/scale-to-width-down/40?cb=20240501172045"/>
             </div>
-            <div id="currentStratagem" class="L-font bg-yellow">RESUPPLY</div>
+            <div id="currentStratagem" class="L-font B-font bg-yellow">RESUPPLY</div>
             <div id="combo" class="flex">
                 <img class="arrow" src="https://static.wikia.nocookie.net/helldivers_gamepedia/images/1/13/Down_Arrow.png"/>
                 <img class="arrow" src="https://static.wikia.nocookie.net/helldivers_gamepedia/images/1/13/Down_Arrow.png"/>
@@ -53,7 +70,7 @@
         </div>
 
         <div id="gameRight" class="sideDisp">
-            <p id="gameScoreNumber" class="L-font font-yellow margin-0">0</p>
+            <p id="gameScoreNumber" class="L-font B-font font-yellow margin-0">0</p>
             <p class="M-font margin-0">SCORE</p>
         </div>
     </div>

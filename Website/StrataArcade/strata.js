@@ -35,33 +35,38 @@ const getIcon = (idx) => {
 }
 const stratagemDBPath = "./strata.json";
 
+let qBacklog = 0;
 let progress = 0;
 let currentCombo = "";
 
-const randInt = (max) => {
-    return Math.floor(Math.random() * max);
-}
+var AUDIO_PRESS;
+var CORRECT;
+var ERROR;
+var STAGE_SUCCESS;
 
 const loadStratagems = async() => {
     await fetch("https://nerv3sine.github.io/Website/StrataArcade/strata.json")
         .then(response => response.json())
         .then(data => {
-            db = data
+            db = data;
         });
 }
 
 $(document).ready(() => {
     loadStratagems()
         .then(() => {
-            for(let i = 0; i < qSize; i++){
-                setStrata(i, randInt(db.length));
-            }
-            readyState = true;
+            resetGame();
         });
+
+    AUDIO_PRESS = new eventAudio(["hit1", "hit2", "hit3", "hit4"]);
+    CORRECT = new eventAudio(["correct1", "correct2", "correct3", "correct4"]);
+    ERROR = new eventAudio(["error1", "error2", "error3", "error4"]);
+    STAGE_SUCCESS = new eventAudio(["success1", "success2", "success3"]);
 })
 
 const arcadeKeyPress = (key) => {
     if(!readyState) return;
+
     let keyPressed = null;
     switch(key){
         case "W":
@@ -91,17 +96,43 @@ const arcadeKeyPress = (key) => {
     compareInput(keyPressed);
 }
 
+const resetGame = () => {
+    for(let i = 0; i < qSize; i++){
+        setStrata(i, randInt(db.length));
+    }
+    
+    qBacklog = game_stage - 1;
+    perfection = true;
+    $("#gameRoundNumber").html(game_stage);
+    updatePoints();
+
+    readyState = true;
+}
+
+const stageClear = () => {
+    readyState = false;
+    BG_MUSIC.stopAudio();
+    launchScoreSummaryScreen();
+}
+
 const compareInput = (input) => {
     let arrows = $("#combo").children();
+    
     if(input == currentCombo[progress]){
+        AUDIO_PRESS.playAudio();
+
         let arr = arrows[progress];
         arr.classList.add("pressed");
         progress++;
+
         if(progress == currentCombo.length){
-            addPoints(currentCombo.length * 5);
+            CORRECT.playAudio();
+            updatePoints(currentCombo.length * 5);
             processQ();
         }
     }else{
+        perfection = false;
+        ERROR.playAudio();
         progress = 0;
         arrows.removeClass("pressed");
         animateGlow($("#combo").children(), "error");
@@ -111,18 +142,31 @@ const compareInput = (input) => {
 const processQ = () => {
     animateGlow($("#currentStratagem"), "successBg");
     for(let i = 0; i < qSize; i++){
-        var idx = i + 1 == qSize ? randInt(db.length) : $("#slot" + (i + 1)).attr("value");
+
+        let idx = randInt(db.length);
+        if(i + 1 != qSize){
+            idx = $("#slot" + (i + 1)).attr("value");
+            if(i == 0 && idx == -1){
+                stageClear();
+                return;
+            }
+        }else{
+            idx = qBacklog > 0 ? idx : -1;
+            qBacklog--;
+        }
         setStrata(i, idx);
     }
 }
 
 const setStrata = (slot, id) => {
-    let iconElement = $("#slot" + slot); 
+    let iconElement = $("#slot" + slot);
+
     iconElement.css("opacity", id == -1 ? "0" : "1");
 
     let strata = db[id];
-    
-    iconElement.attr("src", getIcon(id));
+    if(id != -1){
+        iconElement.attr("src", getIcon(id));
+    }
     iconElement.attr("value", id);
 
     if(slot == 0){
@@ -136,6 +180,7 @@ const setStrata = (slot, id) => {
 const setCombo = (combo) => {
     let comboContainer = $("#combo");
     comboContainer.empty();
+
     for(let i = 0; i < combo.length; i++){
         let arr = $("<img class='arrow'/>");
         arr.attr("src", arrowIcon(combo[i]));
@@ -143,15 +188,7 @@ const setCombo = (combo) => {
     }
 }
 
-const addPoints = (pts) => {
-    let scoreElement = $("#gameScoreNumber");
-    let score = parseInt(scoreElement.html());
-    scoreElement.html(score + pts);
-}
-
-const animateGlow = (targetElement, glowClass) => {
-    targetElement.addClass(glowClass);
-    setTimeout(() => {
-        targetElement.removeClass(glowClass);
-    }, 100)
+const updatePoints = (pts = 0) => {
+    playerScore += pts;
+    $("#gameScoreNumber").html(playerScore);
 }
