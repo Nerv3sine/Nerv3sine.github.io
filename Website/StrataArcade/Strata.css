@@ -75,7 +75,8 @@ body{
 
 #gamePlay{
     width: 100%;
-    padding: 25vh 25vw;
+    flex-direction: row;
+    justify-content: center;
 }
 
 #stratagems{
@@ -128,4 +129,27 @@ body{
 
 .startWindow, .readyWarnWindow{
     display: block;
+}
+
+#roundClearWindow div{
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+    p {
+        width: 175px;
+    }
+    .M-font{
+        padding-top: 8px;
+    }
+    .L-font{
+        text-align: right;
+    }
+}
+
+#timerBar{
+    height: 3vh;
+    width: 100%;
+    background-color: var(--yellow);
+    transition: width 0.42s linear;
 }

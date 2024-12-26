@@ -2,13 +2,15 @@ const gameStates = {
     title: "startWindow",
     loading: "readyWarnWindow",
     game: "gamePlay",
-    scoreSummary: "roundClearWindow"
+    scoreSummary: "roundClearWindow",
+    gameover: "gameOver"
 }
 
 var LOADING_AUDIO;
 var BG_MUSIC;
 var START_MUSIC;
 var READY_MUSIC;
+var FAILURE_MUSIC;
 
 const ROUND_BONUS_BASE = 50;
 const ROUND_BONUS_MULTIPLIER = 25;
@@ -22,6 +24,10 @@ const randInt = (max) => {
     return Math.floor(Math.random() * max);
 }
 
+const newGameReset = () => {
+    game_stage = 1;
+    playerScore = 0;
+}
 
 $(document).ready(() => {
 
@@ -29,6 +35,7 @@ $(document).ready(() => {
     BG_MUSIC = new eventAudio(["playing"], true);
     START_MUSIC = new eventAudio(["start"]);
     READY_MUSIC = new eventAudio(["ready"]);
+    FAILURE_MUSIC = new eventAudio(["failurefull"]);
 
     updateGameState();
 
@@ -42,11 +49,12 @@ $(document).ready(() => {
                 generalArcadeKeyPress(inputKey);
                 break;
         }
-    })
-})
+    });
+});
 
 const generalArcadeKeyPress = (inputKey) => {
     if(gameState == gameStates.title){
+        newGameReset();
         launchLoadingScreen();
     }
 }
@@ -62,11 +70,20 @@ const launchLoadingScreen = () => {
         READY_MUSIC.playAudio();
     }
     
-    resetGame();
     setTimeout(() => {
+        resetGame();
         updateGameState(gameStates.game);
         BG_MUSIC.playAudio();
     }, 1200);
+}
+
+const launchFailureScreen = () => {
+    $("#finalScore").html(playerScore);
+    updateGameState(gameStates.gameover);
+    FAILURE_MUSIC.playAudio();
+    setTimeout(() => {
+        updateGameState(gameStates.title);
+    }, 3800);
 }
 
 const launchScoreSummaryScreen = () => {

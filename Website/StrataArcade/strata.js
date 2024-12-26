@@ -38,7 +38,9 @@ const stratagemDBPath = "./strata.json";
 let qBacklog = 0;
 let progress = 0;
 let currentCombo = "";
+let timerCounter = 24;
 
+var TIMER_RESET;
 var AUDIO_PRESS;
 var CORRECT;
 var ERROR;
@@ -54,9 +56,8 @@ const loadStratagems = async() => {
 
 $(document).ready(() => {
     loadStratagems()
-        .then(() => {
-            resetGame();
-        });
+        // .then(() => {
+        // });
 
     AUDIO_PRESS = new eventAudio(["hit1", "hit2", "hit3", "hit4"]);
     CORRECT = new eventAudio(["correct1", "correct2", "correct3", "correct4"]);
@@ -107,12 +108,25 @@ const resetGame = () => {
     updatePoints();
 
     readyState = true;
+    startTimer();
 }
 
 const stageClear = () => {
+    suspendGameOperations();
+    launchScoreSummaryScreen();
+}
+
+const stageFailure = () => {
+    suspendGameOperations();
+    launchFailureScreen();
+}
+
+//this is basically meant for when the gamestate is exited to another state
+//not a "pause" as the name suggests
+const suspendGameOperations = () => {
+    TIMER_RESET();
     readyState = false;
     BG_MUSIC.stopAudio();
-    launchScoreSummaryScreen();
 }
 
 const compareInput = (input) => {
@@ -141,6 +155,9 @@ const compareInput = (input) => {
 
 const processQ = () => {
     animateGlow($("#currentStratagem"), "successBg");
+    timerCounter += 1;
+    updateTimerBar();
+    
     for(let i = 0; i < qSize; i++){
 
         let idx = randInt(db.length);
@@ -191,4 +208,25 @@ const setCombo = (combo) => {
 const updatePoints = (pts = 0) => {
     playerScore += pts;
     $("#gameScoreNumber").html(playerScore);
+}
+
+const startTimer = () => {
+    updateTimerBar();
+    var timerCountdown = setInterval(() => {
+        timerCounter--;
+        if(timerCounter == 0){
+            stageFailure();
+        }
+        updateTimerBar();
+    }, 420);
+
+    TIMER_RESET = () => {
+        clearInterval(timerCountdown);
+        timerCounter = 24;
+        $("#timerBar").css("width", "100%");
+    }
+}
+
+const updateTimerBar = () => {
+    $("#timerBar").css("width", ((timerCounter - 1) / 24) * 100 + "%");
 }
