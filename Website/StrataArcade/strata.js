@@ -266,6 +266,7 @@ const updateTimerBar = () => {
 const selectGameMode = (mode) => {
     if(mode == 1) {
         game_mode = "normal";
+        newGameReset();
         launchLoadingScreen();
     } 
     else if(mode == 2) {
