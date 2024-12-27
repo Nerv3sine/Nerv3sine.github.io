@@ -31,16 +31,20 @@
     </div>
 
     <div id="roundClearWindow" class="bannerSpacing gameState">
-        <div class="flex">
+        <div id="roundBonusGroup" class="flex hideStat">
             <p class="M-font margin-0">Round Bonus</p>
             <p id="roundBonus" class="B-font L-font font-yellow margin-0">0</p>
         </div>
-        <div class="flex">
-            <p class="M-font margin-0" style="margin: 0;">Perfect Bonus</p>
+        <div id="timeBonusGroup" class="flex hideStat">
+            <p class="M-font margin-0">Time Bonus</p>
+            <p id="timeBonus" class="B-font L-font font-yellow margin-0">0</p>
+        </div>
+        <div id="perfectBonusGroup" class="flex hideStat">
+            <p class="M-font margin-0">Perfect Bonus</p>
             <p id="perfectBonus" class="B-font L-font font-yellow margin-0">0</p>
         </div>
-        <div class="flex">
-            <p class="M-font margin-0" style="margin: 0;">Total Score</p>
+        <div id="totalScoreGroup" class="flex hideStat">
+            <p class="M-font margin-0">Total Score</p>
             <p id="scoreSummary" class="B-font L-font font-yellow margin-0">0</p>
         </div>
     </div>
@@ -78,8 +82,10 @@
 
     <div id="gameOver" class="bannerSpacing gameState">
         <p class="centre-text banner-font pad-bottom-40">GAME OVER</h1>
+        <p class="centre-text M-font B-font margin-0">Round Ender</p>
+        <p id="endRound" class="centre-text L-font B-font font-yellow margin-0">1</p>
         <p class="centre-text M-font B-font margin-0">Your Final Score</p>
-        <p id="finalScore" class="centre-text L-font B-font font-yellow">0</p>
+        <p id="finalScore" class="centre-text L-font B-font font-yellow margin-0">0</p>
     </div>
 </body>
 </html>

@@ -153,3 +153,7 @@ body{
     background-color: var(--yellow);
     transition: width 0.42s linear;
 }
+
+.hideStat{
+    display: none;
+}

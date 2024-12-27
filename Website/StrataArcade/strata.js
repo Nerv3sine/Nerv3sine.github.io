@@ -10,23 +10,43 @@ const arrowIcon = (idx) => {
 }
 
 //presetData
-var db = [
-    {
-        "name": "MG-43 Machine Gun",
-        "combo": "DLDUR",
-        "icon": "Patriotic%20Administration%20Center/Machine%20Gun.svg"
-    },
-    {
-        "name": "APW-1 Anti-Materiel Rifle",
-        "combo": "DLRUD",
-        "icon": "Patriotic%20Administration%20Center/Anti-Materiel%20Rifle.svg"
-    },
-    {
-        "name": "M-105 Stalwart",
-        "combo": "DLDUUL",
-        "icon": "Patriotic%20Administration%20Center/Stalwart.svg"
-    }
-]
+var db = 
+{
+    "Support Weapons": [
+        {
+            "name": "MG-43 Machine Gun",
+            "combo": "DLDUR",
+            "icon": "Patriotic%20Administration%20Center/Machine%20Gun.svg"
+        },
+        {
+            "name": "APW-1 Anti-Materiel Rifle",
+            "combo": "DLRUD",
+            "icon": "Patriotic%20Administration%20Center/Anti-Materiel%20Rifle.svg"
+        },
+        {
+            "name": "M-105 Stalwart",
+            "combo": "DLDUUL",
+            "icon": "Patriotic%20Administration%20Center/Stalwart.svg"
+        }
+    ],
+    "test": [
+        {
+            "name": "MG-43 Machine Gun",
+            "combo": "DLDUR",
+            "icon": "Patriotic%20Administration%20Center/Machine%20Gun.svg"
+        },
+        {
+            "name": "APW-1 Anti-Materiel Rifle",
+            "combo": "DLRUD",
+            "icon": "Patriotic%20Administration%20Center/Anti-Materiel%20Rifle.svg"
+        },
+        {
+            "name": "M-105 Stalwart",
+            "combo": "DLDUUL",
+            "icon": "Patriotic%20Administration%20Center/Stalwart.svg"
+        }
+    ]
+}
 
 var readyState = false;
 const qSize = 6;
@@ -35,10 +55,11 @@ const getIcon = (idx) => {
 }
 const stratagemDBPath = "./strata.json";
 
-let qBacklog = 0;
-let progress = 0;
-let currentCombo = "";
-let timerCounter = 24;
+var qBacklog = 0;
+var progress = 0;
+var currentCombo = "";
+var timerCounterMax = 24;
+var timerCounter = timerCounterMax;
 
 var TIMER_RESET;
 var AUDIO_PRESS;
@@ -50,14 +71,16 @@ const loadStratagems = async() => {
     await fetch("https://nerv3sine.github.io/Website/StrataArcade/strata.json")
         .then(response => response.json())
         .then(data => {
-            db = data;
+            let dataBox = [];
+            for(const [_, stratagemList] of Object.entries(data)){
+                dataBox = dataBox.concat(stratagemList);
+            }
+            db = dataBox;
         });
 }
 
 $(document).ready(() => {
     loadStratagems()
-        // .then(() => {
-        // });
 
     AUDIO_PRESS = new eventAudio(["hit1", "hit2", "hit3", "hit4"]);
     CORRECT = new eventAudio(["correct1", "correct2", "correct3", "correct4"]);
@@ -112,8 +135,9 @@ const resetGame = () => {
 }
 
 const stageClear = () => {
+    let timeBonus = Math.floor(timerCounter / timerCounterMax * 100);
     suspendGameOperations();
-    launchScoreSummaryScreen();
+    launchScoreSummaryScreen(timeBonus);
 }
 
 const stageFailure = () => {
@@ -155,7 +179,7 @@ const compareInput = (input) => {
 
 const processQ = () => {
     animateGlow($("#currentStratagem"), "successBg");
-    timerCounter += 1;
+    timerCounter += 2;
     updateTimerBar();
     
     for(let i = 0; i < qSize; i++){
@@ -222,11 +246,11 @@ const startTimer = () => {
 
     TIMER_RESET = () => {
         clearInterval(timerCountdown);
-        timerCounter = 24;
+        timerCounter = timerCounterMax;
         $("#timerBar").css("width", "100%");
     }
 }
 
 const updateTimerBar = () => {
-    $("#timerBar").css("width", ((timerCounter - 1) / 24) * 100 + "%");
+    $("#timerBar").css("width", ((timerCounter - 1) / timerCounterMax) * 100 + "%");
 }

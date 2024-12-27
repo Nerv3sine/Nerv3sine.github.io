@@ -11,6 +11,7 @@ var BG_MUSIC;
 var START_MUSIC;
 var READY_MUSIC;
 var FAILURE_MUSIC;
+var DISPLAY_SHOW_AUDIO;
 
 const ROUND_BONUS_BASE = 50;
 const ROUND_BONUS_MULTIPLIER = 25;
@@ -36,6 +37,7 @@ $(document).ready(() => {
     START_MUSIC = new eventAudio(["start"]);
     READY_MUSIC = new eventAudio(["ready"]);
     FAILURE_MUSIC = new eventAudio(["failurefull"]);
+    DISPLAY_SHOW_AUDIO = new eventAudio(["hit1"]);
 
     updateGameState();
 
@@ -79,6 +81,7 @@ const launchLoadingScreen = () => {
 
 const launchFailureScreen = () => {
     $("#finalScore").html(playerScore);
+    $("#endRound").html(game_stage);
     updateGameState(gameStates.gameover);
     FAILURE_MUSIC.playAudio();
     setTimeout(() => {
@@ -86,15 +89,16 @@ const launchFailureScreen = () => {
     }, 3800);
 }
 
-const launchScoreSummaryScreen = () => {
+const launchScoreSummaryScreen = (timeScore) => {
 
     let roundBonus = ROUND_BONUS_BASE + ROUND_BONUS_MULTIPLIER * game_stage;
-    
+
     let perfectionBonus = perfection ? 100 : 0;
 
-    playerScore += perfectionBonus + roundBonus;
+    playerScore += perfectionBonus + roundBonus + timeScore;
 
     $("#roundBonus").html(roundBonus);
+    $("#timeBonus").html(timeScore);
     $("#perfectBonus").html(perfectionBonus);
     $("#scoreSummary").html(playerScore);
 
@@ -103,9 +107,27 @@ const launchScoreSummaryScreen = () => {
     game_stage++;
 
     STAGE_SUCCESS.playAudio();
-    setTimeout(() => {
-        launchLoadingScreen();
-    }, 3000);
+
+    let stats = ["roundBonusGroup", "timeBonusGroup", "perfectBonusGroup", "totalScoreGroup"];
+    let statIdx = 0;
+    let showStat = () => {
+        $("#" + stats[statIdx]).removeClass("hideStat");
+        DISPLAY_SHOW_AUDIO.playAudio();
+        statIdx++;
+    }
+    showStat();
+    let statAnim = setInterval(() => {
+        showStat();
+        if(statIdx == stats.length){
+            clearInterval(statAnim);
+            setTimeout(() => {
+                stats.map((stat) => {
+                    $("#" + stat).addClass("hideStat");
+                })
+                launchLoadingScreen();
+            }, 1250);
+        }
+    }, 500);
 }
 
 const updateGameState = (state = gameStates.title) => {
