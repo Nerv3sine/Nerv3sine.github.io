@@ -157,3 +157,107 @@ body{
 .hideStat{
     display: none;
 }
+
+button { 
+    background-color: #242424; 
+    border: 2px solid yellow; 
+    width: 15vw; 
+    color: white; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    margin: 20px auto;
+    text-align: center;
+} 
+
+button:hover { 
+    background-color: yellow; 
+    color: black; 
+}
+
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #242424;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 2px solid yellow;
+    width: 80%;
+}
+
+.modal-content h2 {
+    text-align: center;
+}
+
+.modal-content button {
+    display: block;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.stratagemList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.stratagemList .stratagemElement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* trying to find what looks nicer */
+.stratagemList .stratagemIcon {
+    border: 2px solid #242424;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.stratagemList .stratagemIcon:hover {
+    transform: scale(1.2);
+    z-index: 2;
+    border: 2px solid white;
+}
+
+.stratagemList .stratagemName {
+    display: none;
+    position: absolute;
+    background-color: #242424;
+    color: white;
+    margin-top: 90px;
+    padding: 5px;
+    z-index: 2;
+}
+
+.stratagemList .stratagemIcon:hover + .stratagemName { 
+    display: block;
+}
+
+.stratagemList .stratagemIcon.selected {
+    border: 2px solid yellow;
+}

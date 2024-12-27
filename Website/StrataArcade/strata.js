@@ -148,7 +148,9 @@ const stageFailure = () => {
 //this is basically meant for when the gamestate is exited to another state
 //not a "pause" as the name suggests
 const suspendGameOperations = () => {
-    TIMER_RESET();
+    if(game_mode == "normal") {
+        TIMER_RESET();
+    }
     readyState = false;
     BG_MUSIC.stopAudio();
 }
@@ -166,7 +168,12 @@ const compareInput = (input) => {
         if(progress == currentCombo.length){
             CORRECT.playAudio();
             updatePoints(currentCombo.length * 5);
-            processQ();
+            if(game_mode == "normal") {
+                processQ();
+            }
+            else if(game_mode == "practice") {
+                processPracticeQ();
+            }
         }
     }else{
         perfection = false;
@@ -193,6 +200,7 @@ const processQ = () => {
             }
         }else{
             idx = qBacklog > 0 ? idx : -1;
+            console.log(qBacklog);
             qBacklog--;
         }
         setStrata(i, idx);
@@ -205,6 +213,7 @@ const setStrata = (slot, id) => {
     iconElement.css("opacity", id == -1 ? "0" : "1");
 
     let strata = db[id];
+    console.log(id);
     if(id != -1){
         iconElement.attr("src", getIcon(id));
     }
@@ -253,4 +262,16 @@ const startTimer = () => {
 
 const updateTimerBar = () => {
     $("#timerBar").css("width", ((timerCounter - 1) / timerCounterMax) * 100 + "%");
+}
+
+const selectGameMode = (mode) => {
+    if(mode == 1) {
+        game_mode = "normal";
+        launchLoadingScreen();
+    } 
+    else if(mode == 2) {
+        game_mode = "practice";
+        loadStratagemsList();
+        showStratagemSelectionModal();
+    }
 }
