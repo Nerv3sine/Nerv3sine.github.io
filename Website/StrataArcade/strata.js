@@ -213,7 +213,6 @@ const setStrata = (slot, id) => {
     iconElement.css("opacity", id == -1 ? "0" : "1");
 
     let strata = db[id];
-    console.log(id);
     if(id != -1){
         iconElement.attr("src", getIcon(id));
     }

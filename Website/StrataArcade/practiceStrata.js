@@ -1,4 +1,5 @@
 var practiceDB = {};
+var qCounter = 0;
 
 const loadStratagemsList = () => {
     let container = document.getElementById("stratagemList");
@@ -71,14 +72,18 @@ const startPracticeMode = (selectedStratagems) => {
 }
 
 const resetPracticeGame = () => {
-    let j = 0;
+    qCounter = 0;
+
     for(let i = 0; i < qSize; i++) {
-        if(j == practiceDB.length) {
-            j = 0;
+
+        if(i >= practiceDB.length) {
+            setStrata(i, -1);
         }
-        console.log(practiceDB[j]);
-        setStrata(i, practiceDB[j]);
-        j++;
+        else {
+            console.log(practiceDB[i]);
+            setStrata(i, practiceDB[i]);
+        }
+        qCounter++;
     }
     
     qBacklog = game_stage - 1;
@@ -104,9 +109,14 @@ const processPracticeQ = () => {
             }
         }
         else {
-            idx = qBacklog > 0 ? idx : -1;
-            console.log(qBacklog);
-            qBacklog--;
+            if(qCounter < practiceDB.length) {
+                idx = practiceDB[qCounter];
+                qCounter++;
+            }
+            else {
+                idx = qBacklog > 0 ? idx : -1;
+                qBacklog--;
+            }
         }
 
         setStrata(i, idx);
