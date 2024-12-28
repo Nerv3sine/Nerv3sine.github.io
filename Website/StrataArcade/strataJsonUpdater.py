@@ -22,8 +22,9 @@ def convert(combo):
     return out
 
 def printDB(data):
-    for i in data:
-        print(i)
+    for key in data:
+        for stratagem in data[key]:
+            print(stratagem)
 
 
 def format(name, combo, icon):
@@ -33,8 +34,13 @@ def viewStratagems(data):
     choice = 1
     page = 0
     
-    max = int(len(data) / 10)
-    if len(data) % 10 > 0:
+    dataBlob = list()
+    for key in data:
+        dataBlob += data[key]
+    print(dataBlob)
+
+    max = int(len(dataBlob) / 10)
+    if len(dataBlob) % 10 > 0:
         max += 1
 
     while choice > 0:
@@ -42,8 +48,8 @@ def viewStratagems(data):
         idx = page * 10
         sCount = 0
         format("Name", "Combo", "Icon")
-        while (idx < (page + 1) * 10) and idx < len(data):
-            s = data[idx]
+        while (idx < (page + 1) * 10) and idx < len(dataBlob):
+            s = dataBlob[idx]
             format(s['name'], convert(s['combo']), s['icon'])
             idx += 1
             sCount += 1
@@ -71,6 +77,7 @@ def addStratagem(data):
     name = ""
     combo = ""
     icon = ""
+    strataGroup = ""
     while choice == 1:
         newSpace()
         print("New Stratagem:")
@@ -89,6 +96,7 @@ def addStratagem(data):
 
         folder = input("Folder Name: ")
         fileName = input("File Name: ")
+        strataGroup = input("Stratagem Group Name: ")
         folder = folder.strip().replace(" ", "%20")
         fileName = fileName.strip().replace(" ", "%20")
         icon = folder + "/" + fileName + ".svg"
@@ -97,6 +105,7 @@ def addStratagem(data):
         print(name)
         print(convert(combo))
         print(icon)
+        print("stratagem group: " + strataGroup)
 
         print("\n1) Try Again")
         print("2) Save Changes")
@@ -104,8 +113,12 @@ def addStratagem(data):
 
         choice = int(input("Your choice: "))
 
+        if strataGroup not in data:
+            print("***GROUP DOESNT EXIST***")
+            choice = 1
+
     if choice == 2:
-        data.append({
+        data[strataGroup].append({
             "name": name,
             "combo": combo,
             "icon": icon
