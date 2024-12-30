@@ -51,7 +51,7 @@ var db =
 var readyState = false;
 const qSize = 6;
 const getIcon = (idx) => {
-    return "https://raw.githubusercontent.com/nvigneux/Helldivers-2-Stratagems-icons-svg/b7ad1b3baab4bda356940a183025334e895b2121/" + db[idx].icon
+    return "https://raw.githubusercontent.com/nvigneux/Helldivers-2-Stratagems-icons-svg/master/" + db[idx].icon
 }
 const stratagemDBPath = "./strata.json";
 
