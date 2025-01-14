@@ -19,6 +19,7 @@ const ROUND_BONUS_MULTIPLIER = 25;
 var perfection = true;
 var gameState = gameStates.title;
 var game_stage = 1;
+var game_mode = "normal";
 var playerScore = 0;
 
 const randInt = (max) => {
@@ -43,6 +44,10 @@ $(document).ready(() => {
 
     $(this).on("keydown", (e) => {
         let inputKey = e.originalEvent.key;
+        if(gameStates.game) {
+            arcadeKeyPress(inputKey);
+        }
+        /*
         switch(gameState){
             case(gameStates.game):
                 arcadeKeyPress(inputKey);
@@ -51,6 +56,7 @@ $(document).ready(() => {
                 generalArcadeKeyPress(inputKey);
                 break;
         }
+        */
     });
 });
 
@@ -73,7 +79,12 @@ const launchLoadingScreen = () => {
     }
     
     setTimeout(() => {
-        resetGame();
+        if(game_mode == "normal") {
+            resetGame();
+        }
+        else if(game_mode == "practice") {
+            resetPracticeGame();
+        }
         updateGameState(gameStates.game);
         BG_MUSIC.playAudio();
     }, 1200);
@@ -118,15 +129,29 @@ const launchScoreSummaryScreen = (timeScore) => {
     showStat();
     let statAnim = setInterval(() => {
         showStat();
-        if(statIdx == stats.length){
-            clearInterval(statAnim);
-            setTimeout(() => {
-                stats.map((stat) => {
-                    $("#" + stat).addClass("hideStat");
-                })
-                launchLoadingScreen();
-            }, 1250);
+        if(game_mode == "normal") {
+            if(statIdx == stats.length){
+                clearInterval(statAnim);
+                setTimeout(() => {
+                    stats.map((stat) => {
+                        $("#" + stat).addClass("hideStat");
+                    })
+                    launchLoadingScreen();
+                }, 1250);
+            }
         }
+        else if(game_mode == "practice") {
+            if(statIdx == stats.length){
+                clearInterval(statAnim);
+                setTimeout(() => {
+                    stats.map((stat) => {
+                        $("#" + stat).addClass("hideStat");
+                    })
+                    updateGameState(gameStates.title);
+                }, 1250);
+            }
+        }
+        
     }, 500);
 }
 

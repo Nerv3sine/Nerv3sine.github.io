@@ -12,6 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="general.js"></script>
     <script src="strata.js"></script>
+    <script src="practiceStrata.js"></script>
 </head>
 <body>
     <img id="bgLogo" src="https://preview.redd.it/super-earth-helldivers-svg-logo-v0-0cvbn5nesrvc1.png?width=1024&format=png&auto=webp&s=e3fa0b71beb271bf9164688c4bb23703f7eca352" />
@@ -20,8 +21,23 @@
 
     <div id="startWindow" class="bannerSpacing gameState">
         <p class="centre-text banner-font pad-bottom-100">STRATAGEM ARCADE</p>
-        <p class="centre-text L-font font-yellow">Enter any Stratagem Input to Start!</p>
-        <p class="centre-text">(arrow keys and WASD controls both work)</p>
+        <!-- <p class="centre-text L-font font-yellow">Enter any Stratagem Input to Start!</p> -->
+        <!-- <p class="centre-text">(arrow keys and WASD controls both work)</p> -->
+        <div id="gameModeSelection" class="centre-text">
+            <p class="centre-text L-font font-yellow">Game Modes</p>
+            <button id="gameMode1Button" class="gameModeButton M-font" onclick="selectGameMode(1)">Normal</button>
+            <button id="gameMode2Button" class="gameModeButton M-font" onclick="selectGameMode(2)">Practice</button>
+        </div>
+        <div id="stratagemSelectionModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeStratagemSelectionModal()">&times;</span>
+                <h2 class="M-font">Select your Stratagems to Practice</h2>
+                <div id="stratagemList" class="stratagemList">
+                    <!-- added by player-->
+                </div>
+                <button id="practiceStartButton" class="M-font" onclick="startPractice()">Start</button>
+            </div>
+        </div>
     </div>
 
     <div id="readyWarnWindow" class="bannerSpacing gameState">
