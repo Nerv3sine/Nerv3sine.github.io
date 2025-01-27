@@ -76,6 +76,24 @@
             "teammates": [14838700, 57679353, 90071802, 77144254, 29824410]
         },
         {
+            "image":"https://img.itch.zone/aW1hZ2UvMzI3Njk3OC8xOTU1NjE2NS5wbmc=/347x500/JDYHlB.png",
+            "caption":"Escape the world with a bubble~",
+            "subCaption":"Global Game Jam 2025",
+            "buttons":
+            [
+                {
+                    "label":"Up and Away",
+                    "link":"https://skullythirtyfour.itch.io/up-and-away"
+                },
+                {
+                    "label":"Github Repo",
+                    "link":"https://github.com/Nerv3sine/GGJ25"
+                }
+            ],
+            "tags": ["Unity3D", "C#", "Blender3D"],
+            "teammates": []
+        },
+        {
             "image":"https://user-images.githubusercontent.com/44034888/162912418-bb695aa5-6841-4882-890f-93abb30d3ad5.png",
             "caption":"My first Unity game, a multiplayer FPS game",
             "subCaption":"...coming soon to itch.io!",
