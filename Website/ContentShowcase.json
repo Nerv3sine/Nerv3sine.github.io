@@ -1,4 +1,17 @@
 {
+    "experience":
+    [
+        {
+            "company": "Blackbird Interactive",
+            "banner": "https://support.musicgateway.com/wp-content/uploads/2021/07/Blackbird-Interactive-logo.png",
+            "link": "https://blackbirdinteractive.com/"
+        },
+        {
+            "company": "Engineers and Geoscientists of British Columbia",
+            "banner": "https://i.ytimg.com/vi/5YnVTLlsmmE/maxresdefault.jpg",
+            "link": "https://www.egbc.ca/"
+        }
+    ],
     "content":
     [
         {
