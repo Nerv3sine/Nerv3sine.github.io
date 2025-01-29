@@ -11,7 +11,7 @@ var githubFollowings = {};
 var profiles = {
     "Linkedin":{
         logo: "./img_files/logo-linkedin.svg",
-        pfp:"https://media.licdn.com/dms/image/v2/D5635AQHA9A74i6xErA/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1675666297930?e=1730062800&v=beta&t=yUjbFKbt8x9BifkZdYf75f4Kggk8ACSB22z_7Xta_Jo",
+        pfp:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRth3M_mrMczNAclt8g0HacIzeJfY4Dt2LiyA&s",
         link: "https://www.linkedin.com/in/jasoncai7/"
     },
     "Github":{
@@ -19,20 +19,20 @@ var profiles = {
         pfp:"https://avatars.githubusercontent.com/u/44034888?v=4",
         link: "https://www.github.com/nerv3sine"
     },
+    "Jason Cai":{
+        logo: "h1",
+        pfp:"",
+        link: "https://www.github.com/nerv3sine"
+    },
     "Instagram1":{
         logo: "./img_files/logo-instagram.svg",
-        pfp:"",
+        pfp:"https://avatars.githubusercontent.com/u/44034888?v=4",
         link: "https://www.instagram.com/project_cjs/"
     },
     "Instagram2":{
         logo: "./img_files/logo-instagram.svg",
-        pfp:"",
+        pfp:"https://private-user-images.githubusercontent.com/44034888/406837219-ecd4b880-a536-47d5-ba36-f5939cd929f5.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzgxMjYxNTIsIm5iZiI6MTczODEyNTg1MiwicGF0aCI6Ii80NDAzNDg4OC80MDY4MzcyMTktZWNkNGI4ODAtYTUzNi00N2Q1LWJhMzYtZjU5MzljZDkyOWY1LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAxMjklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMTI5VDA0NDQxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTdjMzc5ZTY0ODI1NjkyZTRjMGEwNjNmYWYwYjk0OTEyMmIyZWU4YTI5ZGRhODgzYzBkMGI1MWVkNGJkNDBlZGEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.UQRHCie3pLyLVK0Jxo2nJ-ier6UwyjKlcCMrGmSovSU",
         link: "https://www.instagram.com/jc_visionairy/"
-    },
-    "Resume":{
-        logo: "./img_files/document-text-outline.svg",
-        pfp:"",
-        link: "../files/General Resume.pdf"
     }
 }
 
@@ -55,6 +55,7 @@ const loadPage = async () =>
 {
     //loads in the JSON file of all the project information that's to be presented
     let data = await request(siteListFilePath);
+    // console.log(data)
 
     //loads in all the users that I follow on Github
     let friends = await request(githubFollowingLink);
@@ -71,6 +72,19 @@ const loadPage = async () =>
     console.log(d)
 
     */
+
+    let topBar = document.getElementById("top");
+    // console.log(profiles)
+    for(const [acc, account] of Object.entries(profiles)){
+        addToTopBar(acc, account, topBar);
+    }
+
+    // renders in all the projects
+    let expDisp = document.getElementById('experience');
+    for(let content of data.experience)
+    {
+        addExperience(content, expDisp);
+    }
 
     // renders in all the projects
     let display = document.getElementById('gallery');
@@ -117,6 +131,41 @@ const loadFooter = () => {
 
         footer.appendChild(comp);
     });
+}
+
+const addToTopBar = (key, data, topBar) => {
+    let item = document.createElement("div");
+    if(data.link != ""){
+        item.onclick = () => {
+            wOpen(data.link);
+        }
+    }
+
+    if(data.pfp != ""){
+        item.className = "accLink";
+
+        let logo = document.createElement("img");
+        logo.src = data.logo;
+        logo.className = "topLogo";
+        item.appendChild(logo);
+
+        if(data.pfp != ""){
+            let pfp = document.createElement("img");
+            pfp.className = "topPfp";
+            
+            pfp.src = data.pfp;
+            item.appendChild(pfp);
+        }
+    }else{
+        item.className = "top_sec";
+
+        let btnText = document.createElement(data.logo);
+        btnText.className = "top_text";
+        btnText.innerHTML = key;
+        item.appendChild(btnText);
+    }
+    
+    topBar.appendChild(item);
 }
 
 /**
@@ -175,6 +224,19 @@ const addToGallery = (data, display) =>
     work.appendChild(tags);
 
     display.appendChild(work);
+}
+
+const addExperience = (data, display) => {
+    let e = document.createElement("div");
+    e.className = "exp";
+    e.onclick = () => {
+        wOpen(data.link)
+    }
+    let banner = document.createElement("img");
+    banner.src = data.banner;
+
+    e.appendChild(banner);
+    display.appendChild(e);
 }
 
 /**

@@ -41,6 +41,7 @@ body{
     top: 0px;
     left: 0px;
     display: flex;
+    justify-content: center;
 }
 
 #name{
@@ -49,17 +50,6 @@ body{
 
 .top_text{
     color: white;
-}
-
-.top_sec{
-    margin-left: 20px;
-    padding: 30px;
-}
-
-.home_sec{
-    padding: 22.5px;
-    margin-right: 50px;
-    margin-left: 40px;
 }
 
 .top_sec, .home_sec{

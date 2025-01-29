@@ -225,20 +225,6 @@
             "teammates": []
         },
         {
-            "image":"./img_files/snapshot_render.jpg",
-            "caption":"My little web development playground",
-            "subCaption":"I fabricate all my website ideas here.",
-            "buttons":
-            [
-                {
-                    "label":"Dev Playground",
-                    "link":"./experiments/expMain.html"
-                }
-            ],
-            "tags": ["HTML", "JavaScript", "CSS", "Python", "JSON"],
-            "teammates": []
-        },
-        {
             "image":"https://www.doctorcare.ca/wp-content/uploads/2023/05/DoctorCare-ICBC-2023-scaled.jpg",
             "caption":"Lougheed Class 5 driving routes website",
             "subCaption":"Some Class 5 driving exam notes and routes I compiled for a friend",

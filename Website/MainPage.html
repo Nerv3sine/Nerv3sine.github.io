@@ -14,29 +14,21 @@
 <body>
     <img id="content" src="img_files/bg contents.png"/>
     <img class="bg-img" src="img_files/pure bg.png"/>
-    <top class="top">
-        <div class="home_sec">
-            <h2 class="top_text" id="name">Jason Cai</h2>
+    <top class="top" id="top"></top>
+
+    <div id="devSection">
+        <h1 class="sectionTitle">Dev Work</h1>
+        <div id="gallery"></div>
+    </div>
+    <div id="expSection">
+        <h1 class="sectionTitle">Experience</h1>
+        <div id="experience"></div>
+        <div id="resumeBtn" onclick="wOpen('../files/General Resume.pdf')">
+            <img src="./img_files/document-text-outline.svg"/>
+            Resume
+            <img src="./img_files/document-text-outline.svg"/>
         </div>
-        <div class="top_sec" id="Linkedin">
-            <h3 class="top_text" onclick="wOpen('https://www.linkedin.com/in/jasoncai7/')">Linkedin</h3>
-        </div>
-        <div class="top_sec" id="Github">
-            <h3 class="top_text" onclick="wOpen('https://www.github.com/nerv3sine')">Github</h3>
-        </div>
-        <div class="top_sec" id="3D">
-            <h3 class="top_text" onclick="wOpen('https://www.instagram.com/project_cjs/')">3D Modelling</h3>
-        </div>
-        <div class="top_sec" id="Photography">
-            <h3 class="top_text" onclick="wOpen('https://www.instagram.com/jc_visionairy/')">Photography</h3>
-        </div>
-        <div class="top_sec" id="Resume">
-            <h3 class="top_text" onclick="wOpen('../files/General Resume.pdf')">Resume</h3>
-        </div>
-    </top>
-    <h1 class="sectionTitle">Dev Work</h1>
-    <!-- <button onclick="console.log(window.innerWidth)"></button> -->
-    <div id="gallery"></div>
+    </div>
     <div id="construction">
         <h3>
             I'm still working to make this page look cool right now, feel free to visit some of my works listed above :)
