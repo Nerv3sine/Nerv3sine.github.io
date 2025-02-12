@@ -67,13 +67,13 @@
                     "link":"https://github.com/romansinkus/barrowTech"
                 }
             ],
-            "tags": ["React", "TypeScript", "Firebase", "CSS", "Python", "Matlab", "Flask"],
+            "tags": ["React", "TypeScript", "Firebase", "Python", "Matlab", "Flask"],
             "teammates": []
         },
         {
             "image":"https://img.itch.zone/aW1nLzEyNzU2NDUwLnBuZw==/315x250%23c/9D8uoq.png",
-            "caption":"Our Reverse Roguelike Platformer Game Jam submission!",
-            "subCaption":"",
+            "caption":"Past Your Peak",
+            "subCaption":"Our Reverse Roguelike Platformer Game Jam submission!",
             "buttons":
             [
                 {
@@ -90,8 +90,8 @@
         },
         {
             "image":"https://img.itch.zone/aW1hZ2UvMzI3Njk3OC8xOTU1NjE2NS5wbmc=/347x500/JDYHlB.png",
-            "caption":"Escape the world with a bubble~",
-            "subCaption":"Global Game Jam 2025",
+            "caption":"Up and Away",
+            "subCaption":"GGJ2025 - Escape the world with a bubble~",
             "buttons":
             [
                 {
@@ -122,8 +122,8 @@
         },
         {
             "image":"./img_files/project 7381 thumbnail.png",
-            "caption":"My own 3D escape room built in Unity",
-            "subCaption":"Now available on itch.io!",
+            "caption":"project 7381",
+            "subCaption":"My own 3D escape room built in Unity",
             "buttons":
             [
                 {
@@ -140,8 +140,8 @@
         },
         {
             "image":"./StrataArcade/StrataArcade.png",
-            "caption":"HTML Recreation of the Helldivers Arcade game; Stratagem Hero",
-            "subCaption":"Made with only HTML/CSS/JS",
+            "caption":"StrataArcade",
+            "subCaption":"a HTML Recreation of the Helldivers Arcade game; Stratagem Hero",
             "buttons":
             [
                 {
@@ -158,8 +158,8 @@
         },
         {
             "image":"../snake3/snake thumbnail.png",
-            "caption":"Snake game made in Processing",
-            "subCaption":"Integrated into html using p5.js!",
+            "caption":"Snake",
+            "subCaption":"Snake game integrated into html using p5.js!",
             "buttons":
             [
                 {
@@ -176,8 +176,8 @@
         },
         {
             "image":"https://upload.wikimedia.org/wikipedia/en/4/48/Inscryption_Cover_Art.jpg",
-            "caption":"I create an Inscryption like game on HTML!",
-            "subCaption":"",
+            "caption":"Enscrypted",
+            "subCaption":"I create an Inscryption like game on HTML!",
             "buttons":
             [
                 {
@@ -194,8 +194,8 @@
         },
         {
             "image":"https://user-images.githubusercontent.com/44034888/162928524-1f994cd6-16ad-4e75-a4a8-3d332524c0c0.png",
-            "caption":"A basic \"Arknights operator\" C++ database system",
-            "subCaption":"comes with it's own Arknights operator generation program!",
+            "caption":"PRTS Operator Database Manager",
+            "subCaption":"A database taht comes with it's own Arknights operator generation program!",
             "buttons":
             [
                 {
