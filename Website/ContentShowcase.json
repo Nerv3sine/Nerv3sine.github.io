@@ -44,8 +44,8 @@
         },
         {
             "image":"./img_files/PC Parts DB Snapshot.png",
-            "caption":"A PC parts database website",
-            "subCaption":"developed using the LAMP app technology stack, comes with a PC Parts generator for DB content",
+            "caption":"PC Parts Database",
+            "subCaption":"Developed using the LAMP app technology stack, comes with a PC Parts generator for DB content",
             "buttons":
             [
                 {
@@ -107,9 +107,27 @@
             "teammates": []
         },
         {
+            "image":"./StrataArcade/StrataArcade.png",
+            "caption":"StrataArcade",
+            "subCaption":"A HTML Recreation of the Helldivers Arcade game; Stratagem Hero",
+            "buttons":
+            [
+                {
+                    "label":"Let's Play!",
+                    "link":"./StrataArcade/StrataArcade.html"
+                },
+                {
+                    "label":"Github Repo",
+                    "link":"https://github.com/Nerv3sine/Nerv3sine.github.io/tree/main/Website/StrataArcade"
+                }
+            ],
+            "tags": ["HTML", "JS", "CSS", "Python"],
+            "teammates": []
+        },
+        {
             "image":"https://user-images.githubusercontent.com/44034888/162912418-bb695aa5-6841-4882-890f-93abb30d3ad5.png",
-            "caption":"My first Unity game, a multiplayer FPS game",
-            "subCaption":"...coming soon to itch.io!",
+            "caption":"Multiplayer FPS Game",
+            "subCaption":"My first Unity game\n...coming soon to itch.io!",
             "buttons":
             [
                 {
@@ -122,7 +140,7 @@
         },
         {
             "image":"./img_files/project 7381 thumbnail.png",
-            "caption":"project 7381",
+            "caption":"Project 7381",
             "subCaption":"My own 3D escape room built in Unity",
             "buttons":
             [
@@ -136,24 +154,6 @@
                 }
             ],
             "tags": ["Unity3D", "C#", "Blender3D"],
-            "teammates": []
-        },
-        {
-            "image":"./StrataArcade/StrataArcade.png",
-            "caption":"StrataArcade",
-            "subCaption":"a HTML Recreation of the Helldivers Arcade game; Stratagem Hero",
-            "buttons":
-            [
-                {
-                    "label":"Let's Play!",
-                    "link":"./StrataArcade/StrataArcade.html"
-                },
-                {
-                    "label":"Github Repo",
-                    "link":"https://github.com/Nerv3sine/Nerv3sine.github.io/tree/main/Website/StrataArcade"
-                }
-            ],
-            "tags": ["HTML", "JS", "CSS", "Python"],
             "teammates": []
         },
         {
@@ -195,7 +195,7 @@
         {
             "image":"https://user-images.githubusercontent.com/44034888/162928524-1f994cd6-16ad-4e75-a4a8-3d332524c0c0.png",
             "caption":"PRTS Operator Database Manager",
-            "subCaption":"A database taht comes with it's own Arknights operator generation program!",
+            "subCaption":"A database that comes with it's own Arknights operator generation program!",
             "buttons":
             [
                 {
@@ -212,8 +212,8 @@
         },
         {
             "image":"./img_files/mars_explorer.png",
-            "caption":"A Unity 3D Crafting Sandbox Game Prototype",
-            "subCaption":"Inspired by Minecraft, Subnautica and Fortnite",
+            "caption":"Mars Explorer",
+            "subCaption":"Unity 3D Crafting Sandbox Game Prototype\nInspired by Minecraft, Subnautica and Fortnite",
             "buttons":
             [
                 {
@@ -226,7 +226,7 @@
         },
         {
             "image":"https://www.doctorcare.ca/wp-content/uploads/2023/05/DoctorCare-ICBC-2023-scaled.jpg",
-            "caption":"Lougheed Class 5 driving routes website",
+            "caption":"Lougheed Class 5 Driving Routes",
             "subCaption":"Some Class 5 driving exam notes and routes I compiled for a friend",
             "buttons":
             [
