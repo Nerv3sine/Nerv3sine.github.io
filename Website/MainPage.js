@@ -2,7 +2,7 @@
 const siteListFilePath = "https://nerv3sine.github.io/Website/ContentShowcase.json";
 
 //github API for "user following" information
-const githubFollowingLink = "https://api.github.com/users/Nerv3sine/following";
+const githubFollowingLink = "https://api.github.com/users/Nerv3sine/following?page=";
 
 //object meant to store "users followed" information for future use
 var githubFollowings = {};
@@ -58,12 +58,18 @@ const loadPage = async () =>
     // console.log(data)
 
     //loads in all the users that I follow on Github
-    let friends = await request(githubFollowingLink);
-    // console.log(friends)
+    const getSetFren = async (pg) => {
+        await request(githubFollowingLink + pg).then(async (r) => {
+            userProcessing(r)
+            if(r.length > 0){
+                await getSetFren(pg + 1)
+            }
+        });
+    }
+    await getSetFren(1)
 
     profileLoading();
 
-    userProcessing(friends);
     // console.log(data)
 
     /* app dev testing
