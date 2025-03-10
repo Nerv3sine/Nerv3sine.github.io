@@ -6,6 +6,7 @@ const githubFollowingLink = "https://api.github.com/users/Nerv3sine/following?pa
 
 //object meant to store "users followed" information for future use
 var githubFollowings = {};
+var conveyorQ = null
 
 //pfps
 var profiles = {
@@ -66,7 +67,10 @@ const loadPage = async () =>
             }
         });
     }
-    await getSetFren(1)
+    //renders all the people that I follow on Github
+    await getSetFren(1).then(() => {
+        setUpConveyor()
+    })
 
     profileLoading();
 
@@ -97,13 +101,6 @@ const loadPage = async () =>
     for(let content of data.content)
     {
         addToGallery(content, display);
-    }
-
-    //renders all the people that I follow on Github
-    let friendsList = document.getElementById('friends');
-    for(let person of Object.entries(githubFollowings))
-    {
-        addPerson(person[1], friendsList);
     }
 }
 
@@ -266,9 +263,10 @@ const userProcessing = (data) =>
  * @param {object} data 
  * @param {HTMLDivElement} display 
  */
-const addPerson = (data, display) => 
+const addPerson = (data) => 
 {
     // console.log(data)
+    let display = document.getElementById('friends');
 
     //user element
     person = document.createElement('div');
@@ -284,10 +282,43 @@ const addPerson = (data, display) =>
     pfp.className = "pfp";
     pfp.title = data.username
     person.appendChild(pfp);
-
+    person.style.position = "absolute"
+    offset = display.childElementCount;
+    delay = ((offset + 1) * 3)
+    person.style.left = (offset * 70) + "px"
+    person.style.transition = "left " + delay + "s linear"
+    const d = (p, dlay) => {
+        setTimeout(() => {
+            p.classList.add("scrollOffScreen")
+            setTimeout(() => {
+                p.remove()
+                let fren = popFriend()
+                addPerson(fren)
+                console.log(fren)
+            }, dlay * 1000)
+        }, 50)
+    }
+    d(person, delay)
     // TODO: make a custom tooltip instead for displaying usernames
 
     display.appendChild(person);
+}
+
+const setUpConveyor = () => {
+    for(var i = 0; i < Math.ceil(window.innerWidth / 70) + 1; i++){
+        addPerson(popFriend())
+    }
+}
+
+const popFriend = () => {
+    if(conveyorQ == null || conveyorQ.size == 0){
+        conveyorQ = new Set(Object.keys(githubFollowings))
+    }
+    let idx = Math.floor(Math.random() * (conveyorQ.size - 1))
+    let frenId = Array.from(conveyorQ)[idx]
+    conveyorQ.delete(frenId)
+    
+    return githubFollowings[frenId]
 }
 
 const profileLoading = () => {
