@@ -294,7 +294,7 @@ const addPerson = (data) =>
                 p.remove()
                 let fren = popFriend()
                 addPerson(fren)
-                console.log(fren)
+                // console.log(fren)
             }, dlay * 1000)
         }, 50)
     }
@@ -314,6 +314,7 @@ const popFriend = () => {
     if(conveyorQ == null || conveyorQ.size == 0){
         conveyorQ = new Set(Object.keys(githubFollowings))
     }
+    // console.log(conveyorQ.size)
     let idx = Math.floor(Math.random() * (conveyorQ.size - 1))
     let frenId = Array.from(conveyorQ)[idx]
     conveyorQ.delete(frenId)
