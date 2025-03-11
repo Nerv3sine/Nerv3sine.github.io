@@ -55,6 +55,7 @@
 .btn:hover{
     background-color: #72a6ff;
     color: white;
+    cursor: pointer;
 }
 
 .btn:active{
@@ -75,6 +76,10 @@
     margin: 1px 2px;
 }
 
+.teammatesList{
+    display: flex;
+    margin-top: 5px;
+}
 
 /* WIP styles */
 #construction{
@@ -89,21 +94,28 @@
 #friends{
     display: flex;
     padding-top: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 100px;
     overflow: auto;
+    /* margin-bottom: 20px; */
 }
 
 .friend{
-    width: 80px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     padding: auto;
-    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 .friend .pfp{
     width: 60px;
     height: 60px;
     border-radius: 40px;
+}
+
+.teammatesList .friend, .teammatesList .friend .pfp{
+    width: 40px;
+    height: 40px;
 }
 
 .scrollOffScreen{

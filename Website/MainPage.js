@@ -69,7 +69,14 @@ const loadPage = async () =>
     }
     //renders all the people that I follow on Github
     await getSetFren(1).then(() => {
+        // console.log(githubFollowings)
         setUpConveyor()
+        // renders in all the projects
+        let display = document.getElementById('gallery');
+        for(let content of data.content)
+        {
+            addToGallery(content, display);
+        }
     })
 
     profileLoading();
@@ -94,13 +101,6 @@ const loadPage = async () =>
     for(let content of data.experience)
     {
         addExperience(content, expDisp);
-    }
-
-    // renders in all the projects
-    let display = document.getElementById('gallery');
-    for(let content of data.content)
-    {
-        addToGallery(content, display);
     }
 }
 
@@ -225,6 +225,32 @@ const addToGallery = (data, display) =>
         tags.appendChild(tag);
     }
     work.appendChild(tags);
+
+    if(data.teammates.length > 0){
+        //relevant members
+        let members = document.createElement("div");
+        members.className = "teammatesList"
+        for(let m of data.teammates){
+            let mData = githubFollowings[m]
+            // console.log(githubFollowingLink)
+            person = document.createElement('div');
+            person.addEventListener("click", () => 
+            {
+                wOpen(mData.link);
+            });
+            person.className = "friend";
+
+            //user pfp
+            pfp = document.createElement('img');
+            pfp.src = mData.pfp;
+            pfp.className = "pfp";
+            pfp.title = mData.username
+            person.appendChild(pfp);
+
+            members.appendChild(person)
+        }
+        work.appendChild(members)
+    }
 
     display.appendChild(work);
 }
