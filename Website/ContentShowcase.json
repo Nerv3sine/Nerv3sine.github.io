@@ -13,7 +13,7 @@
         },
         {
             "company": "A Thinking Ape Entertainment",
-            "banner": "https://www.athinkingape.com/static/www/images/common/logo-landscape-white.svg",
+            "banner": "./img_files/ATA banner.png",
             "link": "https://www.athinkingape.com/"
         }
     ],
