@@ -13,14 +13,14 @@
         },
         {
             "company": "A Thinking Ape Entertainment",
-            "banner": "https://media.licdn.com/dms/image/sync/v2/D5627AQERKOfvjdVuDg/articleshare-shrink_480/articleshare-shrink_480/0/1740613154435?e=1747857600&v=beta&t=LsorNzq5UIGfu38LbuSxfBNTo91Y3TveenXxbKY4UEY",
+            "banner": "https://www.athinkingape.com/static/www/images/common/logo-landscape-white.svg",
             "link": "https://www.athinkingape.com/"
         }
     ],
     "content":
     [
         {
-            "image":"https://private-user-images.githubusercontent.com/44034888/443828251-c643d72d-afec-48c6-8936-6a1a428eb4b7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDcyNTM2NDIsIm5iZiI6MTc0NzI1MzM0MiwicGF0aCI6Ii80NDAzNDg4OC80NDM4MjgyNTEtYzY0M2Q3MmQtYWZlYy00OGM2LTg5MzYtNmExYTQyOGViNGI3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MTQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTE0VDIwMDkwMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTBlYzZmODViZjhlNjcyZThmMjRiZDE4MGRhYzZiYmM4ZGZlZTE5YmU4OGQ2ZWFkMmM3Y2JlOTVjODc3YjRkMmQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.WjEztjk7wtSiSO-_Fx_q0_FFwHQc8IrcHRCVM7vv3fA",
+            "image":"./img_files/suika.png",
             "caption":"Surge Suika",
             "subCaption":"The Suika game with a Surge theme",
             "buttons":
