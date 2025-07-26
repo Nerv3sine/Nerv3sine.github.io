@@ -36,6 +36,10 @@
                 {
                     "label":"Surge?",
                     "link":"https://sfusurge.com/"
+                },
+                {
+                    "label":"Github Repo",
+                    "link":"https://github.com/Nerv3sine/surgeSuikaGame"
                 }
             ],
             "tags": ["Svelte", "TypeScript", "Firebase", "CSS"],
