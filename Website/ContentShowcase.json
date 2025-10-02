@@ -20,6 +20,24 @@
     "content":
     [
         {
+            "image":"./img_files/RhythmOfKingdom.png",
+            "caption":"Rhythm of the Kingdom",
+            "subCaption":"The Stormhacks 2025 Website Rhythm Game!",
+            "buttons":
+            [
+                {
+                    "label":"Play",
+                    "link":"https://www.stormhacks.com/rhythm"
+                },
+                {
+                    "label":"Surge?",
+                    "link":"https://sfusurge.com/"
+                }
+            ],
+            "tags": ["Svelte", "TypeScript", "Firebase", "CSS"],
+            "teammates": [132044780, 59712548]
+        },
+        {
             "image":"./img_files/suika.png",
             "caption":"Surge Suika",
             "subCaption":"The Suika game with a Surge theme",
