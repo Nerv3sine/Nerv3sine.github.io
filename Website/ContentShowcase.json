@@ -20,6 +20,20 @@
     "content":
     [
         {
+            "image":"https://media.geeksforgeeks.org/wp-content/uploads/20200925115408/bash.png",
+            "caption":"A Simple Terminal",
+            "subCaption":"Just a simple terminal, nothing special here :)",
+            "buttons":
+            [
+                {
+                    "label":"Terminal",
+                    "link":"https://planomai-protocol.vercel.app/"
+                }
+            ],
+            "tags": ["Svelte", "TypeScript", "CSS"],
+            "teammates": []
+        },
+        {
             "image":"https://github.com/Nerv3sine/Nerv3sine.github.io/blob/main/Website/img_files/RhythmOfKingdom.png?raw=true",
             "caption":"Rhythm of the Kingdom",
             "subCaption":"The Stormhacks 2025 Website Rhythm Game!",
