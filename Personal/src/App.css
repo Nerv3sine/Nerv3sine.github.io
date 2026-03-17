@@ -14,22 +14,26 @@ h1 {
   position: absolute;
   z-index: -1;
   width: 100vw;
-  height: 100vh;
   left: 0;
 }
 
 .bannerContent{
-  position: absolute;
-  top: 7%;
-  left: 10vw;
-  height: 100vh;
+  position: relative;
+  top: 100px;
+  left: 0;
+
+  width: 100vw;
+  max-width: 150vh;
+
+  margin-bottom: -500px;
+  overflow: clip;
 }
 
 #pageBody{
   background-color: var(--bg-black);
   width: 100vw;
   height: auto;
-  margin-top: 80vh;
+  margin-top: 60vh;
   padding-top: 20vh;
 }
 
