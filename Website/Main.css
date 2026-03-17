@@ -35,7 +35,7 @@ body{
 .top{
     display: block;
     background-color: black;
-    width: 100%;
+    width: 100vw;
     height: 80px;
     position: fixed;
     top: 0px;
