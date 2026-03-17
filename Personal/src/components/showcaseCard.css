@@ -1,0 +1,15 @@
+.cardBody{
+    padding: 10px;
+    height: fit-content;
+    width: 400px;
+    border-radius: 5px;
+
+    color: black;
+    text-align: left;
+    background-color: silver;
+
+    .cardSnapshot{
+        width: 400px;
+        object-fit: cover;
+    }
+}

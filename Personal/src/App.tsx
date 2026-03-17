@@ -1,37 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import snapshotBG from '../../Website/img_files/pure bg.png'
-import snapshot from '../../Website/img_files/bg contents.png'
+import { projData } from './dataLoading'
+
+import snapshotBG from '../../Website/img_files/pure bg.webp'
+import snapshot from '../../Website/img_files/bg contents.webp'
+
+import ShowcaseCard from './components/showcaseCard'
+
 import './App.css'
+import { useEffect, useState } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [projectData, updateProjects] = useState<projData[]>([]);
+
+  useEffect(() => {
+    fetch('https://nerv3sine.github.io/Website/ContentShowcase.json')
+      .then(resp => {
+        if(!resp.ok){
+          throw new Error(`Error loading project data`);
+        }
+        return resp.json();
+      }).then(data => {
+        updateProjects(data['content'])
+        // return data['content']
+      }).then(d => {
+        // console.log(projectData)
+      })
+  }, [])
 
   return (
     <>
-      <img src={snapshotBG} alt="siteBG" className="page1"/>
-      <img src={snapshot} alt="siteFG" className="content"/>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <img src={snapshotBG} alt="siteBG" className="mainPageBG"/>
+      <img src={snapshot} alt="siteFG" className="bannerContent"/>
+      <div id="pageBody">
+        <h1>Dev Work</h1>
+        <div id="gallery">
+        {
+          projectData.map((proj:projData) => {
+            return <ShowcaseCard data={proj}/>
+          })
+        }
+          {/* <ShowcaseCard snapshotLink={"https://nerv3sine.github.io/Website/StrataArcade/StrataArcade.png"} cardName={"Test"} subtext={"test"} buttonLinks={["google.ca"]}/> */}
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
