@@ -88,7 +88,7 @@
             "teammates": [52472454, 132044780, 59712548]
         },
         {
-            "image":"https://github.com/Nerv3sine/Nerv3sine.github.io/blob/main/Website/img_files/suika.png?raw=true",
+            "image":"https://github.com/Nerv3sine/Nerv3sine.github.io/blob/main/Website/img_files/suika.webp?raw=true",
             "caption":"Surge Suika",
             "subCaption":"The Suika game with a Surge theme",
             "buttons":
@@ -142,7 +142,7 @@
             "teammates": [63479092, 61367162, 101071895]
         },
         {
-            "image":"https://github.com/Nerv3sine/Nerv3sine.github.io/blob/main/Website/img_files/PC%20Parts%20DB%20Snapshot.png?raw=true",
+            "image":"https://github.com/Nerv3sine/Nerv3sine.github.io/blob/main/Website/img_files/PC%20Parts%20DB%20Snapshot.webp?raw=true",
             "caption":"PC Parts Database",
             "subCaption":"Developed using the LAMP app technology stack, comes with a PC Parts generator for DB content",
             "buttons":
@@ -206,7 +206,7 @@
             "teammates": [78820323, 99566986, 127362244]
         },
         {
-            "image":"https://nerv3sine.github.io/Website/StrataArcade/StrataArcade.png",
+            "image":"https://nerv3sine.github.io/Website/StrataArcade/StrataArcade.webp",
             "caption":"StrataArcade",
             "subCaption":"A HTML Recreation of the Helldivers Arcade game; Stratagem Hero",
             "buttons":
@@ -238,7 +238,7 @@
             "teammates": [35856905]
         },
         {
-            "image":"https://github.com/Nerv3sine/Nerv3sine.github.io/blob/main/Website/img_files/project%207381%20thumbnail.png?raw=true",
+            "image":"https://github.com/Nerv3sine/Nerv3sine.github.io/blob/main/Website/img_files/project%207381%20thumbnail.webp?raw=true",
             "caption":"Project 7381",
             "subCaption":"My own 3D escape room built in Unity",
             "buttons":
@@ -256,7 +256,7 @@
             "teammates": []
         },
         {
-            "image":"https://github.com/Nerv3sine/Nerv3sine.github.io/blob/main/snake3/snake%20thumbnail.png?raw=true",
+            "image":"https://github.com/Nerv3sine/Nerv3sine.github.io/blob/main/snake3/snake%20thumbnail.webp?raw=true",
             "caption":"Snake",
             "subCaption":"Snake game integrated into html using p5.js!",
             "buttons":
@@ -310,7 +310,7 @@
             "teammates": []
         },
         {
-            "image":"https://github.com/Nerv3sine/Nerv3sine.github.io/blob/main/Website/img_files/mars_explorer.png?raw=true",
+            "image":"https://github.com/Nerv3sine/Nerv3sine.github.io/blob/main/Website/img_files/mars_explorer.webp?raw=true",
             "caption":"Mars Explorer",
             "subCaption":"Unity 3D Crafting Sandbox Game Prototype\nInspired by Minecraft, Subnautica and Fortnite",
             "buttons":
