@@ -20,6 +20,42 @@
     "content":
     [
         {
+            "image":"https://github.com/Nerv3sine/Nerv3sine.github.io/blob/main/Website/img_files/otterloo.webp?raw=true",
+            "caption":"Trip to Otterloo",
+            "subCaption":"Will your skiing skills get you to otterloo?",
+            "buttons":
+            [
+                {
+                    "label":"Play",
+                    "link":"https://www.sparkjam.design/"
+                },
+                {
+                    "label":"Surge?",
+                    "link":"https://sfusurge.com/"
+                }
+            ],
+            "tags": ["Svelte", "TypeScript", "CSS"],
+            "teammates": [52472454]
+        },
+        {
+            "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShwwaMqiJl7auiYjVDvHEgp84UAHV3hNkhjA&s",
+            "caption":"Sillyhacks!",
+            "subCaption":"May the silliest win it all :p",
+            "buttons":
+            [
+                {
+                    "label":"Website",
+                    "link":"https://sillyhacks.sfusurge.com/"
+                },
+                {
+                    "label":"Surge?",
+                    "link":"https://sfusurge.com/"
+                }
+            ],
+            "tags": ["Svelte", "TypeScript", "CSS"],
+            "teammates": [52472454, 91840687, 59712548]
+        },
+        {
             "image":"https://media.geeksforgeeks.org/wp-content/uploads/20200925115408/bash.png",
             "caption":"A Simple Terminal",
             "subCaption":"Just a simple terminal, nothing special here :)",
